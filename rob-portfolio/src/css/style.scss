@@ -1,0 +1,294 @@
+// --- index.css Styles
+:root {
+     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+     line-height: 1.5;
+     font-weight: 400;
+
+     color-scheme: light dark;
+     color: rgba(255, 255, 255, 0.87);
+     background-color: #242424;
+
+     font-synthesis: none;
+     text-rendering: optimizeLegibility;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+     -webkit-text-size-adjust: 100%;
+}
+
+// a {
+//      font-weight: 500;
+//      color: #646cff;
+//      text-decoration: inherit;
+// }
+// a:hover {
+//      color: #535bf2;
+// }
+
+// body {
+//      margin: 0;
+//      display: flex;
+//      place-items: center;
+//      min-width: 320px;
+//      min-height: 100vh;
+// }
+
+// h1 {
+//      font-size: 3.2em;
+//      line-height: 1.1;
+// }
+
+// button {
+//      border-radius: 8px;
+//      border: 1px solid transparent;
+//      padding: 0.6em 1.2em;
+//      font-size: 1em;
+//      font-weight: 500;
+//      font-family: inherit;
+//      background-color: #1a1a1a;
+//      cursor: pointer;
+//      transition: border-color 0.25s;
+// }
+// button:hover {
+//      border-color: #646cff;
+// }
+// button:focus,
+// button:focus-visible {
+//      outline: 4px auto -webkit-focus-ring-color;
+// }
+
+// @media (prefers-color-scheme: light) {
+//      :root {
+//           color: #213547;
+//           background-color: #ffffff;
+//      }
+//      a:hover {
+//           color: #747bff;
+//      }
+//      button {
+//           background-color: #f9f9f9;
+//      }
+// }
+
+//--- App.css Styles ----
+// #root {
+//      // max-width: 1280px;
+//      // margin: 0 auto;
+//      // padding: 2rem;
+//      // text-align: center;
+// }
+
+// .logo {
+//      height: 6em;
+//      padding: 1.5em;
+//      will-change: filter;
+//      transition: filter 300ms;
+// }
+// .logo:hover {
+//      filter: drop-shadow(0 0 2em #646cffaa);
+// }
+// .logo.react:hover {
+//      filter: drop-shadow(0 0 2em #61dafbaa);
+// }
+
+// @keyframes logo-spin {
+//      from {
+//           transform: rotate(0deg);
+//      }
+//      to {
+//           transform: rotate(360deg);
+//      }
+// }
+
+// @media (prefers-reduced-motion: no-preference) {
+//      a:nth-of-type(2) .logo {
+//           animation: logo-spin infinite 20s linear;
+//      }
+// }
+
+// .card {
+//      padding: 2em;
+// }
+
+// .read-the-docs {
+//      color: #888;
+// }
+
+
+
+// ----- Good Stuff
+
+body{
+     margin: 0;
+}
+
+// --- Pros of this styling:
+// Each tab is a separate entity
+// allows for a good animation potential
+// ultimate positioning flexibility
+
+// --- Cons:
+// positioning consistency may be difficult
+// all positioning will be manual
+
+// --- Solution:
+// utilize JS/TS/React to manage position data individually
+
+
+
+.def-cont{
+     // background: green;
+     height: 100vh;
+     width: 100vw;
+     margin: 0;
+}
+
+.home{
+     position: absolute;
+     color: black;
+     display: grid;
+     place-items: center;
+     width: 5rem;
+     height: 5rem;
+     transition: 1s;
+}
+.home.active{
+     width: 80%;
+     height: 55vh;
+     background: white;
+     top: 15vh;
+     left: 10%;
+     transition: 1.5s
+}
+.home-btn{
+     // position: absolute;
+     z-index: 2;
+     background: white;
+     color: black;
+     display: grid;
+     place-items: center;
+     grid-template-rows: 1.5fr 1fr;
+     border-radius: 10px;
+     width: 5rem;
+     height: 5rem;
+     cursor: pointer;
+     transition: 1s;
+     i{
+          height: 100%;
+          display: grid;
+          place-items: center;
+          font-size: 2rem;
+     }
+     p{
+          height: 100%;
+          display: grid;
+          place-items: center;
+          margin: 0;
+     }
+}
+.home-btn.active{
+     cursor: default;
+}
+
+.sect{
+     position: absolute;
+     color: black;
+     // background: red;
+     width: 1rem;
+     height: 1rem;
+     display: grid;
+     place-items: center;
+     transition: 1s;
+}
+.sect.active{
+     background: rgb(149, 255, 149);
+     // background: transparent;
+     width: 100%;
+     height: 100vh;
+     transition: 1s;
+     // cursor: default;
+}
+.sect-btn{
+     position: absolute;
+     z-index: 2;
+     background: white;
+     color: black;
+     display: grid;
+     place-items: center;
+     grid-template-rows: 1.5fr 1fr;
+     border-radius: 10px;
+     width: 5rem;
+     height: 5rem;
+     cursor: pointer;
+     transition: 1s;
+     // transition-timing-function: ease-in-out;
+     // transition-delay: 1s,1s;
+     // transition-property: top, left;
+     // transition-duration: 1.5s;
+     // transition: 1s;
+     // transition-delay: 1s;
+     i{
+          // background: orange;
+          height: 100%;
+          display: grid;
+          place-items: center;
+          font-size: 2rem;
+     }
+     p{
+          // background: yellow;
+          height: 100%;
+          display: grid;
+          place-items: center;
+          margin: 0;
+     }
+}
+.sect-btn.active{
+     cursor: default;
+}
+
+
+
+// --2-- Pros of this styling:
+// allows for proper tab arrangment
+// could auto align tabs if the their arrangement changes
+
+// --- Cons:
+// removes flexibility for animation
+// causes weirdness for the active tab 
+     // (which is still connected the other tabs)
+
+// --- Solutions: 
+// reserve this styling for the simplified variant of the web app
+
+
+// .def-cont{
+//      position: absolute;
+//      background: green;
+//      height: 15vh;
+//      width: 80vw;
+//      top: 75vh;
+//      left: 10vw;
+//      margin: 0;
+//      display: flex;
+//      flex-direction: row;
+//      align-items: center;
+//      justify-content: space-around;
+// }
+// .sect{
+//      background: white;
+//      color: black;
+//      border: 1px solid;
+//      width: 5rem;
+//      height: 5rem;
+//      top: 80vh;
+//      display: grid;
+//      place-items: center;
+//      // transition: 1.5s;
+// }
+// .sect.active{
+//      position: absolute;
+//      background: red;
+//      width: 90%;
+//      height: 55vh;
+//      top: -65vh;
+//      left: 5%;
+// }
