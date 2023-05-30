@@ -46,7 +46,31 @@ export const Contact = (props: elemProps) =>{
                          }
                     }
                >
-                    
+                    <div className="sect-data">
+                         <h1 className="sect-title">Contact Information</h1>
+                         <div className="contact-info">
+                              <div className="contacts">
+                                   <i>O</i>
+                                   <p>Lorem, ipsum dolor.</p>
+                              </div>
+                              <div className="contacts">
+                                   <i>O</i>
+                                   <p>loremipsom.com</p>
+                              </div>
+                              <div className="contacts">
+                                   <i>O</i>
+                                   <p>lorem@ipsom.com</p>
+                              </div>
+                              <div className="contacts">
+                                   <i>O</i>
+                                   <p>linkedin</p>
+                              </div>
+                              <div className="contacts">
+                                   <i>O</i>
+                                   <p>123-456-7890</p>
+                              </div>
+                         </div>
+                    </div>
                </div>
                <div 
                     className={`sect-btn ${state===true?'active':''}`}

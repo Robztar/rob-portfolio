@@ -54,7 +54,63 @@ export const Academics = (props: elemProps) =>{
                          }
                     }
                >
-                    
+                    <div className="sect-data">
+                         <h1 className="sect-title">Academics</h1>
+                         <div className="academics-info">
+                              <div className="timeline">
+                                   <div className="node-cont left-node">
+                                        <div className="node-point"></div>
+                                        <span className="node-point-span"></span>
+                                        <div className="node-data">
+                                             <h2>2018</h2>
+                                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                        </div>
+                                   </div>
+                                   <div className="node-cont right-node">
+                                        <div className="node-point"></div>
+                                        <span className="node-point-span"></span>
+                                        <div className="node-data">
+                                             <h2>2019</h2>
+                                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                        </div>
+                                   </div>
+                                   <div className="node-cont left-node">
+                                        <div className="node-point"></div>
+                                        <span className="node-point-span"></span>
+                                        <div className="node-data">
+                                             <h2>2020</h2>
+                                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                        </div>
+                                   </div>
+                                   <div className="node-cont right-node">
+                                        <div className="node-point"></div>
+                                        <span className="node-point-span"></span>
+                                        <div className="node-data">
+                                             <h2>2021</h2>
+                                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                        </div>
+                                   </div>
+                                   <div className="node-cont left-node">
+                                        <div className="node-point"></div>
+                                        <span className="node-point-span"></span>
+                                        <div className="node-data">
+                                             <h2>2022</h2>
+                                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                        </div>
+                                   </div>
+                                   <div className="node-cont right-node">
+                                        <div className="node-point"></div>
+                                        <span className="node-point-span"></span>
+                                        <div className="node-data">
+                                             <h2>2023</h2>
+                                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                        </div>
+                                   </div>
+
+                                   
+                              </div>
+                         </div>
+                    </div>
                </div>
                <div 
                     className={`sect-btn ${state===true?'active':''}`}

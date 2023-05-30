@@ -6,7 +6,7 @@
 
      color-scheme: light dark;
      color: rgba(255, 255, 255, 0.87);
-     background-color: #242424;
+     // background-color: #242424;
 
      font-synthesis: none;
      text-rendering: optimizeLegibility;
@@ -119,32 +119,22 @@
 
 body{
      margin: 0;
+     background: #00252e;
+     color: #868686;
+     overflow: hidden;
 }
-
-// --- Pros of this styling:
-// Each tab is a separate entity
-// allows for a good animation potential
-// ultimate positioning flexibility
-
-// --- Cons:
-// positioning consistency may be difficult
-// all positioning will be manual
-
-// --- Solution:
-// utilize JS/TS/React to manage position data individually
-
-
 
 .def-cont{
      // background: green;
      height: 100vh;
      width: 100vw;
      margin: 0;
+     
 }
 
 .home{
      position: absolute;
-     color: black;
+     // color: black;
      display: grid;
      place-items: center;
      width: 5rem;
@@ -154,16 +144,30 @@ body{
 .home.active{
      width: 80%;
      height: 55vh;
-     background: white;
+     background: #00252e;
+     border-radius: 10px;
+     // border: dashed black 3px;
+     // box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.25),
+     //      inset 2px 2px 5px rgba(255, 255, 255, 0.25),
+     //      8px 30px 30px rgba(0, 0, 0, 0.4),
+     //      inset -2px -2px 5px rgba(0, 0, 0, 0.4);
+     box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.05),
+          6px 6px 15px rgba(0, 0, 0, 0.5);
      top: 15vh;
      left: 10%;
-     transition: 1.5s
+     transition: 1.5s;
+     // background: red;
 }
+
 .home-btn{
      // position: absolute;
      z-index: 2;
-     background: white;
-     color: black;
+     // background: white;
+     background: #00252e;
+     // border: dashed black 3px;
+     box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1),
+          2px 2px 6px rgba(0, 0, 0, 0.8);
+     // color: black;
      display: grid;
      place-items: center;
      grid-template-rows: 1.5fr 1fr;
@@ -182,16 +186,51 @@ body{
           height: 100%;
           display: grid;
           place-items: center;
+          font-size: 0.9rem;
           margin: 0;
      }
 }
 .home-btn.active{
-     cursor: default;
+     display: none;
 }
 
+.home-data{
+     display: none;
+     height: 1rem;
+     height: 1rem;
+     overflow: hidden;
+}
+.home-data.active{
+     display: grid;
+     grid-template-rows: 40% auto;
+     height: 100%;
+     width: 100%;
+     // background-color: wheat;
+}
+
+.home-title{
+     // background: yellow;
+     margin: 0;
+     display: grid;
+     align-items: end;
+     margin-bottom: 1rem;
+     padding: 0.5rem;
+     text-align: center;
+     font-size: 2rem;
+     
+}
+.home-info{
+     // background: orange;
+     display: grid;
+     align-items: start;
+     padding: 0.5rem 5%;
+     font-size: 1.15rem;
+}
+
+// Glitchy transition of data-div
 .sect{
      position: absolute;
-     color: black;
+     // color: black;
      // background: red;
      width: 1rem;
      height: 1rem;
@@ -200,18 +239,54 @@ body{
      transition: 1s;
 }
 .sect.active{
-     background: rgb(149, 255, 149);
+     // background: rgb(149, 255, 149);
      // background: transparent;
      width: 100%;
      height: 100vh;
      transition: 1s;
-     // cursor: default;
+}
+.sect .sect-data{
+     display: none;
+     overflow: hidden;
+     height: 1rem;
+     opacity: 0;
+}
+.sect.active .sect-data{
+     display: grid;
+     grid-template-rows: 15% auto;
+     row-gap: 0.5rem;
+     // background: blue;
+     box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+          5px 5px 15px rgba(0, 0, 0, 0.5);
+     height: 90%;
+     // width: auto;
+     width: calc(91% - 5rem);
+     overflow: auto;
+     opacity: 1;
+     margin-left: 3%;
+     margin-right: calc(6% + 5rem);
+     padding: 0.5rem;
+     
+     // transition: 3s;
+     animation: 0.25s acadActivate forwards;
+}
+@keyframes acadActivate{
+     0%{
+          display: none;
+     }
+     100%{
+          display: grid;
+     }
 }
 .sect-btn{
      position: absolute;
      z-index: 2;
-     background: white;
-     color: black;
+     // background: white;
+     background: #00252e;
+     // border: dashed black 3px;
+     box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+          5px 5px 15px rgba(0, 0, 0, 0.5);
+     // color: black;
      display: grid;
      place-items: center;
      grid-template-rows: 1.5fr 1fr;
@@ -220,12 +295,6 @@ body{
      height: 5rem;
      cursor: pointer;
      transition: 1s;
-     // transition-timing-function: ease-in-out;
-     // transition-delay: 1s,1s;
-     // transition-property: top, left;
-     // transition-duration: 1.5s;
-     // transition: 1s;
-     // transition-delay: 1s;
      i{
           // background: orange;
           height: 100%;
@@ -238,13 +307,358 @@ body{
           height: 100%;
           display: grid;
           place-items: center;
+          font-size: 0.9rem;
           margin: 0;
      }
 }
 .sect-btn.active{
+     box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+          inset 2px 2px 6px rgba(0, 0, 0, 0.8);
      cursor: default;
 }
 
+.sect-title{
+     // background: greenyellow;
+     margin: 0;
+     display: grid;
+     align-items: end;
+     padding: 0.5rem;
+     font-size: 2rem;
+}
+.academics-info{
+     // background: blue;
+     padding: 1rem;
+     display: grid;
+     align-items: start;
+     justify-items: center;
+}
+.timeline{
+     // background: purple;
+     position: relative;
+     // max-width: 1200px;
+     width: 700px;
+     // margin: 100px auto;
+}
+.node-cont{
+     position: relative;
+     padding: 5px 30px;
+     // background: rgba(0, 0, 0, 0.249);
+     // width: 50%;
+     width: calc(350px - 60px);
+     animation: moveNode 1s forwards;
+     z-index: 4;
+     opacity: 0;
+}
+@keyframes moveNode{
+     0%{
+          opacity: 1;
+          transform: translateY(-30px);
+     }
+     100%{
+          opacity: 1;
+          transform: translateY(0px);
+     }
+}
+.node-cont:nth-child(1){
+     animation-delay: 0.5s;
+}
+.node-cont:nth-child(2){
+     animation-delay: 1.5s;
+}
+.node-cont:nth-child(3){
+     animation-delay: 2.5s;
+}
+.node-cont:nth-child(4){
+     animation-delay: 3.5s;
+}
+.node-cont:nth-child(5){
+     animation-delay: 4.5s;
+}
+.node-cont:nth-child(6){
+     animation-delay: 6s;
+}
+.node-data{
+     padding: 1px 15px;
+     background: white;
+     border-radius: 10px;
+}
+.left-node{
+     left: 0;
+}
+.right-node{
+     left: 50%;
+}
+.node-point{
+     position: absolute;
+     // background: white;
+     background: #00252e;
+     border: solid white 3px;
+     width: 40px;
+     height: 40px;
+     border-radius: 50%;
+     right: -20px;
+     top: 32px;
+     box-sizing: border-box;
+     z-index: 10;
+     transition: 0.5s ease;
+     cursor: pointer;
+}
+.right-node .node-point{
+     left: -20px;
+}
+.node-point-span{
+     position: absolute;
+     height: 3px;
+     width: 30px;
+     // background: white;
+     background: white;
+     right: 0;
+     top: 52px;
+     transition: 0.5s ease;
+}
+.right-node .node-point-span{
+     left: 0px;
+}
+.node-point:hover{
+     background: skyblue;
+     transition: 0.5s ease;
+}
+
+.timeline::after{
+     content: '';
+     position: absolute;
+     width: 6px;
+     border-radius: 3px;
+     height: calc(100% - 140px);
+     margin-top: 33px;
+     // margin-bottom: 35px;
+     background: white;
+     top: 0;
+     left: calc(50% - 3px);
+     z-index: 3;
+     animation: timeline 6s linear forwards;
+}
+@keyframes timeline{
+     0%{height: 0;}
+     100%{height: calc(100% - 140px);}
+}
+
+.skill-info{
+     // background: blue;
+     padding: 1rem;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: space-around;
+}
+.skill-cat{
+     // background: red;
+     transition: 0.5s;
+     cursor: pointer;
+     display: flex;
+     flex-direction: column;
+     height: 15rem;
+     width: 25rem;
+     padding: 0.5rem;
+     border: dashed 3px #868686;
+     border-radius: 10px;
+     i{
+          display: none;
+     }
+     .skill-cat-desc{
+          display: block;
+     }
+     .skill-cat-body{
+          display: none;
+     }
+}
+.skill-cat:hover{
+     height: 15.4rem;
+     width: 25.4rem;
+}
+.skill-cat.active{
+     // background: green;
+     height: 90%;
+     width: 85%;
+     transition: 0.5s;
+     i{
+          display: grid;
+     }
+     .skill-cat-desc{
+          display: none;
+     }
+     .skill-cat-body{
+          display: grid;
+     }
+     cursor: default;
+}
+.skill-cat.inactive{
+     // background: green;
+     height: 15rem;
+     // height: 90%;
+     width: 4rem;
+     transition: 0.5s;
+     i{
+          display: none;
+     }
+     .skill-cat-desc{
+          display: none;
+     }
+     .skill-cat-body{
+          display: none;
+     }
+     .skill-cat-head{
+          width: 15rem;
+          height: 4rem;
+          transform-origin: 7.5rem 7.5rem;
+          transform: rotate(-90deg);
+     }
+     cursor: pointer;
+}
+.skill-cat-head{
+     // background: purple;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: space-between;
+     // padding: 0.25rem;
+     i{
+          cursor: pointer;
+     }
+     transition: 0.5s;
+}
+
+.proj-info{
+     // background: blue;
+     padding: 1rem;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: space-around;
+}
+.proj-card{
+     // background: red;
+     transition: 0.5s;
+     cursor: pointer;
+     display: flex;
+     flex-direction: column;
+     height: 15rem;
+     width: 25rem;
+     padding: 0.5rem;
+     border: dashed 3px #868686;
+     border-radius: 10px;
+     i{
+          display: none;
+     }
+     .proj-thumb{
+          display: block;
+     }
+     .proj-body{
+          display: none;
+     }
+}
+.proj-card:hover{
+     height: 15.4rem;
+     width: 25.4rem;
+}
+.proj-card.active{
+     // background: green;
+     height: 90%;
+     width: 90%;
+     transition: 0.5s;
+     i{
+          display: grid;
+     }
+     .proj-thumb{
+          display: none;
+     }
+     .proj-body{
+          display: grid;
+     }
+     cursor: default;
+}
+.proj-thumb{
+     // background: whitesmoke;
+     border-top-left-radius: 6px;
+     border-top-right-radius: 6px;
+     height: 70%;
+     width: 100%;
+}
+.proj-head{
+     background: purple;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: space-between;
+     border-bottom-left-radius: 6px;
+     border-bottom-right-radius: 6px;
+     // padding: 0.25rem;
+     i{
+          cursor: pointer;
+     }
+     transition: 0.5s;
+}
+.proj-card.inactive{
+     // background: green;
+     height: 0;
+     width: 0;
+     // padding: 0;
+     // border: none;
+     display: none;
+     visibility: hidden;
+     transition: 0.5s;
+     i{
+          display: none;
+     }
+     .proj-thumb{
+          display: none;
+     }
+     .proj-body{
+          display: none;
+     }
+     .proj-head{
+          display: none;
+     }
+     // cursor: pointer;
+}
+
+.contact-info{
+     // background: blue;
+     padding: 1rem;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: space-around;
+}
+
+
+// ----- Responsive Design -----
+@media screen and (max-width: 900px){
+     // .timeline{
+     //      // margin: 50px auto;
+     // }
+     .timeline::after{
+          left: 31px;
+     }
+     .node-cont{
+          // width: 100%;
+          // width: calc(350px - 60px);
+          padding-left: 80px;
+          padding-right: 25px;
+          // padding: 5px 30px;
+          // font-size: 13px;
+     }
+     .right-node{
+          left: 0;
+     }
+     .left-node .node-point, .right-node .node-point{
+          left: 14px;
+          
+     }
+     .left-node .node-point-span, .right-node .node-point-span{
+          left: 50px;
+     }
+}
 
 
 // --2-- Pros of this styling:
