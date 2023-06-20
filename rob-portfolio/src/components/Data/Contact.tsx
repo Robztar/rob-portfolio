@@ -51,23 +51,23 @@ export const Contact = (props: elemProps) =>{
                          <div className="contact-info">
                               <div className="contacts">
                                    <i>O</i>
-                                   <p>Lorem, ipsum dolor.</p>
+                                   <p>Robert V. McFarlance</p>
                               </div>
                               <div className="contacts">
                                    <i>O</i>
-                                   <p>loremipsom.com</p>
+                                   <a href="mailto:leandomc@gmail.com">Leandomc@gmail.com</a>
                               </div>
                               <div className="contacts">
                                    <i>O</i>
-                                   <p>lorem@ipsom.com</p>
+                                   <p>this-site.co</p>
                               </div>
                               <div className="contacts">
                                    <i>O</i>
-                                   <p>linkedin</p>
+                                   <a href="https://www.linkedin.com/in/robert-v-mcfarlane/" target="_blank">https://www.linkedin.com/in/robert-v-mcfarlane/</a>
                               </div>
                               <div className="contacts">
                                    <i>O</i>
-                                   <p>123-456-7890</p>
+                                   <a href="tel:+876-797-7361">876-797-7361</a>
                               </div>
                          </div>
                     </div>

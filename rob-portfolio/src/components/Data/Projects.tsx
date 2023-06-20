@@ -52,6 +52,7 @@ export const Projects = (props: elemProps) =>{
                     <div className="sect-data">
                          <h1 className="sect-title">Projects</h1>
                          <div className="proj-info">
+                              {/* Project 1 */}
                               <div 
                                    className={`
                                         proj-card 
@@ -61,8 +62,6 @@ export const Projects = (props: elemProps) =>{
                                    onClick={ () =>{
                                              if(activeProj !== '1')
                                                   setProj('1')
-                                             else
-                                                  setProj('')
                                         }
                                    }
                               >
@@ -70,7 +69,7 @@ export const Projects = (props: elemProps) =>{
                                         <p>*image expected here*</p>
                                    </div>
                                    <div className='proj-head'>
-                                        <h2>Project1</h2>
+                                        <h2>On The Limb - Group Project</h2>
                                         <i
                                              onClick={ () =>{
                                                   setProj('')
@@ -78,9 +77,12 @@ export const Projects = (props: elemProps) =>{
                                         >X</i>
                                    </div>
                                    <div className='proj-body'>
+                                        <div className="proj-disp">*insert image here*</div>
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, voluptate animi ducimus provident ea incidunt necessitatibus tempore vero. Atque inventore, reprehenderit eaque fuga autem iusto tempora nulla corrupti adipisci quia dignissimos voluptatum ad quae praesentium recusandae illo. Quaerat harum delectus dignissimos perspiciatis id nisi repudiandae odio dolor corporis aliquid quod, non unde saepe perferendis laborum expedita, amet nostrum labore corrupti?</p>
+                                        <a href="https://github.com/Robztar/WebGroupProject" target="_blank">See project</a>
                                    </div>
                               </div>
+                              {/* Project 2 */}
                               <div 
                                    className={`
                                         proj-card 
@@ -90,8 +92,6 @@ export const Projects = (props: elemProps) =>{
                                    onClick={ () =>{
                                              if(activeProj !== '2')
                                                   setProj('2')
-                                             else
-                                                  setProj('')
                                         }
                                    }
                               >
@@ -99,7 +99,7 @@ export const Projects = (props: elemProps) =>{
                                         <p>*image expected here*</p>
                                    </div>
                                    <div className='proj-head'>
-                                        <h2>Project2</h2>
+                                        <h2>Fresh Mart - Group Project</h2>
                                         <i
                                              onClick={ () =>{
                                                   setProj('')
@@ -107,9 +107,72 @@ export const Projects = (props: elemProps) =>{
                                         >X</i>
                                    </div>
                                    <div className='proj-body'>
+                                        <div className="proj-disp">*insert image here*</div>
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, voluptate animi ducimus provident ea incidunt necessitatibus tempore vero. Atque inventore, reprehenderit eaque fuga autem iusto tempora nulla corrupti adipisci quia dignissimos voluptatum ad quae praesentium recusandae illo. Quaerat harum delectus dignissimos perspiciatis id nisi repudiandae odio dolor corporis aliquid quod, non unde saepe perferendis laborum expedita, amet nostrum labore corrupti?</p>
+                                        <a href="https://github.com/Robztar/supermarketProject" target="_blank"></a>
                                    </div>
                               </div>
+                              {/* Project 3 */}
+                              <div 
+                                   className={`
+                                        proj-card 
+                                        ${activeProj === '3'? 'active' : ''} 
+                                        ${activeProj !== '3' && activeProj !== '' ? 'inactive' : ''}
+                                   `}
+                                   onClick={ () =>{
+                                             if(activeProj !== '3')
+                                                  setProj('3')
+                                        }
+                                   }
+                              >
+                                   <div className='proj-thumb'>
+                                        <p>*image expected here*</p>
+                                   </div>
+                                   <div className='proj-head'>
+                                        <h2>CRead - Group Project</h2>
+                                        <i
+                                             onClick={ () =>{
+                                                  setProj('')
+                                             }}
+                                        >X</i>
+                                   </div>
+                                   <div className='proj-body'>
+                                        <div className="proj-disp">*insert image here*</div>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, voluptate animi ducimus provident ea incidunt necessitatibus tempore vero. Atque inventore, reprehenderit eaque fuga autem iusto tempora nulla corrupti adipisci quia dignissimos voluptatum ad quae praesentium recusandae illo. Quaerat harum delectus dignissimos perspiciatis id nisi repudiandae odio dolor corporis aliquid quod, non unde saepe perferendis laborum expedita, amet nostrum labore corrupti?</p>
+                                        <a href="https://github.com/Robztar/FieldGroupProject" target="_blank"></a>
+                                   </div>
+                              </div>
+                              {/* Project 4 */}
+                              <div 
+                                   className={`
+                                        proj-card 
+                                        ${activeProj === '3'? 'active' : ''} 
+                                        ${activeProj !== '3' && activeProj !== '' ? 'inactive' : ''}
+                                   `}
+                                   onClick={ () =>{
+                                             if(activeProj !== '3')
+                                                  setProj('3')
+                                        }
+                                   }
+                              >
+                                   <div className='proj-thumb'>
+                                        <p>*image expected here*</p>
+                                   </div>
+                                   <div className='proj-head'>
+                                        <h2>GroundUp House Designer</h2>
+                                        <i
+                                             onClick={ () =>{
+                                                  setProj('')
+                                             }}
+                                        >X</i>
+                                   </div>
+                                   <div className='proj-body'>
+                                        <div className="proj-disp">*insert image here*</div>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, voluptate animi ducimus provident ea incidunt necessitatibus tempore vero. Atque inventore, reprehenderit eaque fuga autem iusto tempora nulla corrupti adipisci quia dignissimos voluptatum ad quae praesentium recusandae illo. Quaerat harum delectus dignissimos perspiciatis id nisi repudiandae odio dolor corporis aliquid quod, non unde saepe perferendis laborum expedita, amet nostrum labore corrupti?</p>
+                                        <a href="https://github.com/Robztar/groundup-hd" target="_blank"></a>
+                                   </div>
+                              </div>
+
                          </div>
                     </div>
                </div>

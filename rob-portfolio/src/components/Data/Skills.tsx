@@ -74,10 +74,15 @@ export const Skills = (props: elemProps) =>{
                                         >X</i>
                                    </div>
                                    <div className='skill-cat-desc'>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, nihil.</p>
+                                        <p>These are the technical skills I possess that would make me a competent Frontend Developer</p>
                                    </div>
                                    <div className='skill-cat-body'>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, voluptate animi ducimus provident ea incidunt necessitatibus tempore vero. Atque inventore, reprehenderit eaque fuga autem iusto tempora nulla corrupti adipisci quia dignissimos voluptatum ad quae praesentium recusandae illo. Quaerat harum delectus dignissimos perspiciatis id nisi repudiandae odio dolor corporis aliquid quod, non unde saepe perferendis laborum expedita, amet nostrum labore corrupti?</p>
+                                        <div className="skill-cat-nodule active">HMTL</div>
+                                        <div className="skill-cat-nodule">CSS</div>
+                                        <div className="skill-cat-nodule">JavaScript</div>
+                                        <div className="skill-cat-nodule">React.js</div>
+                                        <div className="skill-cat-nodule">TypeScript</div>
+                                        <div className="skill-cat-nodule">Figma</div>
                                    </div>
                               </div>
                               <div 
@@ -102,10 +107,15 @@ export const Skills = (props: elemProps) =>{
                                         >X</i>
                                    </div>
                                    <div className='skill-cat-desc'>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, nihil.</p>
+                                        <p>These are the additional skills I possess that make me a fitting employee for your company.</p>
                                    </div>
                                    <div className='skill-cat-body'>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, voluptate animi ducimus provident ea incidunt necessitatibus tempore vero. Atque inventore, reprehenderit eaque fuga autem iusto tempora nulla corrupti adipisci quia dignissimos voluptatum ad quae praesentium recusandae illo. Quaerat harum delectus dignissimos perspiciatis id nisi repudiandae odio dolor corporis aliquid quod, non unde saepe perferendis laborum expedita, amet nostrum labore corrupti?</p>
+                                        <div className="skill-cat-nodule">Learnability</div>
+                                        <div className="skill-cat-nodule">Detail Orientation</div>
+                                        <div className="skill-cat-nodule">Creativity</div>
+                                        <div className="skill-cat-nodule">Oral Communication</div>
+                                        <div className="skill-cat-nodule">Team Player</div>
+                                        <div className="skill-cat-nodule">Dedicated</div>
                                    </div>
                               </div>
                          </div>
