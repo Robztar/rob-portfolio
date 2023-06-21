@@ -11,6 +11,16 @@
   -webkit-text-size-adjust: 100%;
 }
 
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 0.4rem;
+  background: magenta;
+  border-radius: 5px;
+}
+
 body {
   margin: 0;
   background: #00252e;
@@ -181,7 +191,11 @@ body {
 
 .sect-btn.active {
   box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1), inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  transition: 0.5s;
   cursor: default;
+}
+.sect-btn.active i {
+  color: magenta;
 }
 
 .sect-title {
@@ -268,8 +282,8 @@ body {
 }
 
 .spec-node h2 {
-  border-left: solid rgb(255, 242, 0) 3px;
-  border-bottom: solid rgb(255, 242, 0) 3px;
+  border-left: solid gold 3px;
+  border-bottom: solid gold 3px;
 }
 
 .node-data.active i {
@@ -304,11 +318,11 @@ body {
   transition: 0.5s ease;
 }
 .node-point div {
-  background: rgb(255, 242, 0);
+  background: gold;
   height: 33%;
   width: 33%;
   border-radius: 50%;
-  box-shadow: 0px 0px 5px rgb(255, 242, 0);
+  box-shadow: 0px 0px 5px gold;
   transition: 0.5s;
   cursor: pointer;
 }
@@ -334,7 +348,7 @@ body {
 .node-point:hover div {
   height: 100%;
   width: 100%;
-  box-shadow: 0px 0px 10px rgb(255, 242, 0);
+  box-shadow: 0px 0px 10px gold;
   transition: 0.5s;
 }
 

@@ -67,6 +67,10 @@ export const Contact = (props: elemProps) =>{
                               </div>
                               <div className="contacts">
                                    <i>O</i>
+                                   <a href="https://github.com/Robztar" target="_blank">https://github.com/Robztar</a>
+                              </div>
+                              <div className="contacts">
+                                   <i>O</i>
                                    <a href="tel:+876-797-7361">876-797-7361</a>
                               </div>
                          </div>
