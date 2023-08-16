@@ -146,12 +146,12 @@ export const Projects = (props: elemProps) =>{
                               <div 
                                    className={`
                                         proj-card 
-                                        ${activeProj === '3'? 'active' : ''} 
-                                        ${activeProj !== '3' && activeProj !== '' ? 'inactive' : ''}
+                                        ${activeProj === '4'? 'active' : ''} 
+                                        ${activeProj !== '4' && activeProj !== '' ? 'inactive' : ''}
                                    `}
                                    onClick={ () =>{
-                                             if(activeProj !== '3')
-                                                  setProj('3')
+                                             if(activeProj !== '4')
+                                                  setProj('4')
                                         }
                                    }
                               >

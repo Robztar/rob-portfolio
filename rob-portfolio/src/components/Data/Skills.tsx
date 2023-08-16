@@ -16,6 +16,8 @@ export const Skills = (props: elemProps) =>{
 
      const [tSkill, setTSkill] = useState('')
      const [sSkill, setSSkill] = useState('')
+     const [curSkill, setCurSkill] = useState('')
+     // const [sSkill, setSSkill] = useState('')
 
      if(props.elem === 'skills'){
           state = true
@@ -77,12 +79,66 @@ export const Skills = (props: elemProps) =>{
                                         <p>These are the technical skills I possess that would make me a competent Frontend Developer</p>
                                    </div>
                                    <div className='skill-cat-body'>
-                                        <div className="skill-cat-nodule active">HMTL</div>
-                                        <div className="skill-cat-nodule">CSS</div>
-                                        <div className="skill-cat-nodule">JavaScript</div>
-                                        <div className="skill-cat-nodule">React.js</div>
-                                        <div className="skill-cat-nodule">TypeScript</div>
-                                        <div className="skill-cat-nodule">Figma</div>
+                                        <div 
+                                             className={`skill-cat-nodule ${curSkill === 'html' ? 'active' : ''}`}
+                                             onClick={ () =>{
+                                                  if(curSkill !== 'html'){
+                                                       setCurSkill('html')
+                                                  }else{
+                                                       setCurSkill('')
+                                                  }
+                                             }}
+                                        >HMTL</div>
+                                        <div 
+                                             className={`skill-cat-nodule ${curSkill === 'css' ? 'active' : ''}`}
+                                             onClick={ () =>{
+                                                  if(curSkill !== 'css'){
+                                                       setCurSkill('css')
+                                                  }else{
+                                                       setCurSkill('')
+                                                  }
+                                             }}
+                                        >CSS</div>
+                                        <div 
+                                             className={`skill-cat-nodule ${curSkill === 'js' ? 'active' : ''}`}
+                                             onClick={ () =>{
+                                                  if(curSkill !== 'js'){
+                                                       setCurSkill('js')
+                                                  }else{
+                                                       setCurSkill('')
+                                                  }
+                                             }}
+                                        >JavaScript</div>
+                                        <div 
+                                             className={`skill-cat-nodule ${curSkill === 'rjs' ? 'active' : ''}`}
+                                             onClick={ () =>{
+                                                  if(curSkill !== 'rjs'){
+                                                       setCurSkill('rjs')
+                                                  }else{
+                                                       setCurSkill('')
+                                                  }
+                                             }}
+                                        >React.js</div>
+                                        <div 
+                                             className={`skill-cat-nodule ${curSkill === 'ts' ? 'active' : ''}`}
+                                             onClick={ () =>{
+                                                  if(curSkill !== 'ts'){
+                                                       setCurSkill('ts')
+                                                  }else{
+                                                       setCurSkill('')
+                                                  }
+                                             }}
+                                        >TypeScript</div>
+                                        <div
+                                             className={`skill-cat-nodule ${curSkill === 'fig' ? 'active' : ''}`}
+                                             onClick={ () =>{
+                                                  if(curSkill !== 'cfig'){
+                                                       setCurSkill('fig')
+                                                  }else{
+                                                       setCurSkill('')
+                                                  }
+                                             }}
+                                        >Figma</div>
                                    </div>
                               </div>
                               <div 
@@ -110,12 +166,66 @@ export const Skills = (props: elemProps) =>{
                                         <p>These are the additional skills I possess that make me a fitting employee for your company.</p>
                                    </div>
                                    <div className='skill-cat-body'>
-                                        <div className="skill-cat-nodule">Learnability</div>
-                                        <div className="skill-cat-nodule">Detail Orientation</div>
-                                        <div className="skill-cat-nodule">Creativity</div>
-                                        <div className="skill-cat-nodule">Oral Communication</div>
-                                        <div className="skill-cat-nodule">Team Player</div>
-                                        <div className="skill-cat-nodule">Dedicated</div>
+                                        <div 
+                                             className={`skill-cat-nodule ${curSkill === 'learn' ? 'active' : ''}`}
+                                             onClick={ () =>{
+                                                  if(curSkill !== 'learn'){
+                                                       setCurSkill('learn')
+                                                  }else{
+                                                       setCurSkill('')
+                                                  }
+                                             }}
+                                        >Learnability</div>
+                                        <div 
+                                             className={`skill-cat-nodule ${curSkill === 'detail' ? 'active' : ''}`}
+                                             onClick={ () =>{
+                                                  if(curSkill !== 'detail'){
+                                                       setCurSkill('detail')
+                                                  }else{
+                                                       setCurSkill('')
+                                                  }
+                                             }}
+                                        >Detail Orientation</div>
+                                        <div 
+                                             className={`skill-cat-nodule ${curSkill === 'create' ? 'active' : ''}`}
+                                             onClick={ () =>{
+                                                  if(curSkill !== 'create'){
+                                                       setCurSkill('create')
+                                                  }else{
+                                                       setCurSkill('')
+                                                  }
+                                             }}
+                                        >Creativity</div>
+                                        <div 
+                                             className={`skill-cat-nodule ${curSkill === 'oral' ? 'active' : ''}`}
+                                             onClick={ () =>{
+                                                  if(curSkill !== 'oral'){
+                                                       setCurSkill('oral')
+                                                  }else{
+                                                       setCurSkill('')
+                                                  }
+                                             }}
+                                        >Oral Communication</div>
+                                        <div 
+                                             className={`skill-cat-nodule ${curSkill === 'team' ? 'active' : ''}`}
+                                             onClick={ () =>{
+                                                  if(curSkill !== 'team'){
+                                                       setCurSkill('team')
+                                                  }else{
+                                                       setCurSkill('')
+                                                  }
+                                             }}
+                                        >Team Player</div>
+                                        <div 
+                                             className={`skill-cat-nodule ${curSkill === 'dedicate' ? 'active' : ''}`}
+                                             onClick={ () =>{
+                                                  if(curSkill !== 'dedicate'){
+                                                       setCurSkill('dedicate')
+                                                  }else{
+                                                       setCurSkill('')
+                                                  }
+                                             }}
+                                        >Dedicated</div>
                                    </div>
                               </div>
                          </div>

@@ -1,4 +1,5 @@
 // import { useState } from 'react'
+import MyResume from '../../resume/my_resume.pdf'
 
 type elemProps= {
      elem: string
@@ -49,30 +50,16 @@ export const Contact = (props: elemProps) =>{
                     <div className="sect-data">
                          <h1 className="sect-title">Contact Information</h1>
                          <div className="contact-info">
-                              <div className="contacts">
-                                   <i>O</i>
-                                   <p>Robert V. McFarlance</p>
-                              </div>
-                              <div className="contacts">
-                                   <i>O</i>
-                                   <a href="mailto:leandomc@gmail.com">Leandomc@gmail.com</a>
-                              </div>
-                              <div className="contacts">
-                                   <i>O</i>
-                                   <p>this-site.co</p>
-                              </div>
-                              <div className="contacts">
-                                   <i>O</i>
-                                   <a href="https://www.linkedin.com/in/robert-v-mcfarlane/" target="_blank">https://www.linkedin.com/in/robert-v-mcfarlane/</a>
-                              </div>
-                              <div className="contacts">
-                                   <i>O</i>
-                                   <a href="https://github.com/Robztar" target="_blank">https://github.com/Robztar</a>
-                              </div>
-                              <div className="contacts">
-                                   <i>O</i>
-                                   <a href="tel:+876-797-7361">876-797-7361</a>
-                              </div>
+                              <p>This website was created by <strong>Robert V. McFarlane</strong> as his portfolio website, where his skills web development can be expressed and demonstrated.
+                              <br/>To contact Robert McFarlane or see more from him, see the links below:</p>
+                              <ul>
+                                   <li className="contacts"><i className='fa fa-envelope'></i><a href="mailto:leandomc@gmail.com">Leandomc@gmail.com</a><i className="fa fa-external-link" aria-hidden="true"></i></li>
+                                   <li className="contacts"><i className='fa fa-mobile'></i><a href="tel:+876-797-7361">876-797-7361</a></li>
+                                   <li className="contacts"><i className='fa fa-linkedin-square'></i><a href="https://www.linkedin.com/in/robert-v-mcfarlane/" target="_blank">https://www.linkedin.com/in/robert-v-mcfarlane/</a><i className="fa fa-external-link" aria-hidden="true"></i></li>
+                                   <li className="contacts"><i className='fa fa-github'></i><a href="https://github.com/Robztar" target="_blank">https://github.com/Robztar</a><i className="fa fa-external-link" aria-hidden="true"></i></li>
+                                   <li className="contacts"><i className='fa fa-globe'></i><a href="https://elaborate-arithmetic-fb683f.netlify.app/" target="_blank">https://elaborate-arithmetic-fb683f.netlify.app/</a><i className="fa fa-external-link" aria-hidden="true"></i></li>
+                              </ul>
+                              <p>Resume - </p><a href={MyResume} target="_blank">My Resume (2023)</a>
                          </div>
                     </div>
                </div>
