@@ -88,7 +88,10 @@ export const Skills = (props: elemProps) =>{
                                                        setCurSkill('')
                                                   }
                                              }}
-                                        >HMTL</div>
+                                        >HTML
+                                             {/* <p>HMTL</p> */}
+                                             {/* <div>I am proficient in the use of HTML</div> */}
+                                        </div>
                                         <div 
                                              className={`skill-cat-nodule ${curSkill === 'css' ? 'active' : ''}`}
                                              onClick={ () =>{

@@ -57,7 +57,7 @@ export const Contact = (props: elemProps) =>{
                                    <li className="contacts"><i className='fa fa-mobile'></i><a href="tel:+876-797-7361">876-797-7361</a></li>
                                    <li className="contacts"><i className='fa fa-linkedin-square'></i><a href="https://www.linkedin.com/in/robert-v-mcfarlane/" target="_blank">https://www.linkedin.com/in/robert-v-mcfarlane/</a><i className="fa fa-external-link" aria-hidden="true"></i></li>
                                    <li className="contacts"><i className='fa fa-github'></i><a href="https://github.com/Robztar" target="_blank">https://github.com/Robztar</a><i className="fa fa-external-link" aria-hidden="true"></i></li>
-                                   <li className="contacts"><i className='fa fa-globe'></i><a href="https://elaborate-arithmetic-fb683f.netlify.app/" target="_blank">https://elaborate-arithmetic-fb683f.netlify.app/</a><i className="fa fa-external-link" aria-hidden="true"></i></li>
+                                   <li className="contacts"><i className='fa fa-globe'></i><a href="https://robmc-portfolio.netlify.app/" target="_blank">https://robmc-portfolio.netlify.app/</a><i className="fa fa-external-link" aria-hidden="true"></i></li>
                               </ul>
                               <p>Resume - </p><a href={MyResume} target="_blank">My Resume (2023)</a>
                          </div>

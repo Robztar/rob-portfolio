@@ -39,7 +39,7 @@ export const Home = (props: elemProps) =>{
                <div className={`home-data ${state===true?'active':''}`}>
                     <h1 className='home-title'>Robert McFarlane's Portfolio</h1>
                     <div className='home-info'>
-                         Hello, I am Robert McFarlane. I am a graduand of the Northern Carribean University (NCU), and, upon graduating, will have a BaSc. in Computer Science.
+                         Hello, I am Robert McFarlane. I have a BSc. in Computer Science from the Northern Carribean University (NCU).
                          My field of speciality is in Frontend Web Development. I would Consider myself as a skilled, creative, detail-oriented individual.
                          I'm always seeking ways of improving projects and am always open to learning new concepts.
                     </div>
