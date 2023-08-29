@@ -54,8 +54,12 @@ export const Projects = (props: elemProps) =>{
                >
                     <div className="sect-data">
                          <h1 className="sect-title">Projects</h1>
-                         <div className="proj-info">
-                              {/* Project 1 */}
+                         <div className={`
+                                   proj-info
+                                   ${activeProj === ''? '':'active'}
+                              `}
+                         >
+                              {/* GroundUp */}
                               <div 
                                    className={`
                                         proj-card 
@@ -68,32 +72,41 @@ export const Projects = (props: elemProps) =>{
                                         }
                                    }
                               >
-                                   <img className='proj-thumb' src={OTLEmbed} alt="On The Limb Embed" />
-                                   
+                                   <img className='proj-thumb' src={GroundUp} alt="GroundUp Embed" />
                                    <div className='proj-head'>
-                                        <h2>On The Limb - Group Project</h2>
-                                        <i
+                                        <h2>GroundUp House Designer</h2>
+                                        <i 
+                                             className="fa fa-times-circle-o"
                                              onClick={ () =>{
                                                   setProj('')
                                              }}
-                                        >X</i>
+                                        ></i>
                                    </div>
                                    <div className='proj-body'>
-                                        {/* <div className="proj-disp">*insert image here*</div> */}
-                                        <img 
+                                   <img 
                                              className='proj-disp' 
-                                             src={OTLEmbed} 
-                                             alt="On The Limb Embed"
+                                             src={GroundUp} 
+                                             alt="Ground Embed"
                                              onClick={ () =>{
-                                                       window.open('https://www.youtube.com/embed/jqvCiUc2oMs', '_blank')
+                                                       window.open('https://www.youtube.com/embed/9zk-3wzJSio', '_blank')
                                                   }
                                              }
                                         />
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, voluptate animi ducimus provident ea incidunt necessitatibus tempore vero. Atque inventore, reprehenderit eaque fuga autem iusto tempora nulla corrupti adipisci quia dignissimos voluptatum ad quae praesentium recusandae illo. Quaerat harum delectus dignissimos perspiciatis id nisi repudiandae odio dolor corporis aliquid quod, non unde saepe perferendis laborum expedita, amet nostrum labore corrupti?</p>
-                                        <a href="https://github.com/Robztar/WebGroupProject" target="_blank">See source code</a>
+                                        <div className="proj-links">
+                                             <a href="#demo">Demo (coming soon)</a>
+                                             <a href="https://github.com/Robztar/groundup-hd" target="_blank">Source code</a>
+                                        </div>
+                                        <p>GroundUp is a house designing web application which allows the user to design houses to their desire and then receive an estimate of the quantity of material required to construct that building.</p>
+                                        <p>Role: Developer</p>
+                                        <p>Tech Stack:</p>
+                                        <ul>
+                                             <li>React.js</li>
+                                             <li>Three.js / React Three Fiber</li>
+                                             <li>Zustand</li>
+                                        </ul>
                                    </div>
                               </div>
-                              {/* Project 2 */}
+                              {/* OTL */}
                               <div 
                                    className={`
                                         proj-card 
@@ -106,30 +119,41 @@ export const Projects = (props: elemProps) =>{
                                         }
                                    }
                               >
-                                   <img className='proj-thumb' src={FreshMart} alt="FreshMart Embed" />
+                                   <img className='proj-thumb' src={OTLEmbed} alt="On The Limb Embed" />
+                                   
                                    <div className='proj-head'>
-                                        <h2>Fresh Mart - Group Project</h2>
-                                        <i
+                                        <h2>On The Limb</h2>
+                                        <i 
+                                             className="fa fa-times-circle-o"
                                              onClick={ () =>{
                                                   setProj('')
                                              }}
-                                        >X</i>
+                                        ></i>
                                    </div>
                                    <div className='proj-body'>
+                                        {/* <div className="proj-disp">*insert image here*</div> */}
                                         <img 
                                              className='proj-disp' 
-                                             src={FreshMart} 
-                                             alt="FreshMart Embed"
+                                             src={OTLEmbed} 
+                                             alt="On The Limb Embed"
                                              onClick={ () =>{
-                                                       window.open('https://www.youtube.com/embed/Ua9_-t_BxtQ', '_blank')
+                                                       window.open('https://www.youtube.com/embed/jqvCiUc2oMs', '_blank')
                                                   }
                                              }
                                         />
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, voluptate animi ducimus provident ea incidunt necessitatibus tempore vero. Atque inventore, reprehenderit eaque fuga autem iusto tempora nulla corrupti adipisci quia dignissimos voluptatum ad quae praesentium recusandae illo. Quaerat harum delectus dignissimos perspiciatis id nisi repudiandae odio dolor corporis aliquid quod, non unde saepe perferendis laborum expedita, amet nostrum labore corrupti?</p>
-                                        <a href="https://github.com/Robztar/supermarketProject" target="_blank">See source code</a>
+                                        <div className="proj-links">
+                                             <a href="https://github.com/Robztar/WebGroupProject" target="_blank">Source code</a>
+                                        </div>
+                                        <p>On the Limb is a fitness website that provides workout programs based on the fitness level of the user.</p>
+                                        <p>Roles:</p>
+                                        <ul>
+                                             <li>I took on the role of team coordinator, ensuring that all the members had their tasks outlined and that deliverables were completed on time.</li>
+                                             <li>I was in charge of the final design of th project, providing UI cohesion across the the web app and correcting errors and bugs for the final product.</li>
+                                             <li>I was in charge of the workout plan section, completing the layout and animation effects, and filling in the data.</li>
+                                        </ul>
                                    </div>
                               </div>
-                              {/* Project 3 */}
+                              {/* FreshMart */}
                               <div 
                                    className={`
                                         proj-card 
@@ -142,27 +166,46 @@ export const Projects = (props: elemProps) =>{
                                         }
                                    }
                               >
-                                   <img className='proj-thumb' src={CRead} alt="CRead Thumbnail" />
+                                   <img className='proj-thumb' src={FreshMart} alt="FreshMart Embed" />
                                    <div className='proj-head'>
-                                        <h2>CRead - Group Project</h2>
-                                        <i
+                                        <h2>Fresh Mart</h2>
+                                        <i 
+                                             className="fa fa-times-circle-o"
                                              onClick={ () =>{
                                                   setProj('')
                                              }}
-                                        >X</i>
+                                        ></i>
                                    </div>
                                    <div className='proj-body'>
                                         <img 
                                              className='proj-disp' 
-                                             style={{cursor:'default'}}
-                                             src={CRead} 
-                                             alt="CRead Thumbnail"
+                                             src={FreshMart} 
+                                             alt="FreshMart Embed"
+                                             onClick={ () =>{
+                                                       window.open('https://www.youtube.com/embed/Ua9_-t_BxtQ', '_blank')
+                                                  }
+                                             }
                                         />
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, voluptate animi ducimus provident ea incidunt necessitatibus tempore vero. Atque inventore, reprehenderit eaque fuga autem iusto tempora nulla corrupti adipisci quia dignissimos voluptatum ad quae praesentium recusandae illo. Quaerat harum delectus dignissimos perspiciatis id nisi repudiandae odio dolor corporis aliquid quod, non unde saepe perferendis laborum expedita, amet nostrum labore corrupti?</p>
-                                        <a href="https://github.com/NakardaRichards/CRead" target="_blank">See source code</a>
+                                        <div className="proj-links">
+                                             <a href="https://github.com/Robztar/supermarketProject" target="_blank">Source code</a>
+                                        </div>
+                                        <p>This website acts as an ecommerce portal for a supermarket. On this website, customers can view what the supermarket has available, add to cart the items they desire and purchase them when ready.</p>
+                                        <p>Roles: </p>
+                                        <ul>
+                                             <li>I coordinated the shared work space, providing the file structure that would be utilized throughout development.</li>
+                                             <li>I assisted with the UI design of the website</li>
+                                             <li>I assisted with the backend development</li>
+                                             <li>I assisted with the connection between the frontend and database of the website</li>
+                                        </ul>
+                                        <p>Tech Stack: </p>
+                                        <ul>
+                                             <li>Bootstrap 4</li>
+                                             <li>PHP</li>
+                                             <li>MySQL</li>
+                                        </ul>
                                    </div>
                               </div>
-                              {/* Project 4 */}
+                              {/* CRead */}
                               <div 
                                    className={`
                                         proj-card 
@@ -175,27 +218,39 @@ export const Projects = (props: elemProps) =>{
                                         }
                                    }
                               >
-                                   <img className='proj-thumb' src={GroundUp} alt="GroundUp Embed" />
+                                   <img className='proj-thumb' src={CRead} alt="CRead Thumbnail" />
                                    <div className='proj-head'>
-                                        <h2>GroundUp House Designer</h2>
-                                        <i
+                                        <h2>CRead</h2>
+                                        <i 
+                                             className="fa fa-times-circle-o"
                                              onClick={ () =>{
                                                   setProj('')
                                              }}
-                                        >X</i>
+                                        ></i>
                                    </div>
                                    <div className='proj-body'>
-                                   <img 
+                                        <img 
                                              className='proj-disp' 
-                                             src={GroundUp} 
-                                             alt="Ground Embed"
-                                             onClick={ () =>{
-                                                       window.open('https://www.youtube.com/embed/9zk-3wzJSio', '_blank')
-                                                  }
-                                             }
+                                             style={{cursor:'default'}}
+                                             src={CRead} 
+                                             alt="CRead Thumbnail"
                                         />
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, voluptate animi ducimus provident ea incidunt necessitatibus tempore vero. Atque inventore, reprehenderit eaque fuga autem iusto tempora nulla corrupti adipisci quia dignissimos voluptatum ad quae praesentium recusandae illo. Quaerat harum delectus dignissimos perspiciatis id nisi repudiandae odio dolor corporis aliquid quod, non unde saepe perferendis laborum expedita, amet nostrum labore corrupti?</p>
-                                        <a href="https://github.com/Robztar/groundup-hd" target="_blank">See source code</a>
+                                        <div className="proj-links">
+                                             <a href="https://github.com/NakardaRichards/CRead" target="_blank">Source code</a>
+                                        </div>
+                                        <p>CRead is a website intended for aiding children to improve their literacy. The website also has a test feature that comes at the end of each lesson.</p>
+                                        <p>Roles: </p>
+                                        <ul>
+                                             <li>Helped with the UI design of multiple areas of the website.</li>
+                                             <li>Implemented the test pages and functionality.</li>
+                                             <li>Worked on the backend functionality along with the connection to the website's database.</li>
+                                        </ul>
+                                        <p>Tech Stack: </p>
+                                        <ul>
+                                             <li>HTML5</li>
+                                             <li>PHP</li>
+                                             <li>MySQL</li>
+                                        </ul>
                                    </div>
                               </div>
 

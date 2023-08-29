@@ -52,14 +52,18 @@ export const Contact = (props: elemProps) =>{
                          <div className="contact-info">
                               <p>This website was created by <strong>Robert V. McFarlane</strong> as his portfolio website, where his skills web development can be expressed and demonstrated.
                               <br/>To contact Robert McFarlane or see more from him, see the links below:</p>
-                              <ul>
-                                   <li className="contacts"><i className='fa fa-envelope'></i><a href="mailto:leandomc@gmail.com">Leandomc@gmail.com</a><i className="fa fa-external-link" aria-hidden="true"></i></li>
-                                   <li className="contacts"><i className='fa fa-mobile'></i><a href="tel:+876-797-7361">876-797-7361</a></li>
-                                   <li className="contacts"><i className='fa fa-linkedin-square'></i><a href="https://www.linkedin.com/in/robert-v-mcfarlane/" target="_blank">https://www.linkedin.com/in/robert-v-mcfarlane/</a><i className="fa fa-external-link" aria-hidden="true"></i></li>
-                                   <li className="contacts"><i className='fa fa-github'></i><a href="https://github.com/Robztar" target="_blank">https://github.com/Robztar</a><i className="fa fa-external-link" aria-hidden="true"></i></li>
-                                   <li className="contacts"><i className='fa fa-globe'></i><a href="https://robmc-portfolio.netlify.app/" target="_blank">https://robmc-portfolio.netlify.app/</a><i className="fa fa-external-link" aria-hidden="true"></i></li>
-                              </ul>
-                              <p>Resume - </p><a href={MyResume} target="_blank">My Resume (2023)</a>
+                              <div className='contact-links'>
+                                   <div className='contacts'><i className='fa fa-envelope'></i><a href="mailto:leandomc@gmail.com">leandomc@gmail.com</a><i className="fa fa-external-link" aria-hidden="true"></i></div>
+                                   <div className='contacts'><i className='fa fa-mobile'></i><a href="tel:+876-797-7361">876-797-7361</a></div>
+                                   <div className='contacts'><i className='fa fa-linkedin-square'></i><a href="https://www.linkedin.com/in/robert-v-mcfarlane/" target="_blank">linkedin.com/in/robert-v-mcfarlane/</a><i className="fa fa-external-link" aria-hidden="true"></i></div>
+                                   <div className='contacts'><i className='fa fa-github'></i><a href="https://github.com/Robztar" target="_blank">github.com/Robztar</a><i className="fa fa-external-link" aria-hidden="true"></i></div>
+                                   <div className='contacts'><i className='fa fa-globe'></i><a href="https://robmc-portfolio.netlify.app/" target="_blank">robmc-portfolio.netlify.app/</a><i className="fa fa-external-link" aria-hidden="true"></i></div>
+                              </div>
+                              <div className='resume-link'>
+                                   <p>Here is a link to my Resume:</p>
+                                   <a href={MyResume} target="_blank">My Resume</a>
+                              </div>
+                              <small>&emsp; Last Updated: August 24, 2023</small>
                          </div>
                     </div>
                </div>

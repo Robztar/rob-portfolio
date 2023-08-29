@@ -66,14 +66,15 @@ export const Skills = (props: elemProps) =>{
                               >
                                    <div className='skill-cat-head'>
                                         <h2>Technical Skills</h2>
-                                        <i
+                                        <i 
+                                             className="fa fa-times-circle-o"
                                              onClick={ () =>{
                                                   if(tSkill === 'active'){
                                                        setTSkill('')
                                                        setSSkill('')
                                                   }
                                              }}
-                                        >X</i>
+                                        ></i>
                                    </div>
                                    <div className='skill-cat-desc'>
                                         <p>These are the technical skills I possess that would make me a competent Frontend Developer</p>
@@ -156,14 +157,15 @@ export const Skills = (props: elemProps) =>{
                               >
                                    <div className='skill-cat-head'>
                                         <h2>Soft Skills</h2>
-                                        <i
+                                        <i 
+                                             className="fa fa-times-circle-o"
                                              onClick={ () =>{
                                                   if(sSkill === 'active'){
                                                        setTSkill('')
                                                        setSSkill('')
                                                   }
                                              }}
-                                        >X</i>
+                                        ></i>
                                    </div>
                                    <div className='skill-cat-desc'>
                                         <p>These are the additional skills I possess that make me a fitting employee for your company.</p>
