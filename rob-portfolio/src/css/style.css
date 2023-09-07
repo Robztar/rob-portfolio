@@ -689,15 +689,50 @@ body {
   color: #868686;
   border-bottom: solid 2px magenta;
   padding: 0 0.5rem;
-  border-radius: 10px;
+  border-radius: 0px;
   transition: 0.5s ease-in-out;
 }
 .proj-links a:hover {
-  background: rgba(255, 0, 255, 0.15);
-  color: #868686;
-  border: solid 1px magenta;
-  border-radius: 5px;
+  background: rgba(255, 0, 255, 0.1);
+  border-radius: 10px;
   transition: 0.2s;
+}
+
+.proj-details {
+  width: 95%;
+  border: solid 2px #868686;
+  border-collapse: collapse;
+}
+.proj-details th {
+  border: solid 2px #868686;
+  padding: 0.5rem;
+}
+.proj-details .proj-roles {
+  border-bottom: solid 2px #868686;
+}
+.proj-details td {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+}
+.proj-details td p {
+  border-bottom: solid 1px #868686;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.proj-card:nth-child(1) .proj-details {
+  border: solid 2px #b1953e;
+}
+.proj-card:nth-child(1) .proj-details th {
+  border: solid 2px #b1953e;
+}
+.proj-card:nth-child(1) .proj-details .proj-roles {
+  border-bottom: solid 2px #b1953e;
+}
+.proj-card:nth-child(1) .proj-details td p {
+  border-bottom: solid 1px #b1953e;
 }
 
 .proj-card.inactive {
@@ -729,40 +764,41 @@ body {
 }
 
 .contact-links {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  border: solid 1px #868686;
+  align-self: center;
 }
 .contact-links a {
   text-decoration: none;
   color: #868686;
-  margin-right: 0.5rem;
   border-bottom: solid 1px magenta;
 }
 .contact-links i {
   font-size: 1.7rem;
-}
-
-.contacts {
-  width: 30%;
-  min-width: 22rem;
-  margin-left: 0.5rem;
-  display: grid;
-  grid-template-columns: 1fr 10fr 0.5fr;
-  align-items: center;
-}
-
-.fa-external-link {
-  font-size: 1.1rem !important;
-  visibility: hidden;
+  cursor: pointer;
   transition: 0.2s;
 }
+.contact-links th {
+  width: 3rem;
+  padding: 0.5rem;
+}
+.contact-links td {
+  padding: 0.5rem;
+}
+.contact-links .fa-external-link {
+  margin-left: 0.5rem;
+  font-size: 1.1rem;
+  visibility: hidden;
+  opacity: 0;
+}
 
+.contacts:hover i {
+  color: magenta;
+  transition: 0.2s;
+}
 .contacts:hover .fa-external-link {
+  color: #868686;
   visibility: visible;
+  opacity: 1;
 }
 
 .resume-link {
@@ -779,14 +815,12 @@ body {
   color: #868686;
   border-bottom: solid 2px magenta;
   padding: 0 0.5rem;
-  border-radius: 10px;
+  border-radius: 0px;
   transition: 0.5s ease-in-out;
 }
 .resume-link a:hover {
-  background: rgba(255, 0, 255, 0.15);
-  color: #868686;
-  border: solid 1px magenta;
-  border-radius: 5px;
+  background: rgba(255, 0, 255, 0.1);
+  border-radius: 10px;
   transition: 0.2s;
 }
 
