@@ -98,7 +98,7 @@ export const Contact = (props: elemProps) =>{
                                    <p>Here is a link to Robert's Resume:</p>
                                    <a href={MyResume} target="_blank">My Resume</a>
                               </div>
-                              <small>&emsp; Last Updated: August 24, 2023</small>
+                              <small>&emsp; Last Updated: September 11, 2023</small>
                          </div>
                     </div>
                </div>
