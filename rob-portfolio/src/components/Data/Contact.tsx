@@ -1,5 +1,5 @@
 // import { useState } from 'react'
-import MyResume from '../../resume/my_resume.pdf'
+import MyResume from '../../resume/robert-mcfarlane_resume.pdf'
 
 type elemProps= {
      elem: string
@@ -98,7 +98,11 @@ export const Contact = (props: elemProps) =>{
                                    <p>Here is a link to Robert's Resume:</p>
                                    <a href={MyResume} target="_blank">My Resume</a>
                               </div>
-                              <small>&emsp; Last Updated: September 11, 2023</small>
+                              <small>&emsp; Last Updated: September 14, 2023</small>
+                              <div className='p-source-link'>
+                                   <p>Here is a link to the source code of this website:</p>
+                                   <a href='https://github.com/Robztar/rob-portfolio' target="_blank">Source Code</a>
+                              </div>
                          </div>
                     </div>
                </div>
