@@ -1,4 +1,3 @@
-import { useState } from "react"
 import {windStore} from '../../hooks/myStore'
 
 import OTLEmbed from '../../img/OTL_embed-pic.jpeg'
@@ -15,8 +14,7 @@ export const Projects = () =>{
      let projBtnTop: string
      let projBtnStyle: object
 
-     const { elem, setElem } = windStore();
-     const [activeProj, setProj] = useState('')
+     const { elem, activeProj, setElem, initWind, setProj } = windStore();
 
      if(elem === 'projects'){
           state = true
@@ -45,8 +43,10 @@ export const Projects = () =>{
                     className={`projects sect ${state===true?'active':''}`}
                     style={projStyle}
                     onClick={ () =>{
-                              if(state === false)
-                                   setElem?.('projects')
+                              if(state === false){
+                                   setElem('projects')
+                                   initWind()
+                              }
                          }
                     }
                >
@@ -278,11 +278,13 @@ export const Projects = () =>{
                     </div>
                </div>
                <div 
-                         className={`sect-btn ${state===true?'active':''}`}
+                         className={`sect-btn proj-btn ${state===true?'active':''}`}
                          style={projBtnStyle}
                          onClick={ () =>{
-                                   if(state === false)
-                                        setElem?.('projects')
+                                   if(state === false){
+                                        setElem('projects')
+                                        initWind()
+                                   }
                               }
                          }
                     >

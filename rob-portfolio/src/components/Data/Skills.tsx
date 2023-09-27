@@ -1,4 +1,3 @@
-import { useState } from "react"
 import {windStore} from '../../hooks/myStore'
 
 export const Skills = () =>{
@@ -10,12 +9,7 @@ export const Skills = () =>{
      let skillBtnTop: string
      let skillBtnStyle: object
 
-     const { elem, setElem } = windStore();
-
-     const [tSkill, setTSkill] = useState('')
-     const [sSkill, setSSkill] = useState('')
-     const [curSkill, setCurSkill] = useState('')
-     // const [sSkill, setSSkill] = useState('')
+     const { elem, techSkill, softSkill, setElem, initWind, setTechSkill, setSoftSkill } = windStore();
 
      if(elem === 'skills'){
           state = true
@@ -44,8 +38,10 @@ export const Skills = () =>{
                     className={`skills sect ${state===true?'active':''}`}
                     style={skillStyle}
                     onClick={ () =>{
-                              if(state === false)
-                                   setElem?.('skills')
+                              if(state === false){
+                                   setElem('skills')
+                                   initWind()
+                              }
                          }
                     }
                >
@@ -53,11 +49,11 @@ export const Skills = () =>{
                          <h1 className="sect-title">Skills</h1>
                          <div className="skill-info">
                               <div 
-                                   className={`skill-cat ${tSkill}`}
+                                   className={`skill-cat ${techSkill}`}
                                    onClick={ () =>{
-                                             if(tSkill !== 'active'){
-                                                  setTSkill('active')
-                                                  setSSkill('inactive')
+                                             if(techSkill !== 'active'){
+                                                  setTechSkill('active')
+                                                  setSoftSkill('inactive')
                                              }
                                         }
                                    }
@@ -67,9 +63,9 @@ export const Skills = () =>{
                                         <i 
                                              className="fa fa-times-circle-o"
                                              onClick={ () =>{
-                                                  if(tSkill === 'active'){
-                                                       setTSkill('')
-                                                       setSSkill('')
+                                                  if(techSkill === 'active'){
+                                                       setTechSkill('')
+                                                       setSoftSkill('')
                                                   }
                                              }}
                                         ></i>
@@ -78,77 +74,20 @@ export const Skills = () =>{
                                         <p>These are the technical skills I possess that would make me a competent Frontend Developer</p>
                                    </div>
                                    <div className='skill-cat-body'>
-                                        <div 
-                                             className={`skill-cat-nodule ${curSkill === 'html' ? 'active' : ''}`}
-                                             onClick={ () =>{
-                                                  if(curSkill !== 'html'){
-                                                       setCurSkill('html')
-                                                  }else{
-                                                       setCurSkill('')
-                                                  }
-                                             }}
-                                        >HTML
-                                             {/* <p>HMTL</p> */}
-                                             {/* <div>I am proficient in the use of HTML</div> */}
-                                        </div>
-                                        <div 
-                                             className={`skill-cat-nodule ${curSkill === 'css' ? 'active' : ''}`}
-                                             onClick={ () =>{
-                                                  if(curSkill !== 'css'){
-                                                       setCurSkill('css')
-                                                  }else{
-                                                       setCurSkill('')
-                                                  }
-                                             }}
-                                        >CSS</div>
-                                        <div 
-                                             className={`skill-cat-nodule ${curSkill === 'js' ? 'active' : ''}`}
-                                             onClick={ () =>{
-                                                  if(curSkill !== 'js'){
-                                                       setCurSkill('js')
-                                                  }else{
-                                                       setCurSkill('')
-                                                  }
-                                             }}
-                                        >JavaScript</div>
-                                        <div 
-                                             className={`skill-cat-nodule ${curSkill === 'rjs' ? 'active' : ''}`}
-                                             onClick={ () =>{
-                                                  if(curSkill !== 'rjs'){
-                                                       setCurSkill('rjs')
-                                                  }else{
-                                                       setCurSkill('')
-                                                  }
-                                             }}
-                                        >React.js</div>
-                                        <div 
-                                             className={`skill-cat-nodule ${curSkill === 'ts' ? 'active' : ''}`}
-                                             onClick={ () =>{
-                                                  if(curSkill !== 'ts'){
-                                                       setCurSkill('ts')
-                                                  }else{
-                                                       setCurSkill('')
-                                                  }
-                                             }}
-                                        >TypeScript</div>
-                                        <div
-                                             className={`skill-cat-nodule ${curSkill === 'fig' ? 'active' : ''}`}
-                                             onClick={ () =>{
-                                                  if(curSkill !== 'cfig'){
-                                                       setCurSkill('fig')
-                                                  }else{
-                                                       setCurSkill('')
-                                                  }
-                                             }}
-                                        >Figma</div>
+                                        <div className='skill-cat-nodule'>HTML</div>
+                                        <div className='skill-cat-nodule'>CSS</div>
+                                        <div className='skill-cat-nodule'>JavaScript</div>
+                                        <div className='skill-cat-nodule'>React.js</div>
+                                        <div className='skill-cat-nodule'>TypeScript</div>
+                                        <div className='skill-cat-nodule'>Figma</div>
                                    </div>
                               </div>
                               <div 
-                                   className={`skill-cat ${sSkill}`}
+                                   className={`skill-cat ${softSkill}`}
                                    onClick={ () =>{
-                                        if(sSkill !== 'active'){
-                                             setSSkill('active')
-                                             setTSkill('inactive')
+                                        if(softSkill !== 'active'){
+                                             setSoftSkill('active')
+                                             setTechSkill('inactive')
                                         }
                                    }
                               }
@@ -158,9 +97,9 @@ export const Skills = () =>{
                                         <i 
                                              className="fa fa-times-circle-o"
                                              onClick={ () =>{
-                                                  if(sSkill === 'active'){
-                                                       setTSkill('')
-                                                       setSSkill('')
+                                                  if(softSkill === 'active'){
+                                                       setTechSkill('')
+                                                       setSoftSkill('')
                                                   }
                                              }}
                                         ></i>
@@ -169,77 +108,25 @@ export const Skills = () =>{
                                         <p>These are the additional skills I possess that make me a fitting employee for your company.</p>
                                    </div>
                                    <div className='skill-cat-body'>
-                                        <div 
-                                             className={`skill-cat-nodule ${curSkill === 'learn' ? 'active' : ''}`}
-                                             onClick={ () =>{
-                                                  if(curSkill !== 'learn'){
-                                                       setCurSkill('learn')
-                                                  }else{
-                                                       setCurSkill('')
-                                                  }
-                                             }}
-                                        >Learnability</div>
-                                        <div 
-                                             className={`skill-cat-nodule ${curSkill === 'detail' ? 'active' : ''}`}
-                                             onClick={ () =>{
-                                                  if(curSkill !== 'detail'){
-                                                       setCurSkill('detail')
-                                                  }else{
-                                                       setCurSkill('')
-                                                  }
-                                             }}
-                                        >Detail Orientation</div>
-                                        <div 
-                                             className={`skill-cat-nodule ${curSkill === 'create' ? 'active' : ''}`}
-                                             onClick={ () =>{
-                                                  if(curSkill !== 'create'){
-                                                       setCurSkill('create')
-                                                  }else{
-                                                       setCurSkill('')
-                                                  }
-                                             }}
-                                        >Creativity</div>
-                                        <div 
-                                             className={`skill-cat-nodule ${curSkill === 'oral' ? 'active' : ''}`}
-                                             onClick={ () =>{
-                                                  if(curSkill !== 'oral'){
-                                                       setCurSkill('oral')
-                                                  }else{
-                                                       setCurSkill('')
-                                                  }
-                                             }}
-                                        >Oral Communication</div>
-                                        <div 
-                                             className={`skill-cat-nodule ${curSkill === 'team' ? 'active' : ''}`}
-                                             onClick={ () =>{
-                                                  if(curSkill !== 'team'){
-                                                       setCurSkill('team')
-                                                  }else{
-                                                       setCurSkill('')
-                                                  }
-                                             }}
-                                        >Team Player</div>
-                                        <div 
-                                             className={`skill-cat-nodule ${curSkill === 'dedicate' ? 'active' : ''}`}
-                                             onClick={ () =>{
-                                                  if(curSkill !== 'dedicate'){
-                                                       setCurSkill('dedicate')
-                                                  }else{
-                                                       setCurSkill('')
-                                                  }
-                                             }}
-                                        >Dedicated</div>
+                                        <div className='skill-cat-nodule'>Learnability</div>
+                                        <div className='skill-cat-nodule'>Detail Orientation</div>
+                                        <div className='skill-cat-nodule'>Creativity</div>
+                                        <div className='skill-cat-nodule'>Oral Communication</div>
+                                        <div className='skill-cat-nodule'>Team Player</div>
+                                        <div className='skill-cat-nodule'>Dedicated</div>
                                    </div>
                               </div>
                          </div>
                     </div>
                </div>
                <div 
-                    className={`sect-btn ${state===true?'active':''}`}
+                    className={`sect-btn skill-btn ${state===true?'active':''}`}
                     style={skillBtnStyle}
                     onClick={ () =>{
-                              if(state === false)
-                                   setElem?.('skills')
+                              if(state === false){
+                                   setElem('skills')
+                                   initWind()
+                              }
                          }
                     }
                >

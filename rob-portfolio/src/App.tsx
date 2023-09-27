@@ -1,12 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { uiStore } from './hooks/myStore'
+
 import { Default } from './components/PageFormats/Default'
 import { Simplified } from './components/PageFormats/Simplified';
 import { Emulator } from './components/PageFormats/Emulator';
 
+
 function App() {
-  const [pageFormat, setFormat] = useState('default');
-  // /or/ simple /or/ emulator
+  const {pageFormat, setFormat } = uiStore();
+  // default /or/ simple /or/ emulator
 
   if(pageFormat === 'default'){
     return ( <Default /> )

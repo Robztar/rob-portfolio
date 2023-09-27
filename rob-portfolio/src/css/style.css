@@ -95,7 +95,7 @@ body {
   margin: 0;
 }
 
-.home-btn.active {
+.home-btn.active, .home-btn-ext {
   display: none;
 }
 
@@ -866,5 +866,108 @@ body {
   }
   .left-node .node-point-span, .right-node .node-point-span {
     left: 50px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .home {
+    display: none;
+  }
+  .home.active {
+    display: grid;
+    height: 75vh;
+    top: 5vh !important;
+  }
+  .home-btn-ext {
+    position: absolute;
+    z-index: 2;
+    background: #00252e;
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1.5fr 1fr;
+    cursor: pointer;
+    transition: 1s;
+    left: calc(15% - 2rem);
+  }
+  .home-btn-ext i {
+    display: grid;
+    place-items: center;
+  }
+  .home-btn-ext p {
+    display: grid;
+    place-items: center;
+    margin: 0;
+  }
+  .acad-btn {
+    left: calc(32.5% - 2rem) !important;
+  }
+  .skill-btn {
+    left: calc(50% - 2rem) !important;
+  }
+  .proj-btn {
+    left: calc(67.5% - 2rem) !important;
+  }
+  .contact-btn {
+    left: calc(85% - 2rem) !important;
+  }
+  .home-btn-ext, .sect-btn {
+    box-shadow: none;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    top: 85vh !important;
+  }
+  .home-btn-ext i, .sect-btn i {
+    align-self: end;
+    height: 1.5rem;
+    font-size: 1.5rem;
+  }
+  .home-btn-ext p, .sect-btn p {
+    align-self: start;
+    height: 0.8rem;
+    font-size: 0.6rem;
+  }
+  .home-btn-ext.active {
+    box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1), inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+    transition: 0.5s;
+    cursor: default;
+  }
+  .home-btn-ext.active i {
+    color: magenta;
+  }
+  .home-data.active {
+    grid-template-rows: 30% auto;
+  }
+  .home-title {
+    margin: 0;
+    align-self: end;
+    font-size: 1.5rem;
+  }
+  .home-info {
+    align-self: start;
+    font-size: 1rem;
+  }
+  .sect.active {
+    height: 75vh;
+    top: 5vh !important;
+    left: 10%;
+    font-size: 1rem;
+    transition: 1s;
+  }
+  .sect.active .sect-data {
+    grid-template-rows: 7% auto;
+    row-gap: 0.5rem;
+    height: 100%;
+    width: 80%;
+    overflow: auto;
+    opacity: 1;
+    margin: 0;
+    animation: 0.25s acadActivate forwards;
+  }
+  .sect-title {
+    width: -moz-fit-content;
+    width: fit-content;
+    align-items: end;
+    padding: 0.5rem;
+    font-size: 1.5rem;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -1,4 +1,3 @@
-// import { useState } from 'react'
 import {windStore} from '../../hooks/myStore'
 import MyResume from '../../resume/robert-mcfarlane_resume.pdf'
 
@@ -11,7 +10,7 @@ export const Contact = () =>{
      let contactBtnTop: string
      let contactBtnStyle: object
 
-     const { elem, setElem } = windStore();
+     const { elem, setElem, initWind } = windStore();
 
      if(elem === 'contact'){
           state = true
@@ -40,8 +39,10 @@ export const Contact = () =>{
                     className={`contact sect ${state===true?'active':''}`}
                     style={contactStyle}
                     onClick={ () =>{
-                              if(state === false)
-                                   setElem?.('contact')
+                              if(state === false){
+                                   setElem('contact')
+                                   initWind()
+                              }
                          }
                     }
                >
@@ -105,11 +106,13 @@ export const Contact = () =>{
                     </div>
                </div>
                <div 
-                    className={`sect-btn ${state===true?'active':''}`}
+                    className={`sect-btn contact-btn ${state===true?'active':''}`}
                     style={contactBtnStyle}
                     onClick={ () =>{
-                         if(state === false)
-                              setElem?.('contact')
+                         if(state === false){
+                              setElem('contact')
+                              initWind()
+                         }
                     }
                }
                >

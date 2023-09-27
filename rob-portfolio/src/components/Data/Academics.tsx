@@ -1,4 +1,4 @@
-import { useState } from "react"
+// import { useState } from "react"
 import {windStore} from '../../hooks/myStore'
 
 import DStruct from '../../awards/DStruct_certificate.pdf'
@@ -18,8 +18,7 @@ export const Academics = () =>{
      let acadBtnTop: string
      let acadBtnStyle: object
 
-     const { elem, setElem } = windStore();
-     const [yearLine, setYLine] = useState('')
+     const { elem, yearLine, setElem, initWind, setYLine } = windStore();
 
      if(elem === 'academics'){
           state = true
@@ -53,6 +52,7 @@ export const Academics = () =>{
                     onClick={ () =>{
                               if(state === false){
                                    setElem('academics')
+                                   initWind()
                               }
                          }
                     }
@@ -210,11 +210,12 @@ export const Academics = () =>{
                     </div>
                </div>
                <div 
-                    className={`sect-btn ${state===true?'active':''}`}
+                    className={`sect-btn acad-btn ${state===true?'active':''}`}
                     style={acadBtnStyle}
                     onClick={ () =>{
                               if(state === false){
                                    setElem('academics')
+                                   initWind()
                               }
                          }
                     }
