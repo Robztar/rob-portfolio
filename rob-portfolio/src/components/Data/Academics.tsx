@@ -1,4 +1,6 @@
 import { useState } from "react"
+import {windStore} from '../../hooks/myStore'
+
 import DStruct from '../../awards/DStruct_certificate.pdf'
 import WebDev from '../../awards/WebDev_certificate.pdf'
 import AdvApp from '../../awards/Advanced_Application_Development_certificate.pdf'
@@ -7,13 +9,7 @@ import DbSys from '../../awards/Database_Sys_certificate.pdf'
 import AdvProp from '../../awards/AdvProposal_certificate.pdf'
 import AdvProj from '../../awards/AdvProject_certificate.pdf'
 
-useState
-type elemProps= {
-     elem: string
-     setElem?: (elem: string) => void
-}
-
-export const Academics = (props: elemProps) =>{
+export const Academics = () =>{
      let state: boolean
      let acadLeft: string
      let acadTop: string
@@ -22,9 +18,10 @@ export const Academics = (props: elemProps) =>{
      let acadBtnTop: string
      let acadBtnStyle: object
 
+     const { elem, setElem } = windStore();
      const [yearLine, setYLine] = useState('')
 
-     if(props.elem === 'academics'){
+     if(elem === 'academics'){
           state = true
           acadLeft = '0'
           acadTop = '0'
@@ -32,7 +29,7 @@ export const Academics = (props: elemProps) =>{
           acadBtnTop = 'calc(35vh - 2.5rem)'
      }else{
           state= false
-          if(props.elem !== 'home'){
+          if(elem !== 'home'){
                acadLeft = 'calc(97% - 5rem)'
                acadTop = 'calc(35vh - 2.5rem)'
           }else{
@@ -42,6 +39,7 @@ export const Academics = (props: elemProps) =>{
           acadBtnLeft = acadLeft
           acadBtnTop = acadTop
      }
+     
      acadStyle = {'left': acadLeft,'top': acadTop}
      acadBtnStyle = {'left': acadBtnLeft,
                          'top': acadBtnTop}
@@ -53,15 +51,15 @@ export const Academics = (props: elemProps) =>{
                     // style={{'left': acadPos}}
                     style={acadStyle}
                     onClick={ () =>{
-                              if(state === false)
-                                   props.setElem?.('academics')
+                              if(state === false){
+                                   setElem('academics')
+                              }
                          }
                     }
                >
                     <div className="sect-data">
                          <h1 className="sect-title">Academics</h1>
                          <div className="academics-info">
-                              {/* <div className="timeline"> */}
                               <div className={yearLine === '2023'? 'new-timeline': 'timeline'}>
                                    <div className={`
                                         node-cont left-node 
@@ -215,8 +213,9 @@ export const Academics = (props: elemProps) =>{
                     className={`sect-btn ${state===true?'active':''}`}
                     style={acadBtnStyle}
                     onClick={ () =>{
-                              if(state === false)
-                                   props.setElem?.('academics')
+                              if(state === false){
+                                   setElem('academics')
+                              }
                          }
                     }
                >

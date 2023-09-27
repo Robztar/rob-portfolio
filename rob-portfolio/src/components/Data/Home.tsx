@@ -1,17 +1,17 @@
 import { useState } from 'react'
+import {windStore} from '../../hooks/myStore'
 
-type elemProps= {
-     elem: string
-     setElem?: (elem: string) => void
-}
 
-export const Home = (props: elemProps) =>{
+
+export const Home = () =>{
      let state: boolean
      let homeLeft: string
      let homeTop: string
      let homeStyle: object
 
-     if(props.elem === 'home'){
+     const [ elem, setElem ] = windStore((state) => [ state.elem, state.setElem ]);
+
+     if(elem === 'home'){
           state = true
           homeLeft = '10%'
           homeTop = '15vh'
@@ -31,8 +31,9 @@ export const Home = (props: elemProps) =>{
                // style={{'left': homePos}}
                style={homeStyle}
                onClick={ () =>{
-                         if(state === false)
-                              props.setElem?.('home')
+                         if(state === false){
+                              setElem('home')
+                         }
                     }
                }
           >

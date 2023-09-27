@@ -1,15 +1,12 @@
 import { useState } from "react"
+import {windStore} from '../../hooks/myStore'
+
 import OTLEmbed from '../../img/OTL_embed-pic.jpeg'
 import FreshMart from '../../img/FreshMart-demo-shot.png'
 import CRead from '../../img/CRead_thumb.png'
 import GroundUp from '../../img/GroundUp_embed.png'
 
-type elemProps= {
-     elem: string
-     setElem?: (elem: string) => void
-}
-
-export const Projects = (props: elemProps) =>{
+export const Projects = () =>{
      let state: boolean
      let projLeft: string
      let projTop: string
@@ -18,9 +15,10 @@ export const Projects = (props: elemProps) =>{
      let projBtnTop: string
      let projBtnStyle: object
 
+     const { elem, setElem } = windStore();
      const [activeProj, setProj] = useState('')
 
-     if(props.elem === 'projects'){
+     if(elem === 'projects'){
           state = true
           projLeft = '0'
           projTop = '0'
@@ -28,7 +26,7 @@ export const Projects = (props: elemProps) =>{
           projBtnTop = 'calc(65vh - 2.5rem)'
      }else{
           state= false
-          if(props.elem !== 'home'){
+          if(elem !== 'home'){
                projLeft = 'calc(97% - 5rem)'
                projTop = 'calc(65vh - 2.5rem)'
           }else{
@@ -48,7 +46,7 @@ export const Projects = (props: elemProps) =>{
                     style={projStyle}
                     onClick={ () =>{
                               if(state === false)
-                                   props.setElem?.('projects')
+                                   setElem?.('projects')
                          }
                     }
                >
@@ -284,7 +282,7 @@ export const Projects = (props: elemProps) =>{
                          style={projBtnStyle}
                          onClick={ () =>{
                                    if(state === false)
-                                        props.setElem?.('projects')
+                                        setElem?.('projects')
                               }
                          }
                     >

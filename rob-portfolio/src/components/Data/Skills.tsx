@@ -1,11 +1,7 @@
 import { useState } from "react"
+import {windStore} from '../../hooks/myStore'
 
-type elemProps= {
-     elem: string
-     setElem?: (elem: string) => void
-}
-
-export const Skills = (props: elemProps) =>{
+export const Skills = () =>{
      let state: boolean
      let skillLeft: string
      let skillTop: string
@@ -14,12 +10,14 @@ export const Skills = (props: elemProps) =>{
      let skillBtnTop: string
      let skillBtnStyle: object
 
+     const { elem, setElem } = windStore();
+
      const [tSkill, setTSkill] = useState('')
      const [sSkill, setSSkill] = useState('')
      const [curSkill, setCurSkill] = useState('')
      // const [sSkill, setSSkill] = useState('')
 
-     if(props.elem === 'skills'){
+     if(elem === 'skills'){
           state = true
           skillLeft = '0'
           skillTop = '0'
@@ -27,7 +25,7 @@ export const Skills = (props: elemProps) =>{
           skillBtnTop = 'calc(50vh - 2.5rem)'
      }else{
           state= false
-          if(props.elem !== 'home'){
+          if(elem !== 'home'){
                skillLeft = 'calc(97% - 5rem)'
                skillTop = 'calc(50vh - 2.5rem)'
           }else{
@@ -47,7 +45,7 @@ export const Skills = (props: elemProps) =>{
                     style={skillStyle}
                     onClick={ () =>{
                               if(state === false)
-                                   props.setElem?.('skills')
+                                   setElem?.('skills')
                          }
                     }
                >
@@ -241,7 +239,7 @@ export const Skills = (props: elemProps) =>{
                     style={skillBtnStyle}
                     onClick={ () =>{
                               if(state === false)
-                                   props.setElem?.('skills')
+                                   setElem?.('skills')
                          }
                     }
                >

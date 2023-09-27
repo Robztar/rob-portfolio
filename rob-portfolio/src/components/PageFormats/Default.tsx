@@ -13,11 +13,11 @@ export const Default = () =>{
 
      return(
           <div className='def-cont'>
-               <Home elem={elem} setElem = {setElem} />
-               <Academics elem={elem} setElem = {setElem} />
-               <Skills elem={elem} setElem = {setElem} />
-               <Projects elem={elem} setElem = {setElem} />
-               <Contact elem={elem} setElem = {setElem} />
+               <Home />
+               <Academics />
+               <Skills />
+               <Projects />
+               <Contact />
           </div>
      )
 }

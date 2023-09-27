@@ -1,12 +1,8 @@
 // import { useState } from 'react'
+import {windStore} from '../../hooks/myStore'
 import MyResume from '../../resume/robert-mcfarlane_resume.pdf'
 
-type elemProps= {
-     elem: string
-     setElem?: (elem: string) => void
-}
-
-export const Contact = (props: elemProps) =>{
+export const Contact = () =>{
      let state: boolean
      let contactLeft: string
      let contactTop: string
@@ -15,7 +11,9 @@ export const Contact = (props: elemProps) =>{
      let contactBtnTop: string
      let contactBtnStyle: object
 
-     if(props.elem === 'contact'){
+     const { elem, setElem } = windStore();
+
+     if(elem === 'contact'){
           state = true
           contactLeft = '0'
           contactTop = '0'
@@ -23,7 +21,7 @@ export const Contact = (props: elemProps) =>{
           contactBtnTop = 'calc(80vh - 2.5rem)'
      }else{
           state= false
-          if(props.elem !== 'home'){
+          if(elem !== 'home'){
                contactLeft = 'calc(97% - 5rem)'
                contactTop = 'calc(80vh - 2.5rem)'
           }else{
@@ -43,7 +41,7 @@ export const Contact = (props: elemProps) =>{
                     style={contactStyle}
                     onClick={ () =>{
                               if(state === false)
-                                   props.setElem?.('contact')
+                                   setElem?.('contact')
                          }
                     }
                >
@@ -111,7 +109,7 @@ export const Contact = (props: elemProps) =>{
                     style={contactBtnStyle}
                     onClick={ () =>{
                          if(state === false)
-                              props.setElem?.('contact')
+                              setElem?.('contact')
                     }
                }
                >
