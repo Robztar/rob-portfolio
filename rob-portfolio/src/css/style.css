@@ -54,6 +54,8 @@ body {
   place-items: center;
   width: 5rem;
   height: 5rem;
+  left: calc(97% - 5rem);
+  top: calc(20vh - 2.5rem);
   transition: 1s;
 }
 
@@ -220,6 +222,31 @@ body {
   font-size: 2rem;
 }
 
+.academics {
+  left: calc(20% - 2.5rem);
+  top: 80vh;
+}
+
+.academics.side-sect {
+  left: calc(97% - 5rem);
+  top: calc(35vh - 2.5rem);
+}
+
+.academics.active {
+  left: 0;
+  top: 0;
+}
+
+.acad-btn {
+  left: calc(20% - 2.5rem);
+  top: 80vh;
+}
+
+.acad-btn.side-btn {
+  left: calc(97% - 5rem);
+  top: calc(35vh - 2.5rem);
+}
+
 .academics-info {
   padding: 1rem;
   display: grid;
@@ -277,26 +304,39 @@ body {
 
 .node-data {
   padding: 1px 0.75rem;
+  min-height: 3rem;
   background: white;
   border-radius: 10px;
-}
-.node-data h2 {
-  margin: 0.5rem 0 0;
-  padding-left: 0.5rem;
-  width: 50%;
-  border-bottom: solid magenta 3px;
+  cursor: pointer;
 }
 .node-data p {
   margin: 0.3rem 0 0.5rem;
 }
 
-.spec-node {
-  max-height: 12vh;
-  cursor: pointer;
+.acad-year {
+  margin: 0.5rem 0 0;
+  padding-left: 0.5rem;
+  width: 100%;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.acad-year span {
+  font-weight: 500;
+  font-size: 1.2rem;
+  border-bottom: solid magenta 3px;
+  padding: 0 0.5rem 0 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.node-data.active {
+  max-height: 50vh;
   transition: 0.5s;
 }
-.spec-node h2 {
-  border-left: solid gold 3px;
+.node-data.active .acad-year i {
+  display: none;
+}
+
+.spec-node .acad-year span {
   border-bottom: solid gold 3px;
 }
 
@@ -305,12 +345,7 @@ body {
 }
 
 .spec-node.active {
-  max-height: 50vh;
   background: rgb(255, 251, 226);
-  transition: 0.5s;
-}
-.spec-node.active i {
-  display: none;
 }
 
 .left-node {
@@ -330,10 +365,11 @@ body {
   height: 40px;
   border-radius: 50%;
   right: -20px;
-  top: 32px;
+  top: calc(50% - 20px);
   box-sizing: border-box;
   z-index: 10;
   transition: 0.5s ease;
+  cursor: pointer;
 }
 .node-point div {
   background: gold;
@@ -355,7 +391,7 @@ body {
   width: 30px;
   background: magenta;
   right: 0;
-  top: 52px;
+  top: calc(50% - 1.5px);
   transition: 0.5s ease;
 }
 
@@ -417,6 +453,31 @@ body {
     height: calc(100% - 160px);
   }
 }
+.skills {
+  left: calc(40% - 2.5rem);
+  top: 80vh;
+}
+
+.skills.side-sect {
+  left: calc(97% - 5rem);
+  top: calc(50vh - 2.5rem);
+}
+
+.skills.active {
+  left: 0;
+  top: 0;
+}
+
+.skill-btn {
+  left: calc(40% - 2.5rem);
+  top: 80vh;
+}
+
+.skill-btn.side-btn {
+  left: calc(97% - 5rem);
+  top: calc(50vh - 2.5rem);
+}
+
 .skill-info {
   padding: 1rem;
   display: flex;
@@ -534,6 +595,31 @@ body {
   font-size: 1.13rem;
   color: magenta;
   transition: 0.15s;
+}
+
+.projects {
+  left: calc(60% - 2.5rem);
+  top: 80vh;
+}
+
+.projects.side-sect {
+  left: calc(97% - 5rem);
+  top: calc(65vh - 2.5rem);
+}
+
+.projects.active {
+  left: 0;
+  top: 0;
+}
+
+.proj-btn {
+  left: calc(60% - 2.5rem);
+  top: 80vh;
+}
+
+.proj-btn.side-btn {
+  left: calc(97% - 5rem);
+  top: calc(65vh - 2.5rem);
 }
 
 .projects.active .sect-data {
@@ -755,6 +841,31 @@ body {
   display: none;
 }
 
+.contact {
+  left: calc(80% - 2.5rem);
+  top: 80vh;
+}
+
+.contact.side-sect {
+  left: calc(97% - 5rem);
+  top: calc(80vh - 2.5rem);
+}
+
+.contact.active {
+  left: 0;
+  top: 0;
+}
+
+.contact-btn {
+  left: calc(80% - 2.5rem);
+  top: 80vh;
+}
+
+.contact-btn.side-btn {
+  left: calc(97% - 5rem);
+  top: calc(80vh - 2.5rem);
+}
+
 .contact-info {
   padding: 1rem;
   display: flex;
@@ -875,7 +986,7 @@ body {
   .home.active {
     display: grid;
     height: 75vh;
-    top: 5vh !important;
+    top: 5vh;
   }
   .home-btn-ext {
     position: absolute;
@@ -914,7 +1025,7 @@ body {
     border-radius: 50%;
     width: 4rem;
     height: 4rem;
-    top: 85vh !important;
+    top: 83.5vh !important;
   }
   .home-btn-ext i, .sect-btn i {
     align-self: end;
@@ -948,8 +1059,7 @@ body {
   }
   .sect.active {
     height: 75vh;
-    top: 5vh !important;
-    left: 10%;
+    top: 5vh;
     font-size: 1rem;
     transition: 1s;
   }
@@ -958,10 +1068,7 @@ body {
     row-gap: 0.5rem;
     height: 100%;
     width: 80%;
-    overflow: auto;
-    opacity: 1;
     margin: 0;
-    animation: 0.25s acadActivate forwards;
   }
   .sect-title {
     width: -moz-fit-content;
@@ -969,5 +1076,48 @@ body {
     align-items: end;
     padding: 0.5rem;
     font-size: 1.5rem;
+  }
+  .timeline {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .timeline::after {
+    width: 4px;
+    left: 0;
+  }
+  .new-timeline::after {
+    width: 4px;
+    left: 0;
+  }
+  .left-node .node-point, .right-node .node-point {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    left: -8px;
+    top: calc(50% - 10px);
+  }
+  .left-node .node-point-span, .right-node .node-point-span {
+    left: 12px;
+  }
+  .node-cont {
+    padding-left: 25px;
+    padding-right: 0;
+    width: calc(100% - 25px);
+  }
+  .node-point-span {
+    width: 13px;
+    top: calc(50% - 1.5px);
+  }
+  .node-data {
+    padding: 1px 0.75rem;
+    background: white;
+    border-radius: 10px;
+  }
+  .node-data h2 {
+    margin: 0.1rem 0 0;
+    padding-left: 0.5rem;
+  }
+  .node-data p {
+    margin: 0.1rem 0 0.5rem;
   }
 }/*# sourceMappingURL=style.css.map */

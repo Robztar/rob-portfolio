@@ -91,6 +91,8 @@ body{
      place-items: center;
      width: 5rem;
      height: 5rem;
+     left: calc(97% - 5rem);
+     top: calc(20vh - 2.5rem);
      transition: 1s;
 }
 .home.active{
@@ -284,6 +286,29 @@ body{
 }
 
 // -- Academics --
+
+.academics{
+     left: calc(20% - 2.5rem);
+     top: 80vh;
+}
+.academics.side-sect{
+     left: calc(97% - 5rem);
+     top: calc(35vh - 2.5rem);
+}
+.academics.active{
+     left: 0;
+     top: 0;
+}
+.acad-btn{
+     left: calc(20% - 2.5rem);
+     top: 80vh;
+}
+.acad-btn.side-btn{
+     left: calc(97% - 5rem);
+     top: calc(35vh - 2.5rem);
+}
+
+
 .academics-info{
      // background: blue;
      padding: 1rem;
@@ -338,57 +363,57 @@ body{
 }
 .node-data{
      padding: 1px 0.75rem;
-     // height: vh;
+     min-height: 3rem;
      background: white;
      border-radius: 10px;
-     h2{
-          margin: 0.5rem 0 0;
-          padding-left: 0.5rem;
-          width: 50%;
-          border-bottom: solid magenta 3px;
-     }
+     cursor: pointer;
      p{
           margin: 0.3rem 0 0.5rem;
      }
-     // ul{
-     //      display: none;
-     //      height: 0;
-     //      transition: 0.5s;
-     // }
+}
+
+.acad-year{
+     margin: 0.5rem 0 0;
+     padding-left: 0.5rem;
+     width: 100%;
+     font-weight: 400;
+     font-size: 1rem;
+     
+     span{
+          font-weight: 500;
+          font-size: 1.2rem;
+          border-bottom: solid magenta 3px;
+          padding: 0 0.5rem 0 0.5rem;
+          margin-right: 0.5rem;
+     }
+}
+.node-data.active{
+     .acad-year{
+          i{
+               display: none;
+          }
+     }
+     max-height: 50vh;
+     transition: 0.5s;
 }
 .spec-node{
-     h2{
-          border-left: solid gold 3px;
-          border-bottom: solid gold 3px;
-          // border-radius: 10px;
-     }
-     // ul{
-     //      display: none;
-     //      max-height: 0vh;
-     //      transition: 0.5s;
+     // h2{
+     //      // border-left: solid gold 3px;
+     //      // border-bottom: solid gold 3px;
      // }
-     max-height: 12vh;
-     cursor: pointer;
-     transition: 0.5s;
+     .acad-year{
+          span{
+               border-bottom: solid gold 3px;
+          }
+     }
 }
 .spec-node:hover{
      background: rgb(255, 251, 226);
 }
 .spec-node.active{
-     i{
-          display: none;
-     }
-     // ul{
-     //      display: block;
-     //      height: auto;
-     //      max-height: 30vh;
-     //      transition: 0.5s;
-     // }
-     // height: auto;
-     max-height: 50vh;
      background: rgb(255, 251, 226);
-     transition: 0.5s;
 }
+
 .left-node{
      left: 0;
 }
@@ -404,10 +429,11 @@ body{
      height: 40px;
      border-radius: 50%;
      right: -20px;
-     top: 32px;
+     top: calc(50% - 20px);
      box-sizing: border-box;
      z-index: 10;
      transition: 0.5s ease;
+     cursor: pointer;
      div{
           background: gold;
           height: 33%;
@@ -428,7 +454,7 @@ body{
      // background: white;
      background: magenta;
      right: 0;
-     top: 52px;
+     top: calc(50% - 1.5px);;
      transition: 0.5s ease;
 }
 .right-node .node-point-span{
@@ -489,6 +515,27 @@ body{
 }
 
 // -- Skills --
+.skills{
+     left: calc(40% - 2.5rem);
+     top: 80vh;
+}
+.skills.side-sect{
+     left: calc(97% - 5rem);
+     top: calc(50vh - 2.5rem);
+}
+.skills.active{
+     left: 0;
+     top: 0;
+}
+.skill-btn{
+     left: calc(40% - 2.5rem);
+     top: 80vh;
+}
+.skill-btn.side-btn{
+     left: calc(97% - 5rem);
+     top: calc(50vh - 2.5rem);
+}
+
 .skill-info{
      // background: blue;
      padding: 1rem;
@@ -608,6 +655,27 @@ body{
 
 
 // -- Projects --
+.projects{
+     left: calc(60% - 2.5rem);
+     top: 80vh;
+}
+.projects.side-sect{
+     left: calc(97% - 5rem);
+     top: calc(65vh - 2.5rem);
+}
+.projects.active{
+     left: 0;
+     top: 0;
+}
+.proj-btn{
+     left: calc(60% - 2.5rem);
+     top: 80vh;
+}
+.proj-btn.side-btn{
+     left: calc(97% - 5rem);
+     top: calc(65vh - 2.5rem);
+}
+
 .projects.active .sect-data{
      // background: green;
      // border: solid 2px green;
@@ -851,6 +919,26 @@ body{
 }
 
 // -- Contacts --
+.contact{
+     left: calc(80% - 2.5rem);
+     top: 80vh;
+}
+.contact.side-sect{
+     left: calc(97% - 5rem);
+     top: calc(80vh - 2.5rem);
+}
+.contact.active{
+     left: 0;
+     top: 0;
+}
+.contact-btn{
+     left: calc(80% - 2.5rem);
+     top: 80vh;
+}
+.contact-btn.side-btn{
+     left: calc(97% - 5rem);
+     top: calc(80vh - 2.5rem);
+}
 .contact-info{
      // background: blue;
      padding: 1rem;
@@ -978,41 +1066,14 @@ body{
 }
 
 @media screen and (max-width: 450px){
-     // .timeline::after{
-     //      left: 31px;
-     // }
-     // .new-timeline::after{
-     //      left: 31px;
-     // }
-     // .node-cont{
-     //      // width: 100%;
-     //      // width: calc(350px - 60px);
-     //      padding-left: 80px;
-     //      padding-right: 25px;
-     //      // padding: 5px 30px;
-     //      // font-size: 13px;
-     // }
-     // .right-node{
-     //      left: 0;
-     // }
-     // .left-node .node-point, .right-node .node-point{
-     //      left: 14px;
-          
-     // }
-     // .left-node .node-point-span, .right-node .node-point-span{
-     //      left: 50px;
-     // }
-     
      .home{
           display: none;
-          // height: 75vh;
-          // top: 5vh !important;
      }
      .home.active{
           display: grid;
           // background: yellowgreen;
           height: 75vh;
-          top: 5vh !important;
+          top: 5vh;
      }
      
      .home-btn-ext{
@@ -1056,7 +1117,7 @@ body{
           border-radius: 50%;
           width: 4rem;
           height: 4rem;
-          top: 85vh !important;
+          top: 83.5vh !important;
 
           i{
                align-self: end;
@@ -1082,16 +1143,6 @@ body{
           transition: 0.5s;
           cursor: default;
      }
-     // .sect-btn.active{
-     //      box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
-     //           inset 2px 2px 6px rgba(0, 0, 0, 0.8);
-     //      i{
-     //           color: magenta;
-     //      }
-     //      transition: 0.5s;
-     //      cursor: default;
-     // }
-     
      .home-data.active{
           grid-template-rows: 30% auto;
      }
@@ -1099,54 +1150,79 @@ body{
           margin: 0;
           align-self: end;
           font-size: 1.5rem;
-          
      }
      .home-info{
           align-self: start;
           font-size: 1rem;
      }
-
-     // .sect{
-     //      position: absolute;
-     //      // color: black;
-     //      // background: red;
-     //      width: 1rem;
-     //      height: 1rem;
-     //      display: grid;
-     //      place-items: center;
-     //      transition: 1s;
-     // }
      .sect.active{
-          // width: 100%;
-          // height: 100vh;
           height: 75vh;
-          top: 5vh !important;
-          left: 10%;
+          top: 5vh;
           font-size: 1rem;
-
           transition: 1s;
      }
      .sect.active .sect-data{
           grid-template-rows: 7% auto;
           row-gap: 0.5rem;
           // background: blue;
-
           height: 100%;
-          // width: auto;
           width: 80%;
-          overflow: auto;
-          opacity: 1;
           margin: 0;
-          // padding: 0.5rem;
-          
-          // transition: 3s;
-          animation: 0.25s acadActivate forwards;
      }
      .sect-title{
           width: fit-content;
           align-items: end;
           padding: 0.5rem;
           font-size: 1.5rem;
+     }
+
+     .timeline{
+          width: fit-content;
+     }
+
+     .timeline::after{
+          width: 4px;
+          left: 0;
+     }
+     .new-timeline::after{
+          width: 4px;
+          left: 0;
+     }
+
+     .left-node .node-point, .right-node .node-point {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          left: calc(-10px + 2px);
+          top: calc(50% - 10px);
+     }
+     .left-node .node-point-span, .right-node .node-point-span{
+          left: 12px;
+     }
+     .node-cont{
+          padding-left: 25px;
+          padding-right: 0;
+          width: calc(100% - 25px);
+     }
+     .node-point-span{
+          width: 13px;
+          top: calc(50% - 1.5px);
+     }
+
+     .node-data{
+          padding: 1px 0.75rem;
+          // height: vh;
+          background: white;
+          border-radius: 10px;
+          h2{
+               margin: 0.1rem 0 0;
+               padding-left: 0.5rem;
+               // width: 50%;
+               // border-bottom: solid magenta 3px;
+          }
+          p{
+               margin: 0.1rem 0 0.5rem;
+          }
      }
 }
 

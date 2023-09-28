@@ -4,31 +4,17 @@ import {windStore} from '../../hooks/myStore'
 
 export const Home = () =>{
      let state: boolean
-     let homeLeft: string
-     let homeTop: string
-     let homeStyle: object
 
      const { elem, setElem, initWind } = windStore();
 
-     if(elem === 'home'){
-          state = true
-          homeLeft = '10%'
-          homeTop = '15vh'
-     }else{
-          state= false
-          // homeLeft = 'calc(20% - 2.5rem)'
-          // homeTop = '80vh'
-          homeLeft = 'calc(97% - 5rem)'
-          homeTop = 'calc(20vh - 2.5rem)'
-     }
-     console.log('Home pos is: '+homeLeft)
-     homeStyle = {'left': homeLeft,'top': homeTop}
+     if(elem === 'home'){state = true}
+     else {state= false}
 
      return(
           <>
                <div 
                     className={`home ${state===true?'active':''}`}
-                    style={homeStyle}
+                    // style={homeStyle}
                     onClick={ () =>{
                               if(state === false){
                                    setElem('home')
@@ -67,8 +53,7 @@ export const Home = () =>{
                               initWind()
                          }
                     }
-               }
-               >
+               }>
                     <i className="fa-solid fa-house"></i>
                     <p>Home</p>
                </div>

@@ -2,41 +2,20 @@ import {windStore} from '../../hooks/myStore'
 
 export const Skills = () =>{
      let state: boolean
-     let skillLeft: string
-     let skillTop: string
-     let skillStyle: object
-     let skillBtnLeft: string
-     let skillBtnTop: string
-     let skillBtnStyle: object
+     let skillSide: boolean
 
      const { elem, techSkill, softSkill, setElem, initWind, setTechSkill, setSoftSkill } = windStore();
 
-     if(elem === 'skills'){
-          state = true
-          skillLeft = '0'
-          skillTop = '0'
-          skillBtnLeft = 'calc(97% - 5rem)'
-          skillBtnTop = 'calc(50vh - 2.5rem)'
-     }else{
-          state= false
-          if(elem !== 'home'){
-               skillLeft = 'calc(97% - 5rem)'
-               skillTop = 'calc(50vh - 2.5rem)'
-          }else{
-               skillLeft = 'calc(40% - 2.5rem)'
-               skillTop = '80vh'
-          }
-          skillBtnLeft = skillLeft
-          skillBtnTop = skillTop
-     }
-     skillStyle = {'left': skillLeft,'top': skillTop}
-     skillBtnStyle = {'left': skillBtnLeft,'top': skillBtnTop}
+     if(elem === 'skills') {state = true}
+     else {state= false}
+     
+     if(elem === 'home') {skillSide = false}
+     else {skillSide = true}
 
      return(
           <>
                <div 
-                    className={`skills sect ${state===true?'active':''}`}
-                    style={skillStyle}
+                    className={`skills sect ${state===true?'active':''} ${skillSide===true?'side-sect':''}`}
                     onClick={ () =>{
                               if(state === false){
                                    setElem('skills')
@@ -120,8 +99,7 @@ export const Skills = () =>{
                     </div>
                </div>
                <div 
-                    className={`sect-btn skill-btn ${state===true?'active':''}`}
-                    style={skillBtnStyle}
+                    className={`sect-btn skill-btn ${state===true?'active':''} ${skillSide===true?'side-btn':''}`}
                     onClick={ () =>{
                               if(state === false){
                                    setElem('skills')

@@ -7,41 +7,20 @@ import GroundUp from '../../img/GroundUp_embed.png'
 
 export const Projects = () =>{
      let state: boolean
-     let projLeft: string
-     let projTop: string
-     let projStyle: object
-     let projBtnLeft: string
-     let projBtnTop: string
-     let projBtnStyle: object
+     let projSide: boolean
 
      const { elem, activeProj, setElem, initWind, setProj } = windStore();
 
-     if(elem === 'projects'){
-          state = true
-          projLeft = '0'
-          projTop = '0'
-          projBtnLeft = 'calc(97% - 5rem)'
-          projBtnTop = 'calc(65vh - 2.5rem)'
-     }else{
-          state= false
-          if(elem !== 'home'){
-               projLeft = 'calc(97% - 5rem)'
-               projTop = 'calc(65vh - 2.5rem)'
-          }else{
-               projLeft = 'calc(60% - 2.5rem)'
-               projTop = '80vh'
-          }
-          projBtnLeft = projLeft
-          projBtnTop = projTop
-     }
-     projStyle = {'left': projLeft,'top': projTop}
-     projBtnStyle = {'left': projBtnLeft,'top': projBtnTop}
+     if(elem === 'projects') {state = true}
+     else{state= false}
+
+     if(elem === 'home') {projSide = false}
+     else {projSide = true}
 
      return(
           <>
                <div 
-                    className={`projects sect ${state===true?'active':''}`}
-                    style={projStyle}
+                    className={`projects sect ${state===true?'active':''} ${projSide===true?'side-sect':''}`}
                     onClick={ () =>{
                               if(state === false){
                                    setElem('projects')
@@ -278,16 +257,15 @@ export const Projects = () =>{
                     </div>
                </div>
                <div 
-                         className={`sect-btn proj-btn ${state===true?'active':''}`}
-                         style={projBtnStyle}
-                         onClick={ () =>{
-                                   if(state === false){
-                                        setElem('projects')
-                                        initWind()
-                                   }
+                    className={`sect-btn proj-btn ${state===true?'active':''} ${projSide===true?'side-btn':''}`}
+                    onClick={ () =>{
+                              if(state === false){
+                                   setElem('projects')
+                                   initWind()
                               }
                          }
-                    >
+                    }
+               >
                     <i className="fa-solid fa-list"></i>
                     <p>Projects</p>
                </div>

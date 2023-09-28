@@ -3,41 +3,20 @@ import MyResume from '../../resume/robert-mcfarlane_resume.pdf'
 
 export const Contact = () =>{
      let state: boolean
-     let contactLeft: string
-     let contactTop: string
-     let contactStyle: object
-     let contactBtnLeft: string
-     let contactBtnTop: string
-     let contactBtnStyle: object
+     let contactSide: boolean
 
      const { elem, setElem, initWind } = windStore();
 
-     if(elem === 'contact'){
-          state = true
-          contactLeft = '0'
-          contactTop = '0'
-          contactBtnLeft = 'calc(97% - 5rem)'
-          contactBtnTop = 'calc(80vh - 2.5rem)'
-     }else{
-          state= false
-          if(elem !== 'home'){
-               contactLeft = 'calc(97% - 5rem)'
-               contactTop = 'calc(80vh - 2.5rem)'
-          }else{
-               contactLeft = 'calc(80% - 2.5rem)'
-               contactTop = '80vh'
-          }
-          contactBtnLeft = contactLeft
-          contactBtnTop = contactTop
-     }
-     contactStyle = {'left': contactLeft,'top': contactTop}
-     contactBtnStyle = {'left': contactBtnLeft,'top': contactBtnTop}
+     if(elem === 'contact'){state = true}
+     else{state= false}
+
+     if(elem === 'home') {contactSide = false}
+     else {contactSide = true}
 
      return(
           <>
                <div 
-                    className={`contact sect ${state===true?'active':''}`}
-                    style={contactStyle}
+                    className={`contact sect ${state===true?'active':''} ${contactSide===true?'side-sect':''}`}
                     onClick={ () =>{
                               if(state === false){
                                    setElem('contact')
@@ -106,8 +85,7 @@ export const Contact = () =>{
                     </div>
                </div>
                <div 
-                    className={`sect-btn contact-btn ${state===true?'active':''}`}
-                    style={contactBtnStyle}
+                    className={`sect-btn contact-btn ${state===true?'active':''} ${contactSide===true?'side-btn':''}`}
                     onClick={ () =>{
                          if(state === false){
                               setElem('contact')
