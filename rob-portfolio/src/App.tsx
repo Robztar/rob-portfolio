@@ -6,17 +6,83 @@ import { Emulator } from './components/PageFormats/Emulator';
 
 
 function App() {
-  const {pageFormat, setFormat } = uiStore();
+  const {pageFormat, bgDark, setFormat, switchBG } = uiStore();
   // default /or/ simple /or/ emulator
 
+  const BGCtrl = () =>{
+      return(
+        <div className={`bg-ctrl-cont ${bgDark? '': 'light-mode'}`}>
+          <i className="far fa-sun"></i>
+          <label className="bg-toggle">
+            <input 
+              type="checkbox" 
+              checked={bgDark ? true : false}
+              onClick={()=>{
+                switchBG();
+              }}
+            />
+            <span className="bg-slider"></span>
+          </label> 
+          <i className="far fa-moon"></i>
+        </div>
+      )
+  }
+  const LayoutCtrl = () =>{
+      return(
+        <div className={`layout-ctrl-cont ${bgDark? '': 'light-mode'}`}>
+          <div 
+            className={`layout-ctrl ${pageFormat === 'default'?'active':''}`}
+            onClick={()=>{
+              if(pageFormat !== 'default')
+                setFormat('default');
+            }}
+          >Default</div>
+          <div 
+            className={`layout-ctrl ${pageFormat === 'simple'?'active':''}`}
+            onClick={()=>{
+              if(pageFormat !== 'simple')
+                setFormat('simple');
+            }}
+          >Simplified</div>
+          <div 
+            className={`layout-ctrl ${pageFormat === 'emulator'?'active':''}`}
+            onClick={()=>{
+              if(pageFormat !== 'emulator')
+                setFormat('emulator');
+            }}
+          >Emulator</div>
+        </div>
+      )
+  }
+
+
   if(pageFormat === 'default'){
-    return ( <Default /> )
+    return ( 
+      <>
+        <BGCtrl />
+        <LayoutCtrl />
+        <Default /> 
+      </>
+      
+    )
   }
   else if(pageFormat === 'simple'){
-    return ( <Simplified /> )
+    return ( 
+      <>
+        <BGCtrl />
+        <LayoutCtrl />
+        <Simplified />
+      </> 
+    )
   }
   else if(pageFormat === 'emulator'){
-    return ( <Emulator /> )
+    return ( 
+      <>
+        <BGCtrl />
+        <LayoutCtrl />
+        <Emulator /> 
+      </>
+    )
   }
   else{
     return (

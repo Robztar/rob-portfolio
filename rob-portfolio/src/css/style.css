@@ -30,10 +30,113 @@ body {
   overflow: hidden;
 }
 
+.bg-ctrl-cont {
+  position: absolute;
+  top: 4vh;
+  right: 3vw;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 0.3rem;
+       column-gap: 0.3rem;
+}
+
+.bg-toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 28px;
+}
+.bg-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.bg-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 28px;
+  background: #868686;
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1), inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  transition: 1s;
+}
+
+.bg-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  border-radius: 50%;
+  background: #00252e;
+  transition: 1s;
+}
+
+input:checked + .bg-slider {
+  background: #00252e;
+}
+
+input:checked + .bg-slider:before {
+  background: #868686;
+  transform: translateX(31px);
+}
+
+.layout-ctrl-cont {
+  position: absolute;
+  top: 4vh;
+  right: 50vw;
+  left: 50vw;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+
+.layout-ctrl {
+  padding: 0.25rem 0.75rem;
+  background: #00252e;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.layout-ctrl:hover {
+  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.05), 6px 6px 15px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+
+.layout-ctrl.active {
+  color: magenta;
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1), inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  transition: 0.5s;
+}
+
+.bg-ctrl-cont.light-mode i {
+  color: #00252e;
+}
+
+.light-mode .layout-ctrl {
+  background: #868686;
+  color: #00252e;
+}
 .def-cont {
   height: 100vh;
   width: 100vw;
   margin: 0;
+}
+
+.def-cont.light-mode {
+  color: #00252e;
+  background: #868686;
 }
 
 .fa-times-circle-o {
@@ -123,6 +226,17 @@ body {
   padding: 0.5rem;
   text-align: center;
   font-size: 2rem;
+}
+
+.home-title::after {
+  content: "";
+  position: relative;
+  bottom: 0;
+  height: 3px;
+  width: 30%;
+  border-radius: 2px;
+  place-self: center;
+  background: magenta;
 }
 
 .home-info {
@@ -263,7 +377,7 @@ body {
   position: relative;
   padding: 5px 30px;
   width: 290px;
-  animation: moveNode 1s forwards;
+  animation: moveNode 0.5s forwards;
   z-index: 4;
   opacity: 0;
 }
@@ -279,33 +393,34 @@ body {
   }
 }
 .node-cont:nth-child(1) {
-  animation-delay: 0.5s;
+  animation-delay: 0s;
 }
 
 .node-cont:nth-child(2) {
-  animation-delay: 1.5s;
+  animation-delay: 0.5s;
 }
 
 .node-cont:nth-child(3) {
-  animation-delay: 2.5s;
+  animation-delay: 1s;
 }
 
 .node-cont:nth-child(4) {
-  animation-delay: 3.5s;
+  animation-delay: 1.5s;
 }
 
 .node-cont:nth-child(5) {
-  animation-delay: 4.5s;
+  animation-delay: 2s;
 }
 
 .node-cont:nth-child(6) {
-  animation-delay: 6s;
+  animation-delay: 2.5s;
 }
 
 .node-data {
   padding: 1px 0.75rem;
   min-height: 3rem;
-  background: white;
+  background: #00252e;
+  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.05), 6px 6px 15px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   cursor: pointer;
 }
@@ -340,12 +455,8 @@ body {
   border-bottom: solid gold 3px;
 }
 
-.spec-node:hover {
-  background: rgb(255, 251, 226);
-}
-
-.spec-node.active {
-  background: rgb(255, 251, 226);
+.spec-node:hover, .spec-node.active {
+  background: rgba(255, 251, 226, 0.15);
 }
 
 .left-node {
@@ -416,7 +527,7 @@ body {
   top: 0;
   left: calc(50% - 3px);
   z-index: 3;
-  animation: timeline 6s linear forwards;
+  animation: timeline 3s linear forwards;
 }
 
 @keyframes timeline {
@@ -958,6 +1069,43 @@ body {
   transition: 0.2s;
 }
 
+.light-mode .home.active {
+  color: #00252e;
+  background: #868686;
+}
+.light-mode .home-btn, .light-mode .home-btn-ext, .light-mode .sect-btn {
+  color: #00252e;
+  background: #868686;
+}
+.light-mode .node-data {
+  background: #868686;
+  color: #00252e;
+}
+.light-mode .spec-node:hover, .light-mode .spec-node.active {
+  background: rgba(255, 251, 226, 0.15);
+}
+.light-mode .skill-cat {
+  border: dashed 3px #00252e;
+}
+.light-mode .fa-times-circle-o {
+  color: #00252e;
+}
+.light-mode .contact-links {
+  border: solid 1px #00252e;
+}
+.light-mode .contact-links a {
+  color: #00252e;
+}
+.light-mode .proj-links a {
+  color: #00252e;
+}
+.light-mode .resume-link a {
+  color: #00252e;
+}
+.light-mode .p-source-link a {
+  color: #00252e;
+}
+
 @media screen and (max-width: 900px) {
   .timeline::after {
     left: 31px;
@@ -1120,4 +1268,32 @@ body {
   .node-data p {
     margin: 0.1rem 0 0.5rem;
   }
+}
+.emulator-cont {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-frame {
+  position: absolute;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 711px;
+  border: solid 8px black;
+  border-radius: 3rem;
+}
+
+.mobile-screen-area {
+  background: greenyellow;
+  width: 95%;
+  height: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }/*# sourceMappingURL=style.css.map */

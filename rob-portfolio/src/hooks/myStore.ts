@@ -17,8 +17,9 @@ interface WindState {
 }
 interface UIState {
      pageFormat: string
-     // addProj: (by: number) => void
+     bgDark: boolean
      setFormat: (by: string) => void
+     switchBG: () => void
 }
 
 // store for the window configuration states
@@ -33,7 +34,7 @@ export const windStore = create<WindState>()((set) => ({
           console.log('store is working. elem is now: '+ newElem)
      }, // activates the selected window
      initWind: () => {
-          set(() => ({ yearLine:'', techSkill:'', softSkill:'' }))
+          set(() => ({ yearLine:'', techSkill:'', softSkill:'', activeProj: '' }))
           console.log('reset all')
      }, // resets all wind attributes
      setYLine: (newYLine) => set(() => ({ yearLine: newYLine })), // 
@@ -47,11 +48,12 @@ export const uiStore = create<UIState>()(
      persist(
           (set) => ({
           pageFormat: 'default',
+          bgDark: true,
           setFormat: (newFormat) => set(() => ({ pageFormat: newFormat })),
           
-          // addProj: (by: number) =>{
-          //      set((state) => ({data: state.data + by }))
-          // },
+          switchBG: () =>{
+               set((state) => ({bgDark: !state.bgDark }))
+          },
           }),{ name: 'uistate' }
      )
 );
