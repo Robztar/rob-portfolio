@@ -50,7 +50,7 @@ export const Skills = () =>{
                                         ></i>
                                    </div>
                                    <div className='skill-cat-desc'>
-                                        <p>These are the technical skills I possess that would make me a competent Frontend Developer</p>
+                                        <p>These are the technical skills I possess that would make me a competent Web Developer</p>
                                    </div>
                                    <div className='skill-cat-body'>
                                         <div className='skill-cat-nodule'>HTML</div>
