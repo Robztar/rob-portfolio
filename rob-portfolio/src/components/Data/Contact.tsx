@@ -26,7 +26,7 @@ export const Contact = () =>{
                     }
                >
                     <div className="sect-data">
-                         <h1 className="sect-title">Contact Information</h1>
+                         <h1 className="sect-title">Contact</h1>
                          <div className="contact-info">
                               <p>This website was created by <strong>Robert V. McFarlane</strong> as his portfolio website, where his skills in web development can be expressed and demonstrated.
                               <br/>To contact Robert McFarlane or to see more information about him, see the links provided:</p>

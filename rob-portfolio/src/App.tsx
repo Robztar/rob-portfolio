@@ -12,7 +12,7 @@ function App() {
   const BGCtrl = () =>{
       return(
         <div className={`bg-ctrl-cont ${bgDark? '': 'light-mode'}`}>
-          <i className="far fa-sun"></i>
+          <i className={`far fa-sun ${bgDark? '': 'active'}`}></i>
           <label className="bg-toggle">
             <input 
               type="checkbox" 
@@ -23,7 +23,7 @@ function App() {
             />
             <span className="bg-slider"></span>
           </label> 
-          <i className="far fa-moon"></i>
+          <i className={`far fa-moon ${bgDark? 'active': ''}`}></i>
         </div>
       )
   }

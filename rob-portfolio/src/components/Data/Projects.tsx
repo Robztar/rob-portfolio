@@ -31,11 +31,7 @@ export const Projects = () =>{
                >
                     <div className="sect-data">
                          <h1 className="sect-title">Projects</h1>
-                         <div className={`
-                                   proj-info
-                                   ${activeProj === ''? '':'active'}
-                              `}
-                         >
+                         <div className='proj-info'>
                               {/* GroundUp */}
                               <div 
                                    className={`
