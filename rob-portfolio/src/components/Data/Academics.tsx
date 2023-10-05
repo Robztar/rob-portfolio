@@ -227,7 +227,7 @@ export const Academics = () =>{
                                                        setYLine('')
                                              }}
                                         >
-                                             <h2 className='acad-year'><span>2023</span> <i>Graduation - NCU ...</i></h2>
+                                             <h2 className='acad-year'><span>2023</span> <i>NCU Graduation ...</i></h2>
                                              
                                              {yearLine === '2023'?
                                                   <>

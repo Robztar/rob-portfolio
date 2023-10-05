@@ -28,9 +28,10 @@
 
 $dark-color: #00252e;
 $light-color: #868686;
-// $dark-color: #ffffffaa;
 $accent-color: #ff00ff;
-// $accent: yellowgreen;
+// $light-color: #ffffffaa;
+// $accent-color: yellowgreen;
+
 
 // @media (prefers-color-scheme: light) {
 //      :root {
@@ -71,12 +72,6 @@ body{
      overflow: hidden;
 }
 
-// .ui-ctrl-cont{
-//      position: absolute;
-//      top: 4vh;
-//      right: 3vw;
-//      z-index: 10;
-// }
 .bg-ctrl-cont{
      // background: red;
      position: absolute;
@@ -154,8 +149,6 @@ input:checked + .bg-slider:before {
 .layout-ctrl{
      padding: 0.25rem 0.75rem;
      background: $dark-color;
-     // box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.05),
-     //      6px 6px 15px rgba(0, 0, 0, 0.5);
      border-radius: 10px;
      cursor: pointer;
      transition: 0.5s;
@@ -172,6 +165,12 @@ input:checked + .bg-slider:before {
      transition: 0.5s;
 }
 .bg-ctrl-cont.light-mode{
+     .bg-slider {
+          box-shadow: -6px -6px 20px rgba(255, 255, 255, 0.2),
+               6px 6px 20px rgba(70, 70, 70, 0.4),
+               inset -6px -6px 20px rgba(255, 255, 255, 0.2),
+               inset 6px 6px 20px rgba(70, 70, 70, 0.4);
+     }
      i{ color: $dark-color;}
      i.active{
           color: $accent-color;
@@ -183,13 +182,13 @@ input:checked + .bg-slider:before {
           color: $dark-color;
      }
      .layout-ctrl:hover{
-          // box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.05),
-          //      6px 6px 15px rgba(0, 0, 0, 0.5);
+          box-shadow: -6px -6px 20px rgba(255, 255, 255, 0.2),
+               6px 6px 20px rgba(70, 70, 70, 0.4);
      }
      .layout-ctrl.active{
           color: $accent-color;
-          // box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
-          //      inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+          box-shadow: inset -6px -6px 20px rgba(255, 255, 255, 0.2),
+               inset 6px 6px 20px rgba(70, 70, 70, 0.4);
      }
 }
 
@@ -231,11 +230,6 @@ input:checked + .bg-slider:before {
      height: 55vh;
      background: $dark-color;
      border-radius: 10px;
-     // border: dashed black 3px;
-     // box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.25),
-     //      inset 2px 2px 5px rgba(255, 255, 255, 0.25),
-     //      8px 30px 30px rgba(0, 0, 0, 0.4),
-     //      inset -2px -2px 5px rgba(0, 0, 0, 0.4);
      box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.05),
           6px 6px 15px rgba(0, 0, 0, 0.5);
      top: 15vh;
@@ -448,7 +442,6 @@ input:checked + .bg-slider:before {
      left: calc(97% - 5rem);
      top: calc(35vh - 2.5rem);
 }
-
 
 .academics-info{
      // background: blue;
@@ -1116,12 +1109,13 @@ input:checked + .bg-slider:before {
 
 .resume-link{
      margin-top: 0.5rem;
-     height: 2.5rem;
+     min-height: 2.5rem;
      display: flex;
+     flex-wrap: wrap;
      flex-direction: row;
      justify-content: center;
      align-items: center;
-     gap: 2rem;
+     column-gap: 2rem;
      a{
           text-decoration: none;
           color: $light-color;
@@ -1139,12 +1133,13 @@ input:checked + .bg-slider:before {
 }
 .p-source-link{
      margin-top: 1rem;
-     height: 2.5rem;
+     min-height: 2.5rem;
      display: flex;
+     flex-wrap: wrap;
      flex-direction: row;
      justify-content: center;
      align-items: center;
-     gap: 2rem;
+     column-gap: 2rem;
      a{
           text-decoration: none;
           color: $light-color;
@@ -1169,20 +1164,26 @@ input:checked + .bg-slider:before {
      .home.active{
           color: $dark-color;
           background: $light-color;
-          // box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.05),
-          //      6px 6px 15px rgba(0, 0, 0, 0.5);
+          box-shadow: -6px -6px 20px rgba(255, 255, 255, 0.2),
+               6px 6px 20px rgba(70, 70, 70, 0.4);
      }
      .home-btn, .home-btn-ext, .sect-btn{
           color: $dark-color;
           background: $light-color;
-          // box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
-          //      5px 5px 15px rgba(0, 0, 0, 0.5);
+          box-shadow: -6px -6px 20px rgba(255, 255, 255, 0.2),
+               6px 6px 20px rgba(70, 70, 70, 0.4);
+     }
+     .home-btn.active, .home-btn-ext.active, .sect-btn.active{
+          box-shadow: -6px -6px 20px rgba(255, 255, 255, 0.2),
+               6px 6px 20px rgba(70, 70, 70, 0.4),
+               inset -6px -6px 20px rgba(255, 255, 255, 0.2),
+               inset 6px 6px 20px rgba(70, 70, 70, 0.4);
      }
      .node-data{
           background: $light-color;
           color: $dark-color;
-          // box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.05),
-          //      6px 6px 15px rgba(0, 0, 0, 0.5);
+          box-shadow: -6px -6px 20px rgba(255, 255, 255, 0.2),
+               6px 6px 20px rgba(70, 70, 70, 0.4);
      }
      .spec-node:hover, .spec-node.active{
           background: rgba(255, 251, 226, 0.15);
@@ -1193,6 +1194,11 @@ input:checked + .bg-slider:before {
      .skill-cat-nodule{
           background: $dark-color;
           color: $light-color;
+     }
+     .skill-cat-nodule:hover{
+          background: #002c37;
+          box-shadow:  0px 0px 10px #002c37;
+          color: $accent-color;
      }
      .fa-times-circle-o{
           color: $dark-color;
@@ -1212,9 +1218,11 @@ input:checked + .bg-slider:before {
      }
 }
 
-
 // ----- Responsive Design - Tablet -----
 @media screen and (max-width: 900px){
+     .layout-ctrl-cont{
+          display: none;
+     }
      // .timeline{
      //      // margin: 50px auto;
      // }
@@ -1227,8 +1235,8 @@ input:checked + .bg-slider:before {
      .node-cont{
           // width: 100%;
           // width: calc(350px - 60px);
-          padding-left: 80px;
-          padding-right: 25px;
+          // padding-left: 80px;
+          // padding-right: 25px;
           // padding: 5px 30px;
           // font-size: 13px;
      }
@@ -1263,15 +1271,11 @@ input:checked + .bg-slider:before {
           top: 7vh;
           right: 15vw;
      }
-     .layout-ctrl-cont{
-          display: none;
-     }
      .home{
           display: none;
      }
      .home.active{
           display: grid;
-          // background: yellowgreen;
           height: 75vh;
           top: 5vh;
      }
@@ -1296,28 +1300,24 @@ input:checked + .bg-slider:before {
           }
           left: calc(15% - 2rem);
      }
-     .acad-btn{
-          left: calc(32.5% - 2rem) !important;
-          // background: red;
+     .acad-btn, .acad-btn.side-btn{
+          left: calc(32.5% - 2rem);
      }
-     .skill-btn{
-          left: calc(50% - 2rem) !important;
+     .skill-btn, .skill-btn.side-btn{
+          left: calc(50% - 2rem);
      }
-     .proj-btn{
-          left: calc(67.5% - 2rem) !important;
+     .proj-btn, .proj-btn.side-btn{
+          left: calc(67.5% - 2rem);
      }
-     .contact-btn{
-          left: calc(85% - 2rem) !important;
+     .contact-btn, .contact-btn.side-btn{
+          left: calc(85% - 2rem);
      }
-     .home-btn-ext, .sect-btn{
+     .home-btn-ext, .sect-btn, .sect-btn.side-btn{
           box-shadow: none;
-          // box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1),
-          //      2px 2px 6px rgba(0, 0, 0, 0.8);
-          
           border-radius: 50%;
           width: 4rem;
           height: 4rem;
-          top: 83.5vh !important;
+          top: 83.5vh;
 
           i{
                align-self: end;
@@ -1332,6 +1332,11 @@ input:checked + .bg-slider:before {
                height: 0.8rem;
                font-size: 0.6rem;
                // display: none;
+          }
+     }
+     .light-mode {
+          .home-btn, .home-btn-ext, .sect-btn{
+               box-shadow: none;
           }
      }
      .home-btn-ext.active{
@@ -1377,19 +1382,13 @@ input:checked + .bg-slider:before {
           font-size: 1.5rem;
      }
 
-     .timeline{
-          width: fit-content;
+     .timeline, .new-timeline{
+          width: 100%;
      }
-
-     .timeline::after{
+     .timeline::after, .new-timeline::after{
           width: 4px;
           left: 0;
      }
-     .new-timeline::after{
-          width: 4px;
-          left: 0;
-     }
-
      .left-node .node-point, .right-node .node-point {
           width: 20px;
           height: 20px;
@@ -1401,7 +1400,7 @@ input:checked + .bg-slider:before {
           left: 12px;
      }
      .node-cont{
-          padding-left: 25px;
+          // padding-left: 25px;
           padding-right: 0;
           width: calc(100% - 25px);
      }
@@ -1467,6 +1466,12 @@ input:checked + .bg-slider:before {
      }
      .proj-head h2{
           font-size: 1.25rem;
+     }
+     .resume-link, .p-source-link{
+          justify-content: start;
+          margin-bottom: 0.25rem;
+          p{ margin: 0;}
+          a{ margin: 0;}
      }
 }
 
