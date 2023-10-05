@@ -1179,6 +1179,10 @@ input:checked + .bg-slider:before {
                inset -6px -6px 20px rgba(255, 255, 255, 0.2),
                inset 6px 6px 20px rgba(70, 70, 70, 0.4);
      }
+     .sect.active .sect-data{
+          box-shadow: -6px -6px 20px rgba(255, 255, 255, 0.2),
+               6px 6px 20px rgba(70, 70, 70, 0.4);
+     }
      .node-data{
           background: $light-color;
           color: $dark-color;

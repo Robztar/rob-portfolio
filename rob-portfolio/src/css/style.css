@@ -1104,6 +1104,9 @@ input:checked + .bg-slider:before {
 .light-mode .home-btn.active, .light-mode .home-btn-ext.active, .light-mode .sect-btn.active {
   box-shadow: -6px -6px 20px rgba(255, 255, 255, 0.2), 6px 6px 20px rgba(70, 70, 70, 0.4), inset -6px -6px 20px rgba(255, 255, 255, 0.2), inset 6px 6px 20px rgba(70, 70, 70, 0.4);
 }
+.light-mode .sect.active .sect-data {
+  box-shadow: -6px -6px 20px rgba(255, 255, 255, 0.2), 6px 6px 20px rgba(70, 70, 70, 0.4);
+}
 .light-mode .node-data {
   background: #868686;
   color: #00252e;
