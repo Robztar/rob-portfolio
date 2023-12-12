@@ -31,6 +31,7 @@ $light-color: #868686;
 $accent-color: #ff00ff;
 // $light-color: #ffffffaa;
 // $accent-color: yellowgreen;
+// $accent-color: palevioletred;
 
 
 // @media (prefers-color-scheme: light) {
@@ -63,8 +64,6 @@ $accent-color: #ff00ff;
 
 
 
-// ----- Good Stuff
-
 body{
      margin: 0;
      background: $dark-color;
@@ -72,13 +71,94 @@ body{
      overflow: hidden;
 }
 
-.bg-ctrl-cont{
+// ---- Floating Menu ----
+.float-menu-cont{
      // background: red;
      position: absolute;
-     top: 7.5vh;
-     right: 2.5vw;
+     top: 6.5vh;
+     right: 3.75vw;
      z-index: 10;
 
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     column-gap: 0.3rem;
+     border-radius: 4px;
+     box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1),
+          2px 2px 6px rgba(0, 0, 0, 0.8);
+     backdrop-filter: blur(2px);
+}
+.float-menu-cont.active{
+     width: 20rem;
+     height: 20rem;
+     display: flex;
+     align-items: flex-end;
+     justify-content: start;
+     border-radius: 10px;
+     background: rgba(255, 255, 255, 0.05);
+     box-shadow: 0px 0px 12px rgba(255, 0, 255, 0.1);
+}
+// Menu toggle (Hamburger Style)
+.menu-toggle{
+     // background: blueviolet;
+     height: 3rem;
+     width: 3rem;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+}
+
+.tripbar{
+     width: 2rem;
+     height: 1.5px;
+     border-radius: 2px;
+     background: $light-color;
+     transition: 0.5s;
+     position: relative;
+}
+.tripbar:before, .tripbar:after{
+     content: "";
+     position: absolute;
+     width: inherit;
+     height: inherit;
+     background: $light-color;
+     transition: 0.5s;
+     transform: translateY(-10px);
+}
+.tripbar:after{
+     transform: translateY(10px);
+}
+.menu-toggle.active .tripbar{
+     transition: 0.5s;
+     transform: rotate(360deg);
+     background-color: transparent;
+}
+.menu-toggle.active .tripbar:before{
+     transition: 0.5s;
+     transform: translateY(0) rotate(45deg);
+}
+.menu-toggle.active .tripbar:after{
+     transform: translateY(0) rotate(-45deg);
+}
+
+// Menu Body
+.menu-body{
+     display: none;
+}
+.float-menu-cont.active .menu-body{
+     // background: palevioletred;
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 1rem;
+}
+
+// Background Slider
+.bg-ctrl{
+     // background: teal;
      display: flex;
      align-items: center;
      justify-content: center;
@@ -87,7 +167,6 @@ body{
           color: $accent-color;
      }
 }
-
 .bg-toggle{
      position: relative;
      display: inline-block;
@@ -124,23 +203,16 @@ body{
      background: $dark-color;
      transition: 1s;
 }
-
 input:checked + .bg-slider {
      background: $dark-color;
 }
-
 input:checked + .bg-slider:before {
      background: $light-color;
      transform: translateX(31px);
 }
 
+// Layout Controller
 .layout-ctrl-cont{
-     position: absolute;
-     top: 7.5vh;
-     right: 50vw;
-     left: 50vw;
-     z-index: 10;
-
      display: flex;
      align-items: center;
      justify-content: center;
@@ -164,19 +236,24 @@ input:checked + .bg-slider:before {
           inset 2px 2px 6px rgba(0, 0, 0, 0.8);
      transition: 0.5s;
 }
-.bg-ctrl-cont.light-mode{
-     .bg-slider {
-          box-shadow: -6px -6px 20px rgba(255, 255, 255, 0.2),
-               6px 6px 20px rgba(70, 70, 70, 0.4),
-               inset -6px -6px 20px rgba(255, 255, 255, 0.2),
-               inset 6px 6px 20px rgba(70, 70, 70, 0.4);
-     }
-     i{ color: $dark-color;}
-     i.active{
-          color: $accent-color;
-     }
-}
+
+// Floating Menu - lightmode
 .light-mode{
+     .tripbar, .tripbar:before, .tripbar:after{
+          background: $dark-color;
+     }
+     .bg-ctrl{
+          .bg-slider {
+               box-shadow: -6px -6px 20px rgba(255, 255, 255, 0.2),
+                    6px 6px 20px rgba(70, 70, 70, 0.4),
+                    inset -6px -6px 20px rgba(255, 255, 255, 0.2),
+                    inset 6px 6px 20px rgba(70, 70, 70, 0.4);
+          }
+          i{ color: $dark-color;}
+          i.active{
+               color: $accent-color;
+          }
+     }
      .layout-ctrl{
           background: $light-color;
           color: $dark-color;
@@ -1227,22 +1304,11 @@ input:checked + .bg-slider:before {
      .layout-ctrl-cont{
           display: none;
      }
-     // .timeline{
-     //      // margin: 50px auto;
-     // }
      .timeline::after{
           left: 31px;
      }
      .new-timeline::after{
           left: 31px;
-     }
-     .node-cont{
-          // width: 100%;
-          // width: calc(350px - 60px);
-          // padding-left: 80px;
-          // padding-right: 25px;
-          // padding: 5px 30px;
-          // font-size: 13px;
      }
      .right-node{
           left: 0;
@@ -1271,8 +1337,8 @@ input:checked + .bg-slider:before {
           height: 0.1rem;
           border-radius: 3px;
      }
-     .bg-ctrl-cont{
-          top: 7vh;
+     .float-menu-cont{
+          top: 6vh;
           right: 15vw;
      }
      .home{

@@ -30,18 +30,101 @@ body {
   overflow: hidden;
 }
 
-.bg-ctrl-cont {
+.float-menu-cont {
   position: absolute;
-  top: 7.5vh;
-  right: 2.5vw;
+  top: 6.5vh;
+  right: 3.75vw;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 0.3rem;
+       column-gap: 0.3rem;
+  border-radius: 4px;
+  box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1), 2px 2px 6px rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+
+.float-menu-cont.active {
+  width: 20rem;
+  height: 20rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: start;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 12px rgba(255, 0, 255, 0.1);
+}
+
+.menu-toggle {
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.tripbar {
+  width: 2rem;
+  height: 1.5px;
+  border-radius: 2px;
+  background: #868686;
+  transition: 0.5s;
+  position: relative;
+}
+
+.tripbar:before, .tripbar:after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background: #868686;
+  transition: 0.5s;
+  transform: translateY(-10px);
+}
+
+.tripbar:after {
+  transform: translateY(10px);
+}
+
+.menu-toggle.active .tripbar {
+  transition: 0.5s;
+  transform: rotate(360deg);
+  background-color: transparent;
+}
+
+.menu-toggle.active .tripbar:before {
+  transition: 0.5s;
+  transform: translateY(0) rotate(45deg);
+}
+
+.menu-toggle.active .tripbar:after {
+  transform: translateY(0) rotate(-45deg);
+}
+
+.menu-body {
+  display: none;
+}
+
+.float-menu-cont.active .menu-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bg-ctrl {
   display: flex;
   align-items: center;
   justify-content: center;
   -moz-column-gap: 0.3rem;
        column-gap: 0.3rem;
 }
-.bg-ctrl-cont i.active {
+.bg-ctrl i.active {
   color: #ff00ff;
 }
 
@@ -92,11 +175,6 @@ input:checked + .bg-slider:before {
 }
 
 .layout-ctrl-cont {
-  position: absolute;
-  top: 7.5vh;
-  right: 50vw;
-  left: 50vw;
-  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,16 +201,18 @@ input:checked + .bg-slider:before {
   transition: 0.5s;
 }
 
-.bg-ctrl-cont.light-mode .bg-slider {
+.light-mode .tripbar, .light-mode .tripbar:before, .light-mode .tripbar:after {
+  background: #00252e;
+}
+.light-mode .bg-ctrl .bg-slider {
   box-shadow: -6px -6px 20px rgba(255, 255, 255, 0.2), 6px 6px 20px rgba(70, 70, 70, 0.4), inset -6px -6px 20px rgba(255, 255, 255, 0.2), inset 6px 6px 20px rgba(70, 70, 70, 0.4);
 }
-.bg-ctrl-cont.light-mode i {
+.light-mode .bg-ctrl i {
   color: #00252e;
 }
-.bg-ctrl-cont.light-mode i.active {
+.light-mode .bg-ctrl i.active {
   color: #ff00ff;
 }
-
 .light-mode .layout-ctrl {
   background: #868686;
   color: #00252e;
@@ -1180,8 +1260,8 @@ input:checked + .bg-slider:before {
     height: 0.1rem;
     border-radius: 3px;
   }
-  .bg-ctrl-cont {
-    top: 7vh;
+  .float-menu-cont {
+    top: 6vh;
     right: 15vw;
   }
   .home {

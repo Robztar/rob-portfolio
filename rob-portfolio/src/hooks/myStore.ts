@@ -3,11 +3,13 @@ import {persist} from 'zustand/middleware'
 
 // abstraction for the state properties and methods
 interface WindState {
+     menu: boolean
      elem: string
      yearLine: string
      techSkill: string
      softSkill: string
      activeProj: string
+     switchMenu: () => void
      setElem: (by: string) => void
      initWind: () => void
      setYLine: (by: string) => void
@@ -24,17 +26,21 @@ interface UIState {
 
 // store for the window configuration states
 export const windStore = create<WindState>()((set) => ({
+     menu: false,
      elem: 'home',  // stores the selected window
      yearLine: '',  // stores the selected academic year
      techSkill: '',  // 
      softSkill: '',  // 
      activeProj: '',  // 
+     switchMenu: () =>{
+          set((state) => ({menu: !state.menu }))
+     },
      setElem: (newElem) => {
           set(() => ({ elem: newElem }))
           console.log('store is working. elem is now: '+ newElem)
      }, // activates the selected window
      initWind: () => {
-          set(() => ({ yearLine:'', techSkill:'', softSkill:'', activeProj: '' }))
+          set(() => ({ menu: false, yearLine: '', techSkill: '', softSkill: '', activeProj: '' }))
           console.log('reset all')
      }, // resets all wind attributes
      setYLine: (newYLine) => set(() => ({ yearLine: newYLine })), // 

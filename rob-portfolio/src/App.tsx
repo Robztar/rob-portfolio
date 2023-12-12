@@ -1,35 +1,37 @@
-import { uiStore } from './hooks/myStore'
+import { windStore,uiStore } from './hooks/myStore'
 
 import { Default } from './components/PageFormats/Default'
-import { Simplified } from './components/PageFormats/Simplified';
-import { Emulator } from './components/PageFormats/Emulator';
+import { Simplified } from './components/PageFormats/Simplified'
+import { Emulator } from './components/PageFormats/Emulator'
 
 
 function App() {
+  const {menu, switchMenu} = windStore();
   const {pageFormat, bgDark, setFormat, switchBG } = uiStore();
-  // default /or/ simple /or/ emulator
 
+  {/* Background Colour Mode Selector */}
   const BGCtrl = () =>{
-      return(
-        <div className={`bg-ctrl-cont ${bgDark? '': 'light-mode'}`}>
-          <i className={`far fa-sun ${bgDark? '': 'active'}`}></i>
-          <label className="bg-toggle">
-            <input 
-              type="checkbox" 
-              checked={bgDark ? true : false}
-              onClick={()=>{
-                switchBG();
-              }}
-            />
-            <span className="bg-slider"></span>
-          </label> 
-          <i className={`far fa-moon ${bgDark? 'active': ''}`}></i>
-        </div>
-      )
+    return(
+      <div className='bg-ctrl'>
+        <i className={`far fa-sun ${bgDark? '': 'active'}`}></i>
+        <label className="bg-toggle">
+          <input 
+            type="checkbox" 
+            checked={bgDark ? true : false}
+            onClick={()=>{
+              switchBG();
+            }}
+          />
+          <span className="bg-slider"></span>
+        </label> 
+        <i className={`far fa-moon ${bgDark? 'active': ''}`}></i>
+      </div>
+    )
   }
+  {/* Layout Mode Controller */}
   const LayoutCtrl = () =>{
       return(
-        <div className={`layout-ctrl-cont ${bgDark? '': 'light-mode'}`}>
+        <div className='layout-ctrl-cont'>
           <div 
             className={`layout-ctrl ${pageFormat === 'default'?'active':''}`}
             onClick={()=>{
@@ -55,13 +57,31 @@ function App() {
       )
   }
 
+  const UICtrlr = () =>{
+      return(
+        <div className={`float-menu-cont ${menu? 'active': ''} ${bgDark? '': 'light-mode'}`}>
+          <div 
+            className={`menu-toggle ${menu? 'active': ''}`}
+            onClick={()=>{
+                switchMenu();
+            }}
+          >
+            <div className='tripbar'></div>
+          </div>
+          <div className='menu-body'>
+            <BGCtrl />
+            <LayoutCtrl />
+          </div>
+        </div>
+      )
+  }
+
 
   if(pageFormat === 'default'){
     return ( 
       <>
-        <BGCtrl />
-        <LayoutCtrl />
-        <Default /> 
+        <UICtrlr />
+        <Default />
       </>
       
     )
@@ -69,8 +89,7 @@ function App() {
   else if(pageFormat === 'simple'){
     return ( 
       <>
-        <BGCtrl />
-        <LayoutCtrl />
+        <UICtrlr />
         <Simplified />
       </> 
     )
@@ -78,8 +97,7 @@ function App() {
   else if(pageFormat === 'emulator'){
     return ( 
       <>
-        <BGCtrl />
-        <LayoutCtrl />
+        <UICtrlr />
         <Emulator /> 
       </>
     )
@@ -92,35 +110,3 @@ function App() {
 }
 
 export default App
-
-
-// function App() {
-//   const [count, setCount] = useState(0)
-
-//   return (
-//     <div className="App">
-//       <div>
-//         <a href="https://vitejs.dev" target="_blank" title='Click to learn more'>
-//           <img src="/vite.svg" className="logo" alt="Vite logo" />
-//         </a>
-//         <a href="https://reactjs.org" target="_blank" title='Click to learn more'>
-//           <img src={reactLogo} className="logo react" alt="React logo" />
-//         </a>
-//       </div>
-//       <h1>Vite + React</h1>
-//       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
-//           count is {count}
-//         </button>
-//         <p>
-//           <code>src/App.tsx</code> Has been edited... HMR works!
-//         </p>
-//       </div>
-//       <p className="read-the-docs">
-//         Click on the Vite and React logos to learn more
-//       </p>
-//     </div>
-//   )
-// }
-
-// export default App
