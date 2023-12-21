@@ -27,6 +27,7 @@ export const Skills = () =>{
                     <div className="sect-data">
                          <h1 className="sect-title">Skills</h1>
                          <div className="skill-info">
+                              {/* Technical */}
                               <div 
                                    className={`skill-cat ${techSkill}`}
                                    onClick={ () =>{
@@ -59,8 +60,12 @@ export const Skills = () =>{
                                         <div className='skill-cat-nodule'>React.js</div>
                                         <div className='skill-cat-nodule'>TypeScript</div>
                                         <div className='skill-cat-nodule'>Figma</div>
+                                        <div className='skill-cat-nodule'>PHP</div>
+                                        <div className='skill-cat-nodule'>MySQL</div>
+                                        <div className='skill-cat-nodule'>GitHub</div>
                                    </div>
                               </div>
+                              {/* Soft */}
                               <div 
                                    className={`skill-cat ${softSkill}`}
                                    onClick={ () =>{

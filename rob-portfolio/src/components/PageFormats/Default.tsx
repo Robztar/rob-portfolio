@@ -1,4 +1,5 @@
 import { uiStore } from '../../hooks/myStore'
+import '../../css/default.css'
 
 import { Home } from '../Data/Home'
 import { Academics } from "../Data/Academics"

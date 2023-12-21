@@ -35,7 +35,7 @@ export const Projects = () =>{
                               {/* GroundUp */}
                               <div 
                                    className={`
-                                        proj-card 
+                                        proj-card src-card
                                         ${activeProj === '1'? 'active' : ''} 
                                         ${activeProj !== '1' && activeProj !== '' ? 'inactive' : ''}
                                    `}
@@ -248,7 +248,6 @@ export const Projects = () =>{
                                         </table>
                                    </div>
                               </div>
-
                          </div>
                     </div>
                </div>

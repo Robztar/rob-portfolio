@@ -73,7 +73,7 @@ export const Contact = () =>{
                                    </tr>
                               </table>
                               <div className='resume-link'>
-                                   <p>Here is a link to Robert's Resume:</p>
+                                   <p>Here is a link to Robert's Primary Resume:</p>
                                    <a href={MyResume} target="_blank">My Resume</a>
                               </div>
                               <small>&emsp; Last Updated: October 3, 2023</small>

@@ -1,4 +1,5 @@
 import { uiStore } from '../../hooks/myStore'
+import '../../css/emul.css'
 
 import { Home } from '../Data/Home'
 import { Academics } from "../Data/Academics"
@@ -11,10 +12,15 @@ export const Emulator = () =>{
 
      return(
           <div className={`def-cont ${bgDark? '': 'light-mode'}`}>
-               <div className='emulator-cont'>
+               This view is still in development...
+               <div className='emul-cont'>
                     <div className='mobile-frame'>
                          <div className='mobile-screen-area'>
-                              This view is still in development...
+                              <Home />
+                              <Academics />
+                              <Skills />
+                              <Projects />
+                              <Contact />
                          </div>
                     </div>
                </div>
