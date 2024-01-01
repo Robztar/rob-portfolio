@@ -89,8 +89,8 @@ function App() {
   else if(pageFormat === 'simple'){
     return ( 
       <>
-        <UICtrlr />
-        <Simplified />
+        {/* <UICtrlr /> */}
+        <Simplified UICtrlr={UICtrlr} BGCtrl={BGCtrl} />
       </> 
     )
   }

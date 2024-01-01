@@ -467,6 +467,7 @@ $accent-color: #ff00ff;
 
 .skill-info{
      // background: blue;
+     overflow-y: hidden;
      padding: 1rem;
      display: flex;
      flex-wrap: wrap;
@@ -507,6 +508,7 @@ $accent-color: #ff00ff;
      // background: green;
      height: 90%;
      width: 85%;
+     overflow-y: auto;
      transition: 0.5s;
      i{
           display: grid;
@@ -856,6 +858,7 @@ $accent-color: #ff00ff;
 }
 .contact-info{
      // background: blue;
+     overflow-y: auto;
      padding: 1rem;
      display: flex;
      flex-direction: column;
@@ -902,8 +905,8 @@ $accent-color: #ff00ff;
 }
 
 .resume-link{
+     // background-color: orange;
      margin-top: 0.5rem;
-     min-height: 2.5rem;
      display: flex;
      flex-wrap: wrap;
      flex-direction: row;
@@ -927,7 +930,6 @@ $accent-color: #ff00ff;
 }
 .p-source-link{
      margin-top: 1rem;
-     min-height: 2.5rem;
      display: flex;
      flex-wrap: wrap;
      flex-direction: row;

@@ -76,7 +76,7 @@ export const Contact = () =>{
                                    <p>Here is a link to Robert's Primary Resume:</p>
                                    <a href={MyResume} target="_blank">My Resume</a>
                               </div>
-                              <small>&emsp; Last Updated: October 3, 2023</small>
+                              <small>&emsp; Last Updated: January 1, 2024</small>
                               <div className='p-source-link'>
                                    <p>Here is a link to the source code of this website:</p>
                                    <a href='https://github.com/Robztar/rob-portfolio' target="_blank">Source Code</a>

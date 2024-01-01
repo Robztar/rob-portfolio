@@ -12,7 +12,6 @@ export const Emulator = () =>{
 
      return(
           <div className={`def-cont ${bgDark? '': 'light-mode'}`}>
-               This view is still in development...
                <div className='emul-cont'>
                     <div className='mobile-frame'>
                          <div className='mobile-screen-area'>
