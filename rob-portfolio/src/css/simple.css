@@ -21,7 +21,7 @@
   justify-content: space-around;
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
-  transition: 0.25s;
+  transition: 0.5s;
 }
 .sidebar-cont .line {
   width: 55%;
@@ -29,9 +29,63 @@
   background: #868686;
 }
 
-.sidebar-cont:hover {
-  width: 10rem;
+.side-ui-sel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.side-bg-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+}
+.side-bg-icon i.active {
+  color: #ff00ff;
+}
+
+.sidebar-cont .bg-ctrl {
+  display: none;
+}
+
+.side-layout-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff00ff;
+  height: 4rem;
+}
+
+.side-layout-sel {
+  display: none;
+}
+
+.side-layout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 7px;
   transition: 0.25s;
+  cursor: pointer;
+}
+
+.side-layout-btn:hover {
+  box-shadow: 0 0 10px 2px rgba(134, 134, 134, 0.1490196078);
+  transition: 0.25s;
+}
+
+.side-layout-btn.active {
+  color: #ff00ff;
+  box-shadow: 0 0 10px 5px rgba(134, 134, 134, 0.2470588235);
+  height: 0.5rem;
+  width: auto;
+  padding: 1rem;
+  border-radius: 15px;
 }
 
 .side-page-sel {
@@ -43,30 +97,78 @@
   justify-content: space-around;
   gap: 1rem;
 }
-.side-page-sel div {
+
+.side-page-btn {
   height: 4rem;
   width: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: #868686;
+  transition: 0.25s;
+}
+.side-page-btn .side-page-label {
+  display: none;
 }
 
-.side-layout-sel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  gap: 1rem;
+.side-page-btn:hover {
+  box-shadow: 0 0 10px 3px rgba(134, 134, 134, 0.1490196078);
+  padding: 0 1.5rem;
+  border-radius: 10px;
+  transition: 0.25s;
 }
-.side-layout-sel div {
+
+.side-page-btn.active .side-page-icon {
+  color: #ff00ff;
+}
+
+.sidebar-cont:hover {
+  width: 15rem;
+  transition: 0.5s;
+}
+.sidebar-cont:hover .side-bg-icon {
+  display: none;
+}
+.sidebar-cont:hover .bg-ctrl {
+  display: flex;
   height: 4rem;
+}
+.sidebar-cont:hover .side-layout-icon {
+  display: none;
+}
+.sidebar-cont:hover .side-layout-sel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  gap: 0.5rem;
+}
+.sidebar-cont:hover .side-page-btn {
+  width: auto;
+}
+.sidebar-cont:hover .side-page-btn .side-page-label {
+  display: flex;
+}
+.sidebar-cont:hover .side-page-btn.active {
+  box-shadow: 0 0 10px 5px rgba(134, 134, 134, 0.2470588235);
+  padding: 0 2rem;
+  border-radius: 20px;
+  transition: 0.25s;
 }
 
 .mainbody-cont {
-  background: palevioletred;
   position: relative;
   left: 5rem;
   height: 100vh;
   width: calc(100vw - 5rem);
   overflow-y: auto;
+}
+
+.light-mode .side-page-btn a {
+  color: #00252e;
+}
+.light-mode .side-page-btn {
+  color: #00252e;
 }/*# sourceMappingURL=simple.css.map */

@@ -90,7 +90,7 @@ function App() {
     return ( 
       <>
         {/* <UICtrlr /> */}
-        <Simplified UICtrlr={UICtrlr} BGCtrl={BGCtrl} />
+        <Simplified BGCtrl={BGCtrl} />
       </> 
     )
   }

@@ -7,7 +7,6 @@ $accent-color: #ff00ff;
 // $accent-color: yellowgreen;
 // $accent-color: palevioletred;
 
-// !!! To redo ALL of this css !!!
 .simp-cont{
      // background: green;
      height: 100vh;
@@ -36,13 +35,58 @@ $accent-color: #ff00ff;
           height: 1px;
           background: $light-color;
      }
+     transition: 0.5s;
+}
+
+.side-ui-sel{
+     // background: blueviolet;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-around;
+     gap: 1rem;
+}
+.side-bg-icon{ 
+     display: flex; 
+     align-items: center;
+     justify-content: center;
+     height: 4rem;
+     i.active{ color: $accent-color;}
+}
+.sidebar-cont .bg-ctrl{ display: none;}
+
+.side-layout-icon{ 
+     display: flex; 
+     align-items: center;
+     justify-content: center;
+     color: $accent-color;
+     height: 4rem;
+}
+.side-layout-sel{ display: none;}
+.side-layout-btn{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     // background: red;
+     height: 2rem ;
+     width: 2rem ;
+     border-radius: 7px;
+     transition: 0.25s;
+     cursor: pointer;
+}
+.side-layout-btn:hover{
+     box-shadow: 0 0 10px 2px #86868626;
      transition: 0.25s;
 }
-.sidebar-cont:hover{
-     // width: auto;
-     width: 10rem;
-     transition: 0.25s;
+.side-layout-btn.active{
+     color: $accent-color;
+     box-shadow: 0 0 10px 5px #8686863f;
+     height: 0.5rem;
+     width: auto;
+     padding: 1rem;
+     border-radius: 15px;
 }
+
 .side-page-sel{
      // background: blue;
      height: fit-content;
@@ -51,35 +95,75 @@ $accent-color: #ff00ff;
      align-items: center;
      justify-content: space-around;
      gap: 1rem;
-     div{
-          // background: red;
+}
+.side-page-btn{
+     // background: red;
+     height: 4rem;
+     width: 4rem;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 1rem;
+     text-decoration: none;
+     color: $light-color;
+     
+     .side-page-label{display: none;}
+     transition: 0.25s;
+}
+.side-page-btn:hover{
+     box-shadow: 0 0 10px 3px #86868626;
+     padding: 0 1.5rem;
+     border-radius: 10px;
+     transition: 0.25s;
+}
+.side-page-btn.active .side-page-icon{color: $accent-color;}
+
+.sidebar-cont:hover{
+     // width: auto;
+     width: 15rem;
+     // border: solid 1px black;
+     transition: 0.5s;
+     .side-bg-icon{ display: none;}
+     .bg-ctrl{ 
+          display: flex;
           height: 4rem;
-          width: 4rem;
+     }
+     .side-layout-icon{ display: none;}
+     .side-layout-sel{ 
           display: flex;
           align-items: center;
           justify-content: center;
-     }
-}
-.side-layout-sel{
-     // background: blueviolet;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: space-around;
-     gap: 1rem;
-     div{
-          // background: red;
           height: 4rem;
+          gap: 0.5rem;
+     }
+     .side-page-btn{
+          width: auto;
+          .side-page-label{display: flex;}
+     }
+     .side-page-btn.active{ 
+          box-shadow: 0 0 10px 5px #8686863f;
+          padding: 0 2rem;
+          border-radius: 20px;
+          transition: 0.25s;
      }
 }
+
+
 .mainbody-cont{
-     background: palevioletred;
+     // background: palevioletred;
      position: relative;
      left: 5rem;
      height: 100vh;
      width: calc(100vw - 5rem);
      overflow-y: auto;
 }
+
+.light-mode{
+     .side-page-btn a{color: $dark-color;}
+     .side-page-btn{color: $dark-color;}
+}
+// !!! To redo ALL of this css !!!
+
 // .simp-cont{
 
 //      // // -- Home Sect --
