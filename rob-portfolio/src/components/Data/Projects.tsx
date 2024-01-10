@@ -23,8 +23,8 @@ export const Projects = () =>{
                     className={`projects sect ${state===true?'active':''} ${projSide===true?'side-sect':''}`}
                     onClick={ () =>{
                               if(state === false){
-                                   setElem('projects')
-                                   initWind()
+                                   // setElem('projects')
+                                   // initWind()
                               }
                          }
                     }

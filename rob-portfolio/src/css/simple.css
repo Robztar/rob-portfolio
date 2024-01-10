@@ -19,6 +19,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  background: rgba(0, 0, 0, 0.08);
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
   transition: 0.5s;
@@ -122,6 +123,11 @@
 
 .side-page-btn.active .side-page-icon {
   color: #ff00ff;
+  border-bottom: solid 1px #ff00ff;
+}
+
+.side-page-btn.active .side-page-label {
+  border-bottom: solid 1px #ff00ff;
 }
 
 .sidebar-cont:hover {
@@ -164,6 +170,57 @@
   height: 100vh;
   width: calc(100vw - 5rem);
   overflow-y: auto;
+}
+.mainbody-cont .page-sect {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainbody-cont .home, .mainbody-cont .home.active {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 80%;
+  height: 55vh;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.05), 6px 6px 15px rgba(0, 0, 0, 0.5);
+}
+.mainbody-cont .home .home-data, .mainbody-cont .home .home-data.active, .mainbody-cont .home.active .home-data, .mainbody-cont .home.active .home-data.active {
+  display: grid;
+  grid-template-rows: 40% auto;
+  height: 100%;
+  width: 100%;
+}
+.mainbody-cont .sect, .mainbody-cont .sect.active {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.mainbody-cont .sect .sect-data, .mainbody-cont .sect.active .sect-data {
+  display: grid;
+  grid-template-rows: 15% auto;
+  row-gap: 0.5rem;
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05), 5px 5px 15px rgba(0, 0, 0, 0.5);
+  height: 90%;
+  width: 95%;
+  overflow: auto;
+  opacity: 1;
+  margin: 0;
+  padding: 0.5rem;
+  animation: 0.25s acadActivate forwards;
+}
+.mainbody-cont .home-btn, .mainbody-cont .sect-btn {
+  display: none;
 }
 
 .light-mode .side-page-btn a {

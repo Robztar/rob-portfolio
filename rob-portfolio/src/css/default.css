@@ -133,7 +133,6 @@
   box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05), 5px 5px 15px rgba(0, 0, 0, 0.5);
   height: 90%;
   width: calc(91% - 5rem);
-  overflow: auto;
   opacity: 1;
   margin-left: 3%;
   margin-right: calc(6% + 5rem);
@@ -611,7 +610,7 @@
 
 .proj-info {
   margin: 0;
-  height: 75vh;
+  height: 74vh;
   padding: 0.25rem;
   overflow-y: auto;
   display: flex;
@@ -675,7 +674,6 @@
   width: 80vw;
   align-items: center;
   border-radius: 0;
-  padding: 0.4rem;
   transition: 0.5s;
   cursor: default;
 }

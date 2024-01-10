@@ -50,15 +50,15 @@ const SideBar = ({BGCtrl } : { BGCtrl: React.FC }) =>{
                          <div className='side-page-label'>Academics</div>
                     </a>
                     <a href='#skills' className={`side-page-btn ${elem=== 'skills' ?'active':''}`}>
-                         <div className='side-page-icon'>S</div>
+                         <div className='side-page-icon'><i className="fa-solid fa-gears"></i></div>
                          <div className='side-page-label'>Skills</div>
                     </a>
                     <a href='#projects' className={`side-page-btn ${elem=== 'projects' ?'active':''}`}>
-                         <div className='side-page-icon'>P</div>
+                         <div className='side-page-icon'><i className="fa-solid fa-list"></i></div>
                          <div className='side-page-label'>Projects</div>
                     </a>
-                    <a href='#contacts' className={`side-page-btn ${elem=== 'contacts' ?'active':''}`}>
-                         <div className='side-page-icon'>C</div>
+                    <a href='#contacts' className={`side-page-btn ${elem=== 'contact' ?'active':''}`}>
+                         <div className='side-page-icon'><i className="fa-solid fa-address-card"></i></div>
                          <div className='side-page-label'>Contacts</div>
                     </a>
                </div>
@@ -70,7 +70,8 @@ const MainBody = () =>{
      return(
           <div className='mainbody-cont'>
                <div 
-                    // style={{height:'100vh',background:'red'}} 
+                    className='page-sect'
+                    id='home'
                     onMouseEnter={()=>{
                     if(elem !== 'home'){
                          setElem('home')
@@ -79,17 +80,50 @@ const MainBody = () =>{
                }}>
                     <Home />
                </div>
-               <div onMouseEnter={()=>{
+               <div 
+                    className='page-sect'
+                    id='academics'
+                    onMouseEnter={()=>{
                     if(elem !== 'academics'){
-                         // setElem('academics')
-                         // initWind()
+                         setElem('academics')
+                         initWind()
                     }
                }}>
                     <Academics />
                </div>
-               <Skills />
-               <Projects />
-               <Contact />
+               <div 
+                    className='page-sect'
+                    id='skills'
+                    onMouseEnter={()=>{
+                    if(elem !== 'skills'){
+                         setElem('skills')
+                         initWind()
+                    }
+               }}>
+                    <Skills />
+               </div>
+               <div 
+                    className='page-sect'
+                    id='projects'
+                    onMouseEnter={()=>{
+                    if(elem !== 'projects'){
+                         setElem('projects')
+                         initWind()
+                    }
+               }}>
+                    <Projects />
+               </div>
+               <div 
+                    className='page-sect'
+                    id='contacts'
+                    onMouseEnter={()=>{
+                    if(elem !== 'contact'){
+                         setElem('contact')
+                         initWind()
+                    }
+               }}>
+                    <Contact />
+               </div>
           </div>
      )
 }

@@ -19,8 +19,8 @@ export const Contact = () =>{
                     className={`contact sect ${state===true?'active':''} ${contactSide===true?'side-sect':''}`}
                     onClick={ () =>{
                               if(state === false){
-                                   setElem('contact')
-                                   initWind()
+                                   // setElem('contact')
+                                   // initWind()
                               }
                          }
                     }

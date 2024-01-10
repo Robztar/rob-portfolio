@@ -26,8 +26,8 @@ export const Academics = () =>{
                     className={`academics sect ${state===true?'active':''} ${acadSide===true?'side-sect':''}`}
                     onClick={ () =>{
                               if(state === false){
-                                   setElem('academics')
-                                   initWind()
+                                   // setElem('academics')
+                                   // initWind()
                               }
                          }
                     }

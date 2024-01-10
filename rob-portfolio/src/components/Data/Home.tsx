@@ -17,8 +17,8 @@ export const Home = () =>{
                     // style={homeStyle}
                     onClick={ () =>{
                               if(state === false){
-                                   setElem('home')
-                                   initWind()
+                                   // setElem('home')
+                                   // initWind()
                               }
                          }
                     }
