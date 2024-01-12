@@ -1,5 +1,5 @@
 // import { useState } from "react"
-import {windStore} from '../../hooks/myStore'
+import {uiStore, windStore} from '../../hooks/myStore'
 
 import DStruct from '../../awards/DStruct_certificate.pdf'
 import WebDev from '../../awards/WebDev_certificate.pdf'
@@ -14,6 +14,7 @@ export const Academics = () =>{
      let acadSide: boolean
 
      const { elem, yearLine, setElem, initWind, setYLine } = windStore();
+     const { pageFormat } = uiStore();
 
      if(elem === 'academics') {state = true}
      else {state= false}
@@ -38,11 +39,6 @@ export const Academics = () =>{
                               <div className={yearLine === '2023'? 'new-timeline': 'timeline'}>
                                    {/* 2018 */}
                                    <div className='node-cont left-node'>
-                                   {/* <div className={`
-                                        node-cont left-node 
-                                        ${yearLine === '2018'?'active':''}
-                                        ${yearLine !== '' && yearLine !== '2018'?'inactive':''} 
-                                   `}> */}
                                         <div 
                                              className="node-point"
                                              onClick={ () =>{
@@ -63,8 +59,8 @@ export const Academics = () =>{
                                              }}
                                         >
                                              <h2 className='acad-year'><span>2018</span> <i>Start NCU ...</i></h2>
-                                             {yearLine === '2018'?
-                                                  <p><small>Aug 28</small> - Start attending the Northern Caribbean University</p>
+                                             {yearLine === '2018' || pageFormat === 'simple'?
+                                                  <p className='node-body'><small>Aug 28</small> - Start attending the Northern Caribbean University</p>
                                              :''}
                                         </div>
                                    </div>
@@ -92,8 +88,8 @@ export const Academics = () =>{
                                         >
                                              <h2 className='acad-year'><span>2019</span> <i>Sophomore - NCU ...</i></h2>
                                              
-                                             {yearLine === '2019'?
-                                                  <p><small>Aug 27</small> - Start Sophomore year</p>
+                                             {yearLine === '2019' || pageFormat === 'simple'?
+                                                  <p className='node-body'><small>Aug 27</small> - Start Sophomore year</p>
                                              :''}
                                         </div>
                                    </div>
@@ -121,14 +117,15 @@ export const Academics = () =>{
                                         >
                                              <h2 className='acad-year'><span>2020</span> <i>Junior - NCU ...</i></h2>
                                              
-                                             {yearLine === '2020'?
-                                                  <>
+                                             {yearLine === '2020' || pageFormat === 'simple'?
+                                                  <div className='node-body'>
                                                        <p><small>Sept 07</small> - Start Junior year</p>
+                                                       <p>Awards:</p>
                                                        <ul>
-                                                            <li><a href={DStruct} target="_blank">Data Structures and Algorithms Most Outstanding Student</a></li>
-                                                            <li><a href={WebDev} target="_blank">Website Design and Implementation Most Outstanding Student</a></li>
+                                                            <li><a href={DStruct} target="_blank">Data Structures and Algorithms</a></li>
+                                                            <li><a href={WebDev} target="_blank">Website Design and Implementation</a></li>
                                                        </ul>
-                                                  </>
+                                                  </div>
                                              :''}
                                              
                                         </div>
@@ -157,13 +154,14 @@ export const Academics = () =>{
                                         >
                                              <h2 className='acad-year'><span>2021</span> <i>Senior - NCU ...</i></h2>
                                              
-                                             {yearLine === '2021'?
-                                                  <>
+                                             {yearLine === '2021' || pageFormat === 'simple'?
+                                                  <div className='node-body'>
                                                        <p><small>Aug 30</small> - Start Senior year </p>
+                                                       <p>Awards:</p>
                                                        <ul>
-                                                            <li><a href={AdvApp} target="_blank">Advanced Application Development Most Outstanding Student</a></li>
+                                                            <li><a href={AdvApp} target="_blank">Advanced Application Development</a></li>
                                                        </ul>
-                                                  </>
+                                                  </div>
                                              :''}
                                         </div>
                                    </div>
@@ -191,18 +189,18 @@ export const Academics = () =>{
                                         >
                                              <h2 className='acad-year'><span>2022</span> <i>Final Year - NCU ...</i></h2>
                                              
-                                             <div>{yearLine === '2022'?
-                                                  <>
+                                             {yearLine === '2022' || pageFormat === 'simple'?
+                                                  <div className='node-body'>
                                                        <p><small>Aug 29</small> - Start final semester</p>
+                                                       <p>Awards:</p>
                                                        <ul>
-                                                            <li><a href={DbSys} target="_blank">Database Systems Most Outstanding Student</a></li>
-                                                            <li><a href={InfoSys} target="_blank">Foundations of Information Systems Most Outstanding Student</a></li>
-                                                            <li><a href={AdvProp} target="_blank">Advanced Project/Research Proposal Development Most Outstanding Student</a></li>
-                                                            <li><a href={AdvProj} target="_blank">Advanced Project/Research in CIS Most Outstanding Student</a></li>
+                                                            <li><a href={DbSys} target="_blank">Database Systems</a></li>
+                                                            <li><a href={InfoSys} target="_blank">Foundations of Information Systems</a></li>
+                                                            <li><a href={AdvProp} target="_blank">Advanced Project/Research Proposal Development</a></li>
+                                                            <li><a href={AdvProj} target="_blank">Advanced Project/Research in CIS</a></li>
                                                        </ul>
-                                                  </>
+                                                  </div>
                                              :''}
-                                             </div>
                                         </div>
                                    </div>
 
@@ -229,14 +227,14 @@ export const Academics = () =>{
                                         >
                                              <h2 className='acad-year'><span>2023</span> <i>NCU Graduation ...</i></h2>
                                              
-                                             {yearLine === '2023'?
-                                                  <>
+                                             {yearLine === '2023' || pageFormat === 'simple'?
+                                                  <div className='node-body'>
                                                        <p><small>Aug 13</small> - Graduation from NCU</p>
                                                        <ul>
                                                             <li>Graduated with a Bachelors of Science in Computer Science</li>
                                                             <li>Magna Cum Laude</li>
                                                        </ul>
-                                                  </>
+                                                  </div>
                                                   
                                              :''}
                                              

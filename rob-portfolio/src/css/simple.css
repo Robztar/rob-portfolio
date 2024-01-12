@@ -222,7 +222,116 @@
 .mainbody-cont .home-btn, .mainbody-cont .sect-btn {
   display: none;
 }
-
+.mainbody-cont .timeline, .mainbody-cont .new-timeline {
+  width: 95%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.mainbody-cont .node-cont {
+  position: relative;
+  padding: 0;
+  width: 13rem;
+  height: 70vh;
+  animation: none;
+  opacity: 1;
+  box-shadow: none;
+}
+.mainbody-cont .node-data, .mainbody-cont .node-data.active {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  height: 100%;
+  max-height: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  cursor: default;
+}
+.mainbody-cont .node-data p, .mainbody-cont .node-data.active p {
+  margin: 0;
+}
+.mainbody-cont .node-data .acad-year i, .mainbody-cont .node-data.active .acad-year i {
+  display: none;
+}
+.mainbody-cont .acad-year {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 50%;
+  font-weight: 400;
+  font-size: 1rem;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+.mainbody-cont .acad-year span, .mainbody-cont .spec-node span {
+  border-bottom: none;
+  margin: 0;
+  padding: 0.5rem;
+}
+.mainbody-cont .node-body {
+  height: 50%;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.mainbody-cont .node-body p:nth-child(1) {
+  font-weight: 500;
+  text-decoration: underline;
+  margin-bottom: 0.5rem;
+}
+.mainbody-cont .node-body ul {
+  margin: 0;
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.mainbody-cont .right-node {
+  left: 0;
+}
+.mainbody-cont .right-node .node-data {
+  flex-direction: column-reverse;
+}
+.mainbody-cont .right-node .node-data .acad-year {
+  align-items: start;
+}
+.mainbody-cont .right-node .node-data .node-body {
+  justify-content: end;
+  padding: 0 0 0.5rem;
+}
+.mainbody-cont .node-point {
+  right: calc(50% - 20px);
+  top: calc(50% - 20px);
+  cursor: default;
+}
+.mainbody-cont .right-node .node-point {
+  left: calc(50% - 20px);
+}
+.mainbody-cont .node-point-span {
+  width: 100%;
+}
+.mainbody-cont .node-point:hover div {
+  height: 100%;
+  width: 100%;
+  box-shadow: 0px 0px 10px gold;
+  transition: 0.5s;
+}
+.mainbody-cont .timeline::after, .mainbody-cont .new-timeline::after {
+  display: none;
+  left: calc(50% - 3px);
+}
 .light-mode .side-page-btn a {
   color: #00252e;
 }
