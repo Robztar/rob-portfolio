@@ -56,7 +56,7 @@ export const Projects = () =>{
                                         ></i>
                                    </div>
                                    <div className='proj-body'>
-                                   <img 
+                                        <img 
                                              className='proj-disp' 
                                              src={GroundUp} 
                                              alt="Ground Embed"

@@ -255,6 +255,7 @@ $accent-color: #ff00ff;
      display: grid;
      align-items: start;
      justify-items: center;
+     overflow-y: auto;
 }
 .timeline{
      // background: purple;
@@ -327,6 +328,16 @@ $accent-color: #ff00ff;
           border-bottom: solid $accent-color 3px;
           padding: 0 0.5rem 0 0.5rem;
           margin-right: 0.5rem;
+     }
+}
+.node-body{
+     li a{
+          border-bottom: 1px magenta solid;
+          text-decoration: none;
+          transition: 0.5s;
+     }
+     li a:hover{
+          transition: 0.5s;
      }
 }
 .node-data.active{
@@ -619,9 +630,6 @@ $accent-color: #ff00ff;
      transition: 0.5s;
 
      .sect-title{
-          // background: orange;
-          // border: solid 2px orange;
-          height: 6vh;
           margin: 0;
      }
 }

@@ -223,6 +223,7 @@
   display: grid;
   align-items: start;
   justify-items: center;
+  overflow-y: auto;
 }
 
 .timeline {
@@ -298,6 +299,15 @@
   border-bottom: solid #ff00ff 3px;
   padding: 0 0.5rem 0 0.5rem;
   margin-right: 0.5rem;
+}
+
+.node-body li a {
+  border-bottom: 1px magenta solid;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.node-body li a:hover {
+  transition: 0.5s;
 }
 
 .node-data.active {
@@ -604,7 +614,6 @@
   transition: 0.5s;
 }
 .projects.active .sect-data .sect-title {
-  height: 6vh;
   margin: 0;
 }
 
