@@ -5,25 +5,15 @@ import {windStore} from '../../hooks/myStore'
 export const Home = () =>{
      let state: boolean
 
-     const { elem, setElem, initWind } = windStore();
+     const { elem, setElem, setLastElem, initWind } = windStore();
 
      if(elem === 'home'){state = true}
      else {state= false}
 
      return(
           <>
-               <div 
-                    className={`home ${state===true?'active':''}`}
-                    // style={homeStyle}
-                    onClick={ () =>{
-                              if(state === false){
-                                   // setElem('home')
-                                   // initWind()
-                              }
-                         }
-                    }
-               >
-                    <div className={`home-data ${state===true?'active':''}`}>
+               <div className={`home ${state?'active':''}`}>
+                    <div className={`home-data ${state?'active':''}`}>
                          <h1 className='home-title'>Robert McFarlane's Portfolio</h1>
                          <div className='home-info'>
                               Hello, I am Robert McFarlane. I have a BSc. in Computer Science from the Northern Carribean University (NCU).
@@ -32,10 +22,11 @@ export const Home = () =>{
                          </div>
                     </div>
                     <div 
-                         className={`home-btn ${state===true?'active':''}`}
+                         className={`home-btn ${state?'active':''}`}
                          onClick={ () =>{
-                              if(state === false){
+                              if(!state){
                                    setElem('home')
+                                   setLastElem('home')
                                    initWind()
                               }
                          }
@@ -46,9 +37,9 @@ export const Home = () =>{
                     </div>
                </div>
                <div 
-                    className={`home-btn-ext ${state===true?'active':''}`}
+                    className={`home-btn-ext ${state?'active':''}`}
                     onClick={ () =>{
-                         if(state === false){
+                         if(!state){
                               setElem('home')
                               initWind()
                          }

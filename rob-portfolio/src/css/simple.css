@@ -14,7 +14,7 @@
   left: 0;
   height: 100vh;
   width: 5rem;
-  z-index: 1;
+  z-index: 15;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -201,12 +201,12 @@
 }
 .mainbody-cont .sect, .mainbody-cont .sect.active {
   position: relative;
+  transform: rotateY(0deg);
+  animation: none;
   display: grid;
   place-items: center;
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
   border-radius: 0;
   box-shadow: none;
 }
@@ -221,7 +221,6 @@
   opacity: 1;
   margin: 0;
   padding: 0.5rem;
-  animation: 0.25s acadActivate forwards;
 }
 .mainbody-cont .sect .sect-data .sect-title, .mainbody-cont .sect.active .sect-data .sect-title {
   height: 5rem;

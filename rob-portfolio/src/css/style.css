@@ -435,13 +435,12 @@ input:checked + .bg-slider:before {
     align-self: start;
     font-size: 1rem;
   }
-  .sect.active {
+  .sect, .sect.active {
     height: 75vh;
     top: 5vh;
     font-size: 1rem;
-    transition: 1s;
   }
-  .sect.active .sect-data {
+  .sect .sect-data, .sect.active .sect-data {
     grid-template-rows: 7% auto;
     row-gap: 0.5rem;
     border-radius: 10px;
@@ -537,6 +536,10 @@ input:checked + .bg-slider:before {
   }
   .proj-card.active .proj-head h2 {
     font-size: 1.25rem;
+  }
+  .contact-info {
+    margin-top: 0.5rem;
+    padding: 0;
   }
   .resume-link, .p-source-link {
     justify-content: start;

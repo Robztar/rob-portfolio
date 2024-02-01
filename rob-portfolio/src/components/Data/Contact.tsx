@@ -5,7 +5,7 @@ export const Contact = () =>{
      let state: boolean
      let contactSide: boolean
 
-     const { elem, setElem, initWind } = windStore();
+     const { elem, lastElem, setElem, setLastElem, initWind } = windStore();
 
      if(elem === 'contact'){state = true}
      else{state= false}
@@ -16,14 +16,10 @@ export const Contact = () =>{
      return(
           <>
                <div 
-                    className={`contact sect ${state===true?'active':''} ${contactSide===true?'side-sect':''}`}
-                    onClick={ () =>{
-                              if(state === false){
-                                   // setElem('contact')
-                                   // initWind()
-                              }
-                         }
-                    }
+                    className={`contact sect 
+                         ${state?'active':''} 
+                         ${lastElem === 'contact'?'standby':''}
+                    `}
                >
                     <div className="sect-data">
                          <h1 className="sect-title">Contact</h1>
@@ -85,14 +81,14 @@ export const Contact = () =>{
                     </div>
                </div>
                <div 
-                    className={`sect-btn contact-btn ${state===true?'active':''} ${contactSide===true?'side-btn':''}`}
+                    className={`sect-btn contact-btn ${state?'active':''} ${contactSide?'side-btn':''}`}
                     onClick={ () =>{
-                         if(state === false){
+                         if(!state){
+                              setLastElem(elem)
                               setElem('contact')
                               initWind()
                          }
-                    }
-               }
+                    }}
                >
                     <i className="fa-solid fa-address-card"></i>
                     <p>Contact</p>

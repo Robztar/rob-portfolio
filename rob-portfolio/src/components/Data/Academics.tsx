@@ -13,7 +13,7 @@ export const Academics = () =>{
      let state: boolean
      let acadSide: boolean
 
-     const { elem, yearLine, setElem, initWind, setYLine } = windStore();
+     const { elem, lastElem, yearLine, setElem, setLastElem, initWind, setYLine } = windStore();
      const { pageFormat } = uiStore();
 
      if(elem === 'academics') {state = true}
@@ -24,14 +24,10 @@ export const Academics = () =>{
      return(
           <>
                <div 
-                    className={`academics sect ${state===true?'active':''} ${acadSide===true?'side-sect':''}`}
-                    onClick={ () =>{
-                              if(state === false){
-                                   // setElem('academics')
-                                   // initWind()
-                              }
-                         }
-                    }
+                    className={`academics sect 
+                         ${state?'active':''}
+                         ${lastElem === 'academics'?'standby':''}
+                    `}
                >
                     <div className="sect-data">
                          <h1 className="sect-title">Academics</h1>
@@ -245,9 +241,10 @@ export const Academics = () =>{
                     </div>
                </div>
                <div 
-                    className={`sect-btn acad-btn ${state===true?'active':''} ${acadSide===true?'side-btn':''}`}
+                    className={`sect-btn acad-btn ${state?'active':''} ${acadSide?'side-btn':''}`}
                     onClick={ () =>{
-                              if(state === false){
+                              if(!state){
+                                   setLastElem(elem)
                                    setElem('academics')
                                    initWind()
                               }

@@ -116,14 +116,12 @@
   align-self: start;
   font-size: 1rem;
 }
-.emul-cont .sect.active {
+.emul-cont .sect, .emul-cont .sect.active {
   height: 75vh;
   top: 5vh;
   font-size: 1rem;
-  transition: 1s;
 }
-.emul-cont .sect.active .sect-data {
-  grid-template-rows: 7% auto;
+.emul-cont .sect .sect-data, .emul-cont .sect.active .sect-data {
   row-gap: 0.5rem;
   border-radius: 10px;
   height: 100%;
@@ -221,6 +219,11 @@
 }
 .emul-cont .proj-card.active .proj-head h2 {
   font-size: 1.25rem;
+}
+.emul-cont .contact-info {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  height: 66vh;
 }
 .emul-cont .resume-link, .emul-cont .p-source-link {
   justify-content: start;

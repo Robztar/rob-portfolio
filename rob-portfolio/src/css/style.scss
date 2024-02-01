@@ -502,13 +502,13 @@ input:checked + .bg-slider:before {
           align-self: start;
           font-size: 1rem;
      }
-     .sect.active{
+     .sect, .sect.active{
           height: 75vh;
           top: 5vh;
           font-size: 1rem;
-          transition: 1s;
+          // transition: 1s;
      }
-     .sect.active .sect-data{
+     .sect .sect-data, .sect.active .sect-data{
           grid-template-rows: 7% auto;
           row-gap: 0.5rem;
           // background: blue;
@@ -613,6 +613,11 @@ input:checked + .bg-slider:before {
      .proj-card.active .proj-head h2{
           font-size: 1.25rem;
      }
+     .contact-info{
+          // background: blue;
+          margin-top: 0.5rem;
+          padding: 0;
+     }
      .resume-link, .p-source-link{
           justify-content: start;
           margin-bottom: 0.25rem;
@@ -620,49 +625,3 @@ input:checked + .bg-slider:before {
           a{ margin: 0;}
      }
 }
-
-// --2-- Pros of this styling:
-// allows for proper tab arrangment
-// could auto align tabs if the their arrangement changes
-
-// --- Cons:
-// removes flexibility for animation
-// causes weirdness for the active tab 
-     // (which is still connected the other tabs)
-
-// --- Solutions: 
-// reserve this styling for the simplified variant of the web app
-
-
-// .def-cont{
-//      position: absolute;
-//      background: green;
-//      height: 15vh;
-//      width: 80vw;
-//      top: 75vh;
-//      left: 10vw;
-//      margin: 0;
-//      display: flex;
-//      flex-direction: row;
-//      align-items: center;
-//      justify-content: space-around;
-// }
-// .sect{
-//      background: white;
-//      color: black;
-//      border: 1px solid;
-//      width: 5rem;
-//      height: 5rem;
-//      top: 80vh;
-//      display: grid;
-//      place-items: center;
-//      // transition: 1.5s;
-// }
-// .sect.active{
-//      position: absolute;
-//      background: red;
-//      width: 90%;
-//      height: 55vh;
-//      top: -65vh;
-//      left: 5%;
-// }

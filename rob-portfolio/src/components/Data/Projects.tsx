@@ -9,7 +9,7 @@ export const Projects = () =>{
      let state: boolean
      let projSide: boolean
 
-     const { elem, activeProj, setElem, initWind, setProj } = windStore();
+     const { elem, lastElem, activeProj, setElem, setLastElem, initWind, setProj } = windStore();
 
      if(elem === 'projects') {state = true}
      else{state= false}
@@ -20,14 +20,10 @@ export const Projects = () =>{
      return(
           <>
                <div 
-                    className={`projects sect ${state===true?'active':''} ${projSide===true?'side-sect':''}`}
-                    onClick={ () =>{
-                              if(state === false){
-                                   // setElem('projects')
-                                   // initWind()
-                              }
-                         }
-                    }
+                    className={`projects sect 
+                         ${state?'active':''}
+                         ${lastElem === 'projects'?'standby':''}
+                    `}
                >
                     <div className="sect-data">
                          <h1 className="sect-title">Projects</h1>
@@ -252,9 +248,10 @@ export const Projects = () =>{
                     </div>
                </div>
                <div 
-                    className={`sect-btn proj-btn ${state===true?'active':''} ${projSide===true?'side-btn':''}`}
+                    className={`sect-btn proj-btn ${state?'active':''} ${projSide?'side-btn':''}`}
                     onClick={ () =>{
-                              if(state === false){
+                              if(!state){
+                                   setLastElem(elem)
                                    setElem('projects')
                                    initWind()
                               }

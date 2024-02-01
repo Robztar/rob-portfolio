@@ -4,8 +4,7 @@ export const Skills = () =>{
      let state: boolean
      let skillSide: boolean
 
-     const { elem, techSkill, softSkill, setElem, initWind, setTechSkill, setSoftSkill } = windStore();
-
+     const { elem, lastElem, techSkill, softSkill, setElem, setLastElem, initWind, setTechSkill, setSoftSkill } = windStore();
      if(elem === 'skills') {state = true}
      else {state= false}
      
@@ -15,14 +14,10 @@ export const Skills = () =>{
      return(
           <>
                <div 
-                    className={`skills sect ${state===true?'active':''} ${skillSide===true?'side-sect':''}`}
-                    onClick={ () =>{
-                              if(state === false){
-                                   // setElem('skills')
-                                   // initWind()
-                              }
-                         }
-                    }
+                    className={`skills sect 
+                         ${state?'active':''} 
+                         ${lastElem === 'skills'?'standby':''}
+                    `}
                >
                     <div className="sect-data">
                          <h1 className="sect-title">Skills</h1>
@@ -104,9 +99,10 @@ export const Skills = () =>{
                     </div>
                </div>
                <div 
-                    className={`sect-btn skill-btn ${state===true?'active':''} ${skillSide===true?'side-btn':''}`}
+                    className={`sect-btn skill-btn ${state?'active':''} ${skillSide?'side-btn':''}`}
                     onClick={ () =>{
-                              if(state === false){
+                              if(!state){
+                                   setLastElem(elem)
                                    setElem('skills')
                                    initWind()
                               }
