@@ -179,14 +179,6 @@ $accent-color: #ff00ff;
      }
 }
 
-// .sect-home-layout{
-//      z-index: 1;
-//      transform: rotateY(0deg);
-//      height: 0vh;
-//      display: none;
-//      animation: none;
-// }
-
 .sect-data{
      display: flex;
      flex-direction: column;
@@ -858,6 +850,7 @@ $accent-color: #ff00ff;
 .contact-info{
      // background: blue;
      overflow-y: auto;
+     max-height: 100%;
      padding: 1rem;
      display: flex;
      flex-direction: column;
@@ -930,6 +923,7 @@ $accent-color: #ff00ff;
 }
 .p-source-link{
      margin-top: 1rem;
+     // margin: 1rem;
      display: flex;
      flex-wrap: wrap;
      flex-direction: row;

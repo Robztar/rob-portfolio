@@ -116,12 +116,14 @@
   align-self: start;
   font-size: 1rem;
 }
-.emul-cont .sect, .emul-cont .sect.active {
+.emul-cont .sect, .emul-cont .sect.active, .emul-cont .sect.standby {
   height: 75vh;
   top: 5vh;
   font-size: 1rem;
 }
-.emul-cont .sect .sect-data, .emul-cont .sect.active .sect-data {
+.emul-cont .sect .sect-data,
+.emul-cont .sect.active .sect-data,
+.emul-cont .sect.standby .sect-data {
   row-gap: 0.5rem;
   border-radius: 10px;
   height: 100%;
@@ -234,4 +236,7 @@
 }
 .emul-cont .resume-link a, .emul-cont .p-source-link a {
   margin: 0;
+}
+.emul-cont .p-source-link {
+  margin-bottom: 1rem;
 }/*# sourceMappingURL=emul.css.map */

@@ -144,13 +144,15 @@ $accent-color: #ff00ff;
           align-self: start;
           font-size: 1rem;
      }
-     .sect, .sect.active{
+     .sect, .sect.active, .sect.standby{
           height: 75vh;
           top: 5vh;
           font-size: 1rem;
           // transition: 1s;
      }
-     .sect .sect-data, .sect.active .sect-data{
+     .sect .sect-data, 
+     .sect.active .sect-data, 
+     .sect.standby .sect-data{
           // grid-template-rows: 7% auto;
           row-gap: 0.5rem;
           // background: blue;
@@ -274,4 +276,5 @@ $accent-color: #ff00ff;
           p{ margin: 0;}
           a{ margin: 0;}
      }
+     .p-source-link{ margin-bottom: 1rem; }
 }

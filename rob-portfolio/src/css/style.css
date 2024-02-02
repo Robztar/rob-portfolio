@@ -435,12 +435,14 @@ input:checked + .bg-slider:before {
     align-self: start;
     font-size: 1rem;
   }
-  .sect, .sect.active {
+  .sect, .sect.active, .sect.standby {
     height: 75vh;
     top: 5vh;
     font-size: 1rem;
   }
-  .sect .sect-data, .sect.active .sect-data {
+  .sect .sect-data,
+  .sect.active .sect-data,
+  .sect.standby .sect-data {
     grid-template-rows: 7% auto;
     row-gap: 0.5rem;
     border-radius: 10px;
@@ -469,7 +471,8 @@ input:checked + .bg-slider:before {
     left: -8px;
     top: calc(50% - 10px);
   }
-  .left-node .node-point-span, .right-node .node-point-span {
+  .left-node .node-point-span,
+  .right-node .node-point-span {
     left: 12px;
   }
   .node-cont {
@@ -544,6 +547,7 @@ input:checked + .bg-slider:before {
   .resume-link, .p-source-link {
     justify-content: start;
     margin-bottom: 0.25rem;
+    margin: 1rem;
   }
   .resume-link p, .p-source-link p {
     margin: 0;
