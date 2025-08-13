@@ -184,16 +184,23 @@
   display: grid;
   place-items: center;
   width: 80%;
-  height: 55vh;
+  height: 80vh;
   top: 0;
   left: 0;
   border-radius: 10px;
   box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.05), 6px 6px 15px rgba(0, 0, 0, 0.5);
 }
 .mainbody-cont .home .home-data, .mainbody-cont .home .home-data.active, .mainbody-cont .home.active .home-data, .mainbody-cont .home.active .home-data.active {
+  position: static;
   display: grid;
   grid-template-rows: 40% auto;
   height: 100%;
+  width: 100%;
+}
+.mainbody-cont .home .home-title, .mainbody-cont .home .home-info, .mainbody-cont .home.active .home-title, .mainbody-cont .home.active .home-info {
+  margin: 0;
+  padding: 0 1rem;
+  box-sizing: border-box;
   width: 100%;
 }
 .mainbody-cont .home-btn, .mainbody-cont .sect-btn {

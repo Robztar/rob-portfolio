@@ -11,6 +11,87 @@ export const Skills = () =>{
      if(elem === 'home') {skillSide = false}
      else {skillSide = true}
 
+     const SkillData = (
+          <div className="sect-data">
+               <h1 className="sect-title">Skills</h1>
+               <div className="skill-info">
+                    {/* Technical */}
+                    <div 
+                         className={`skill-cat ${techSkill}`}
+                         onClick={ () =>{
+                                   if(techSkill !== 'active'){
+                                        setTechSkill('active')
+                                        setSoftSkill('inactive')
+                                   }
+                              }
+                         }
+                    >
+                         <div className='skill-cat-head'>
+                              <h2>Technical Skills</h2>
+                              <i 
+                                   className="fa fa-times-circle-o"
+                                   onClick={ () =>{
+                                        if(techSkill === 'active'){
+                                             setTechSkill('')
+                                             setSoftSkill('')
+                                        }
+                                   }}
+                              ></i>
+                         </div>
+                         <div className='skill-cat-desc'>
+                              <p>These are the technical skills I possess that would make me a competent Web Developer</p>
+                         </div>
+                         <div className='skill-cat-body'>
+                              <div className='skill-cat-nodule'>HTML</div>
+                              <div className='skill-cat-nodule'>CSS</div>
+                              <div className='skill-cat-nodule'>JavaScript</div>
+                              <div className='skill-cat-nodule'>React.js</div>
+                              <div className='skill-cat-nodule'>TypeScript</div>
+                              <div className='skill-cat-nodule'>Figma</div>
+                              <div className='skill-cat-nodule'>PHP</div>
+                              <div className='skill-cat-nodule'>MySQL</div>
+                              <div className='skill-cat-nodule'>GitHub</div>
+                         </div>
+                    </div>
+                    {/* Soft */}
+                    <div 
+                         className={`skill-cat ${softSkill}`}
+                         onClick={ () =>{
+                              if(softSkill !== 'active'){
+                                   setSoftSkill('active')
+                                   setTechSkill('inactive')
+                              }
+                         }
+                    }
+                    >
+                         <div className='skill-cat-head'>
+                              <h2>Soft Skills</h2>
+                              <i 
+                                   className="fa fa-times-circle-o"
+                                   onClick={ () =>{
+                                        if(softSkill === 'active'){
+                                             setTechSkill('')
+                                             setSoftSkill('')
+                                        }
+                                   }}
+                              ></i>
+                         </div>
+                         <div className='skill-cat-desc'>
+                              <p>These are the additional skills I possess that make me a fitting employee for your company.</p>
+                         </div>
+                         <div className='skill-cat-body'>
+                              <div className='skill-cat-nodule'>Learnability</div>
+                              <div className='skill-cat-nodule'>Detail Orientation</div>
+                              <div className='skill-cat-nodule'>Creativity</div>
+                              <div className='skill-cat-nodule'>Oral Communication</div>
+                              <div className='skill-cat-nodule'>Team Player</div>
+                              <div className='skill-cat-nodule'>Dedicated</div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     )
+
      return(
           <>
                <div 
@@ -19,84 +100,7 @@ export const Skills = () =>{
                          ${lastElem === 'skills'?'standby':''}
                     `}
                >
-                    <div className="sect-data">
-                         <h1 className="sect-title">Skills</h1>
-                         <div className="skill-info">
-                              {/* Technical */}
-                              <div 
-                                   className={`skill-cat ${techSkill}`}
-                                   onClick={ () =>{
-                                             if(techSkill !== 'active'){
-                                                  setTechSkill('active')
-                                                  setSoftSkill('inactive')
-                                             }
-                                        }
-                                   }
-                              >
-                                   <div className='skill-cat-head'>
-                                        <h2>Technical Skills</h2>
-                                        <i 
-                                             className="fa fa-times-circle-o"
-                                             onClick={ () =>{
-                                                  if(techSkill === 'active'){
-                                                       setTechSkill('')
-                                                       setSoftSkill('')
-                                                  }
-                                             }}
-                                        ></i>
-                                   </div>
-                                   <div className='skill-cat-desc'>
-                                        <p>These are the technical skills I possess that would make me a competent Web Developer</p>
-                                   </div>
-                                   <div className='skill-cat-body'>
-                                        <div className='skill-cat-nodule'>HTML</div>
-                                        <div className='skill-cat-nodule'>CSS</div>
-                                        <div className='skill-cat-nodule'>JavaScript</div>
-                                        <div className='skill-cat-nodule'>React.js</div>
-                                        <div className='skill-cat-nodule'>TypeScript</div>
-                                        <div className='skill-cat-nodule'>Figma</div>
-                                        <div className='skill-cat-nodule'>PHP</div>
-                                        <div className='skill-cat-nodule'>MySQL</div>
-                                        <div className='skill-cat-nodule'>GitHub</div>
-                                   </div>
-                              </div>
-                              {/* Soft */}
-                              <div 
-                                   className={`skill-cat ${softSkill}`}
-                                   onClick={ () =>{
-                                        if(softSkill !== 'active'){
-                                             setSoftSkill('active')
-                                             setTechSkill('inactive')
-                                        }
-                                   }
-                              }
-                              >
-                                   <div className='skill-cat-head'>
-                                        <h2>Soft Skills</h2>
-                                        <i 
-                                             className="fa fa-times-circle-o"
-                                             onClick={ () =>{
-                                                  if(softSkill === 'active'){
-                                                       setTechSkill('')
-                                                       setSoftSkill('')
-                                                  }
-                                             }}
-                                        ></i>
-                                   </div>
-                                   <div className='skill-cat-desc'>
-                                        <p>These are the additional skills I possess that make me a fitting employee for your company.</p>
-                                   </div>
-                                   <div className='skill-cat-body'>
-                                        <div className='skill-cat-nodule'>Learnability</div>
-                                        <div className='skill-cat-nodule'>Detail Orientation</div>
-                                        <div className='skill-cat-nodule'>Creativity</div>
-                                        <div className='skill-cat-nodule'>Oral Communication</div>
-                                        <div className='skill-cat-nodule'>Team Player</div>
-                                        <div className='skill-cat-nodule'>Dedicated</div>
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
+                    {SkillData}
                </div>
                <div 
                     className={`sect-btn skill-btn ${state?'active':''} ${skillSide?'side-btn':''}`}

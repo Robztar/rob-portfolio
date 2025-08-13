@@ -8,7 +8,7 @@ import { Projects } from "../Data/Projects"
 import { Skills } from "../Data/Skills"
 
 
-const SideBar = ({BGCtrl } : { BGCtrl: React.FC }) =>{
+const SideBar = ({BGCtrl } : { BGCtrl: React.JSX.Element }) =>{
      const {pageFormat, bgDark, setFormat} = uiStore();
      const { elem, setElem, initWind } = windStore();
      return(
@@ -20,7 +20,7 @@ const SideBar = ({BGCtrl } : { BGCtrl: React.FC }) =>{
                               : <i className='far fa-sun active'></i>
                          }
                     </div>
-                    <BGCtrl />
+                    {BGCtrl}
                     <div className='side-layout-icon'>S</div>
                     <div className="side-layout-sel">
                          <div className='side-layout-btn'
@@ -30,12 +30,12 @@ const SideBar = ({BGCtrl } : { BGCtrl: React.FC }) =>{
                               }}
                          >D</div>
                          <div className='side-layout-btn active'>Simplified</div>
-                         <div className='side-layout-btn'
+                         {/* <div className='side-layout-btn'
                               onClick={()=>{
                                    if(pageFormat !== 'emulator')
                                         setFormat('emulator');
                               }}
-                         >E</div>
+                         >E</div> */}
                     </div>
                </div>
                <div className='line'></div>
@@ -78,7 +78,7 @@ const MainBody = () =>{
                          initWind()
                     }
                }}>
-                    <Home />
+                    <Home pageMode='simple' />
                </div>
                <div 
                     className='page-sect'
@@ -127,7 +127,7 @@ const MainBody = () =>{
           </div>
      )
 }
-export const Simplified = ({ BGCtrl }: { BGCtrl: React.FC }) =>{
+export const Simplified = ({ BGCtrl }: { BGCtrl: React.JSX.Element }) =>{
      const {bgDark} = uiStore();
 
      return(
