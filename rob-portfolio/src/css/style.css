@@ -82,6 +82,7 @@ body {
   border-radius: 2px;
   background: #868686;
   position: relative;
+  transition: 0.5s;
 }
 
 .tripbar:before, .tripbar:after {
@@ -125,16 +126,16 @@ body {
 }
 .float-menu-cont.active .tripbar {
   background-color: transparent;
+  width: 1.5rem;
+  transform: translateY(0) rotate(-90deg);
 }
 .float-menu-cont.active .tripbar:before {
   width: 1.5rem;
-  transform: rotate(360deg);
-  transform: translateY(0) rotate(135deg);
+  transform: translateY(0) rotate(45deg);
 }
 .float-menu-cont.active .tripbar:after {
   width: 1.5rem;
-  transform: rotate(360deg);
-  transform: translateY(0) rotate(225deg);
+  transform: translateY(0) rotate(-45deg);
 }
 
 .bg-ctrl {
@@ -372,19 +373,21 @@ input:checked + .bg-slider:before {
     border-radius: 3px;
   }
   .side-btn-housing .float-menu-cont {
-    top: -3.6rem;
+    top: -3rem;
     right: -3rem;
   }
   .home {
     display: none;
   }
   .home-data {
-    grid-template-rows: 25% auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     top: 0rem;
     left: calc(-100vw + 11rem);
   }
   .home-data.home-data.active {
-    height: calc(100% - 10rem);
+    height: calc(100% - 9rem);
     width: calc(100vw - 2rem);
     border-radius: 10px;
     box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.05), 6px 6px 15px rgba(0, 0, 0, 0.5);
@@ -393,12 +396,15 @@ input:checked + .bg-slider:before {
     width: 80%;
   }
   .home-title {
+    width: 100%;
     margin: 0;
+    padding: 3.5rem 0 0;
     align-self: end;
     font-size: 1.5rem;
   }
   .home-info {
     width: calc(100vw - (2rem + 6vw));
+    font-size: 0.9rem;
   }
   .home-btn-ext {
     position: absolute;
@@ -468,7 +474,7 @@ input:checked + .bg-slider:before {
   }
   .sect-btn.side-btn:not(.active), .sect-btn:not(.side-btn):not(.active) {
     filter: brightness(100%);
-    box-shadow: inset -1px -1px 3px rgba(255, 255, 255, 0.1), inset 1px 1px 3px rgba(255, 255, 255, 0.1);
+    box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1), 2px 2px 6px rgba(0, 0, 0, 0.8);
     transition: 0.5s;
     cursor: pointer;
   }
@@ -496,7 +502,7 @@ input:checked + .bg-slider:before {
     top: calc(100% - 8rem);
     right: 0;
     transform: translateX(calc(-100vw + 10rem + 2vw + 1rem + (100vw - 2rem) / 5 * 0));
-    box-shadow: inset -1px -1px 3px rgba(255, 255, 255, 0.1), inset 1px 1px 3px rgba(255, 255, 255, 0.1);
+    box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1), 2px 2px 6px rgba(0, 0, 0, 0.8);
   }
   .home-btn-ext.active {
     box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1), inset 2px 2px 6px rgba(0, 0, 0, 0.8);
